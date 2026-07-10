@@ -10,12 +10,22 @@ JSON parsing and serialisation are handled by `code/C830AR/cots/nlohmann-json/js
 
 - `--PaAgentEntityName=<entity>`: PAAgent entity name used for CORBA resolution.
 - `--PaAgentLocationKey=<key>`: location/region key used to subscribe to local PAAgent messages.
+- `--PaBridgeUserKey=<key>` or `--PaBridgeOperatorKey=<key>`: operator/user key used to request the bridge session.
+- `--PaBridgeProfileKey=<key>`: profile key used to request the bridge session.
+- `--PaBridgeLocationKey=<key>`: location key used to request the bridge session. Defaults to `--LocationKey` or the PAAgent location key when available.
+- `--PaBridgeConsoleId=<key>`: console/workstation key used to request the bridge session.
+- `--PaBridgePassword=<password>`: password used to authenticate the bridge session.
 - `--RestPort=<port>`: REST listen port, default `8088`.
 - `--KafkaTopicPrefix=<prefix>`: topic prefix, default `paagent`.
 - `--KafkaBootstrapServers=<host:port,...>`: enables Kafka publishing through
   `code/C830AR/cots/librdkafka`.
 - `--KafkaSpoolFile=<path>`: optional fallback that writes Kafka-style records to a file
   when no Kafka bootstrap server is configured.
+
+PABridgeAgent keeps retrying until it obtains a real Authentication session and
+uses that session for all PAAgent calls. Web PA clients must not generate or pass
+`sessionId`. Before the session is ready, `/health` reports `starting` and the
+PA REST APIs return `503`.
 
 ## REST endpoints
 
@@ -29,7 +39,7 @@ JSON parsing and serialisation are handled by `code/C830AR/cots/nlohmann-json/js
 - `POST /api/pa/broadcasts/{broadcastId}/retry-station`
 - `POST /api/pa/broadcasts/{broadcastId}/retry-train`
 - `POST /api/pa/station/music`
-- `GET /api/pa/station/music-status?sessionId=...`
+- `GET /api/pa/station/music-status`
 - `POST /api/pa/station/dva`
 - `POST /api/pa/station/live`
 - `POST /api/pa/station/record-adhoc`

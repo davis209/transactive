@@ -11,8 +11,9 @@
 
 namespace TA_IRS_App
 {
-    PaRestController::PaRestController(const std::string& paAgentEntityName)
-        : m_paAgent(paAgentEntityName, true)
+    PaRestController::PaRestController(const std::string& paAgentEntityName, SessionIdProvider sessionIdProvider)
+        : m_paAgent(paAgentEntityName, true),
+          m_sessionIdProvider(sessionIdProvider)
     {
     }
 
@@ -24,7 +25,17 @@ namespace TA_IRS_App
         {
             if (method == "GET" && path == "/health")
             {
-                return ok(JsonUtil::object({ JsonUtil::property("status", "ok") }));
+                const bool hasSession = m_sessionIdProvider && !m_sessionIdProvider().empty();
+                return ok(JsonUtil::object({
+                    JsonUtil::property("status", hasSession ? "ok" : "starting"),
+                    JsonUtil::property("sessionReady", hasSession ? "true" : "false", true)
+                }));
+            }
+
+            const std::string sessionId = m_sessionIdProvider ? m_sessionIdProvider() : "";
+            if (sessionId.empty())
+            {
+                return error(statusCode, 503, "PABridgeAgent has not acquired an Authentication session yet");
             }
 
             if (method == "GET" && path == "/api/pa/broadcasts")
@@ -88,14 +99,14 @@ namespace TA_IRS_App
             broadcastId = getPathId(path, "/api/pa/broadcasts/", "/terminate");
             if (method == "POST" && !broadcastId.empty())
             {
-                m_paAgent->terminateBroadcast(broadcastId.c_str(), JsonUtil::getString(request, "sessionId").c_str());
+                m_paAgent->terminateBroadcast(broadcastId.c_str(), sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", broadcastId), JsonUtil::property("terminated", "true", true) }));
             }
 
             broadcastId = getPathId(path, "/api/pa/broadcasts/", "/remove");
             if (method == "POST" && !broadcastId.empty())
             {
-                m_paAgent->removeBroadcast(broadcastId.c_str(), JsonUtil::getString(request, "sessionId").c_str());
+                m_paAgent->removeBroadcast(broadcastId.c_str(), sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", broadcastId), JsonUtil::property("removed", "true", true) }));
             }
 
@@ -106,7 +117,7 @@ namespace TA_IRS_App
                 m_paAgent->changeBroadcastId(
                     broadcastId.c_str(),
                     toBroadcastId.c_str(),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({
                     JsonUtil::property("fromBroadcastId", broadcastId),
                     JsonUtil::property("toBroadcastId", toBroadcastId)
@@ -120,7 +131,7 @@ namespace TA_IRS_App
                 m_paAgent->retryStationBroadcast(
                     broadcastId.c_str(),
                     zones,
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", broadcastId), JsonUtil::property("accepted", "true", true) }));
             }
 
@@ -132,7 +143,7 @@ namespace TA_IRS_App
                     broadcastId.c_str(),
                     trains,
                     JsonUtil::parseBool(request, "hasOverrideOption", false),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", broadcastId), JsonUtil::property("accepted", "true", true) }));
             }
 
@@ -161,18 +172,12 @@ namespace TA_IRS_App
             {
                 m_paAgent->broadcastStationMusic(
                     PaJsonConverter::parseMusicType(JsonUtil::getString(request, "musicType")),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("accepted", "true", true) }));
             }
 
             if (method == "GET" && path.find("/api/pa/station/music-status") == 0)
             {
-                std::string sessionId;
-                std::string::size_type pos = path.find("sessionId=");
-                if (pos != std::string::npos)
-                {
-                    sessionId = path.substr(pos + 10);
-                }
                 TA_Base_Bus::IPAAgentCorbaDef::EMusicType value = m_paAgent->getMusicStatus(sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("musicType", PaJsonConverter::musicType(value)) }));
             }
@@ -198,7 +203,7 @@ namespace TA_IRS_App
                     static_cast<CORBA::UShort>(JsonUtil::parseUnsigned(request, "periodInSecs", 0)),
                     JsonUtil::parseBool(request, "isSynchronisedWithTis", false),
                     JsonUtil::getString(request, "groupName").c_str(),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", id.in()) }));
             }
 
@@ -209,7 +214,7 @@ namespace TA_IRS_App
                     static_cast<CORBA::Octet>(JsonUtil::parseUnsigned(request, "sourceId", 0)),
                     zones,
                     JsonUtil::getString(request, "groupName").c_str(),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", id.in()) }));
             }
 
@@ -218,7 +223,7 @@ namespace TA_IRS_App
                 CORBA::String_var id = m_paAgent->recordAdhocMessage(
                     static_cast<CORBA::Octet>(JsonUtil::parseUnsigned(request, "sourceId", 0)),
                     JsonUtil::parseUnsigned(request, "messageKey", 0),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", id.in()) }));
             }
 
@@ -228,7 +233,7 @@ namespace TA_IRS_App
                 CORBA::Boolean result = m_paAgent->setAdhocType(
                     JsonUtil::parseUnsigned(request, "messageKey", 0),
                     type.empty() ? 'N' : type[0],
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("updated", result ? "true" : "false", true) }));
             }
 
@@ -237,7 +242,7 @@ namespace TA_IRS_App
                 m_paAgent->setAdhocLabel(
                     JsonUtil::parseUnsigned(request, "messageKey", 0),
                     JsonUtil::getString(request, "label").c_str(),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("updated", "true", true) }));
             }
 
@@ -254,7 +259,7 @@ namespace TA_IRS_App
                     static_cast<CORBA::Short>(JsonUtil::parseUnsigned(request, "libraryVersion", 0)),
                     schedule,
                     JsonUtil::parseBool(request, "hasOverrideOption", false),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", id.in()) }));
             }
 
@@ -265,7 +270,7 @@ namespace TA_IRS_App
                     trains,
                     JsonUtil::parseBool(request, "hasOverrideOption", false),
                     JsonUtil::getString(request, "staticGroup").c_str(),
-                    JsonUtil::getString(request, "sessionId").c_str());
+                    sessionId.c_str());
                 return ok(JsonUtil::object({ JsonUtil::property("broadcastId", id.in()) }));
             }
 

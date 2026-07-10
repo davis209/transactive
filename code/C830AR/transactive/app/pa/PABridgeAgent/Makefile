@@ -41,6 +41,8 @@ PROJ_LIBS       = \
                 TA_DataPointLibrary \
                 TA_DataNodeLibrary \
                 TA_PAAgentCorbaDef_4669 \
+                TA_AuthenticationLibrary \
+                TA_AuthenticationCorbaDef \
                 TA_Message \
                 TA_MessageCorbaDef \
                 TA_CorbaUtil \
