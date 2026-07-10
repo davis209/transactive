@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.maintenance_management.mms_agent</ProjectName>
+    <ProjectGuid>{71907846-90F2-4901-B310-2F67FBFD467D}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.28307.799</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../../../../bin/win32_nd\</OutDir>
+    <IntDir>.\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nd/app.maintenance_management.mms_agent.MmsAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./src/;../../../;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.0.5/include;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/bus/maintenance_management/mmscorbadef/IDL/src;../../../../;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../cots/BEAMessageQ/include;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;__WIN32__;WIN32;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_CONSOLE;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/app.maintenance_management.mms_agent.MmsAgent.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>omniORB405_rtd.lib;omniDynamic405_rtd.lib;COS405_rtd.lib;omnithread30_rtd.lib;oci.lib;Rpcrt4.lib;WS2_32.lib;aced.lib;TA_Base_Core_d.lib;TA_Base_bus_d.lib;TA_IRS_Core_d.lib;TA_IRS_bus_d.lib;dmqcl32.lib;winmm.lib;stracelib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../../../../bin/win32_nd/MmsAgent.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../sdk/win32_nd;../../../../../build/win32_nd;../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers/ace;../../../../cots/MmsApi/Winnt/ver_1_0/stub/lib;../../../../../sdk/lib;../../../../cots/BEAMessageQ/lib;../../../../../sdk/include/cots/WinStackTrace\build\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../../../../../bin/win32_nd/MmsAgent.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nd/app.maintenance_management.mms_agent.MmsAgent.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nr/app.maintenance_management.mms_agent.MmsAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;__WIN32__;WIN32;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_CONSOLE;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./src/;../../../;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.2.2/include;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/bus/maintenance_management/mmscorbadef/IDL/src;../../../../;../../../../../sdk/include/cots/boost/boost_1_78_0;../../../../cots/BEAMessageQ/include;..\..\..\..\..\sdk\include\cots\ACE\6_4_0\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Rpcrt4.lib;WS2_32.lib;TA_Base_Core.lib;TA_Base_bus.lib;TA_IRS_Core.lib;TA_IRS_bus.lib;winmm.lib;libcurl.lib;dmqcl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <AdditionalLibraryDirectories>../../../../../sdk/win32_nr;../../../../../build/win32_nr;../../../../cots/MmsApi/Winnt/ver_1_0/stub/lib;../../../../../sdk/lib;../../../../cots/BEAMessageQ/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nr/app.maintenance_management.mms_agent.MmsAgent.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DatabaseCache.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MmsAgent.cpp" />
+    <ClCompile Include="src\MmsAlarmSubmitter.cpp" />
+    <ClCompile Include="src\MmsApiWrapper.cpp" />
+    <ClCompile Include="src\MmsConnection.cpp" />
+    <ClCompile Include="src\MmsConnectionTester.cpp" />
+    <ClCompile Include="src\MmsJobRequestSubmitter.cpp" />
+    <ClCompile Include="src\MmsMessageUtil.cpp" />
+    <ClCompile Include="src\MmsPeriodicSubmitter.cpp" />
+    <ClCompile Include="src\MmsServerState.cpp" />
+    <ClCompile Include="src\PeriodicThread.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DatabaseCache.h" />
+    <ClInclude Include="src\InvalidArgException.h" />
+    <ClInclude Include="src\MmsAgent.h" />
+    <ClInclude Include="src\MmsAlarmSubmitter.h" />
+    <ClInclude Include="src\MmsApiWrapper.h" />
+    <ClInclude Include="src\MmsConnection.h" />
+    <ClInclude Include="src\MmsConnectionException.h" />
+    <ClInclude Include="src\MmsConnectionTester.h" />
+    <ClInclude Include="src\MmsJobRequestSubmitter.h" />
+    <ClInclude Include="src\MmsMessageUtil.h" />
+    <ClInclude Include="src\MmsPeriodicSubmitter.h" />
+    <ClInclude Include="src\MmsServerState.h" />
+    <ClInclude Include="src\PeriodicThread.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,32 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'UpdateBufferTestCases'
+Results File:	'UpdateBufferTest.log'
+Suite File:		''
+
+Testing method:	'testClearQueuedUpdates'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFetchUpdate'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: UpdateBufferTest.log
+
+OK (2 tests)
+Tests Ran: 2		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 38.31 seconds.
+
+**********************************************************************************************************************
+
+

@@ -1,0 +1,140 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'GenericCachedMapTestCases'
+Results File:	'GenericCachedMapTest.log'
+Suite File:		''
+
+Testing method:	'testGetCachedDbRecordFromKey'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetConfigurableCachedDbRecordFromKey_updatesCorrectly'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetConfigurableCachedDbRecordFromKey_locksCorrectly'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetAllRecords_basic'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetAllRecords_filtered'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetFirstMatchingRecord'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testUpdateRecordMapWithItem_updateExisting'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testUpdateRecordMapWithItem_updateWithNew'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testUpdateRecordMapWithItem_addInvalid'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testClearKeyToRecordMap'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFlagAsInitialised'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetPrimaryKeyArray'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRefreshKeyToRecordMapUsing'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessDatabaseRemovalNotification'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessDatabaseUpdateCreateNotification_updateRecord'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessDatabaseUpdateCreateNotification_createRecord'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRemoveRecordMapItem'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDoesRecordExistInMap'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testUpdateRecordMapWithItemFromDatabase'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testConstructor'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: GenericCachedMapTest.log
+
+OK (20 tests)
+Tests Ran: 20		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 0.06 seconds.
+
+**********************************************************************************************************************
+
+

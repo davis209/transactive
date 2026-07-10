@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.pa.PAAgent</ProjectName>
+    <ProjectGuid>{A3659B41-604E-490F-B379-E2EC45C19951}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.28307.799</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../../../../build/win32_nd\</OutDir>
+    <IntDir>.\../../../../../build/win32_nd/transactive/app/pa/PAAgent\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../build/win32_nd/app.pa.PAAgent.PAAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm300 /I /Z".\src"  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\;..\..\..\..\..\build\win32_n\transactive;..\..\..\..\..\sdk\include\transactive\core\data_access_interface\tis_agent_4669\IDL\src;..\..\..\..\..\sdk\include\transactive;..\..\..\..\..\sdk\include\transactive\core\process_management\IDL\src;..\..\..\..\..\sdk\include\transactive\core\message\IDL\src;..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src;..\..\..\..\..\sdk\include\transactive\bus\scada/common_library/IDL/src;..\..\..\..\..\sdk\omniORB\omniORB_4.0.5\include;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/IDL/src;../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../sdk/include/cots/boost/boost_1_39_0;../../..;../../../../../sdk/include/transactive;../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/process_management/IDL/src;../../../../../sdk/include/transactive/core/data_access_interface/tis_agent_4669/IDL/src;../../../../../sdk/include/transactive/bus/security/duty_agent/IDL/src;../../../../../sdk/include/transactive/bus/security/authentication_agent/IDL/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorba/idl/src;../../../../../sdk/include/transactive/bus/radio/radioagentcorbadef_4669/IDL/src;../../../../../sdk/omniORB/omniORB_4.0.5/include;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;__WIN32__;__x86__;_NT_;__OSVERSION__=4;WIN32;_CONSOLE;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../../../../../build/win32_nd/transactive/app/pa/PAAgent/app.pa.PAAgent.PAAgent.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../../build/win32_nd/transactive/app/pa/PAAgent/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../../build/win32_nd/transactive/app/pa/PAAgent/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../../build/win32_nd/transactive/app/pa/PAAgent/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>omniORB405_rtd.lib;omniDynamic405_rtd.lib;COS405_rtd.lib;omnithread30_rtd.lib;aced.lib;TA_Base_Core_d.lib;TA_Base_Bus_d.lib;TA_IRS_Core_d.lib;TA_IRS_Bus_d.lib;oci.lib;ws2_32.lib;Rpcrt4.lib;winmm.lib;stracelib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../../../../bin/win32_nd/PAAgent.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../sdk/win32_nd;../../../../../build/win32_nd;../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7;../../../../../sdk/lib;../../../../../sdk/include/cots/WinStackTrace\build\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;msvcprt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../../../../../build/win32_nd/PAAgent.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\../../../../../build/win32_nd/transactive/app/pa/PAAgent/PAAgent.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../build/win32_nd/app.pa.PAAgent.PAAgent.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../build/win32_nr/app.pa.PAAgent.PAAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm300 /I /Z".\src"  %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_CONSOLE;WIN32_LEAN_AND_MEAN;TA_PP_USE_PCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TA_Base_Core.lib;TA_Base_Bus.lib;TA_IRS_Core.lib;TA_IRS_Bus.lib;ws2_32.lib;Rpcrt4.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../build/win32_nr/app.pa.PAAgent.PAAgent.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractBroadcast.cpp" />
+    <ClCompile Include="src\AbstractBroadcastCircularList.cpp" />
+    <ClCompile Include="src\AbstractNonTrainDVABroadcast.cpp" />
+    <ClCompile Include="src\AbstractPAAgent.cpp" />
+    <ClCompile Include="src\PasTableReadCounter.cpp" />
+    <ClCompile Include="src\AbstractPASTable.cpp" />
+    <ClCompile Include="src\AbstractStationBroadcast.cpp" />
+    <ClCompile Include="src\AbstractTrainBroadcast.cpp" />
+    <ClCompile Include="src\AbstractWriteablePASTable.cpp" />
+    <ClCompile Include="src\AtsAgentSubscriber.cpp" />
+    <ClCompile Include="src\BroadcastManager.cpp" />
+    <ClCompile Include="src\BroadcastWorker.cpp" />
+    <ClCompile Include="src\CachedConfig.cpp" />
+    <ClCompile Include="src\ConnectToPAFEPC.cpp" />
+    <ClCompile Include="src\DataPointWriteQueueProcessor.cpp" />
+    <ClCompile Include="src\DisconnectFromPAFEPC.cpp" />
+    <ClCompile Include="src\DVARecordingBroadcast.cpp" />
+    <ClCompile Include="src\FireCountdownAckMonitor.cpp" />
+    <ClCompile Include="src\InvalidatePASDataPoints.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MasterDVABroadcast.cpp" />
+    <ClCompile Include="src\MasterLiveBroadcast.cpp" />
+    <ClCompile Include="src\MasterPAAgent.cpp" />
+    <ClCompile Include="src\MasterPasTableManager.cpp" />
+    <ClCompile Include="src\PASConnection.cpp" />
+    <ClCompile Include="src\PASEvent.cpp" />
+    <ClCompile Include="src\PasHelpers.cpp" />
+    <ClCompile Include="src\PASReadEvent.cpp" />
+    <ClCompile Include="src\PasTableManager.cpp" />
+    <ClCompile Include="src\PASWriteEvent.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\ProgressReportSentry.cpp" />
+    <ClCompile Include="src\StationDVABroadcast.cpp" />
+    <ClCompile Include="src\StationLiveBroadcast.cpp" />
+    <ClCompile Include="src\StationMusicBroadcast.cpp" />
+    <ClCompile Include="src\StationPAAgent.cpp" />
+    <ClCompile Include="src\StationPasTableManager.cpp" />
+    <ClCompile Include="src\Table100.cpp" />
+    <ClCompile Include="src\Table1200.cpp" />
+    <ClCompile Include="src\Table1201.cpp" />
+    <ClCompile Include="src\Table1204.cpp" />
+    <ClCompile Include="src\Table1301.cpp" />
+    <ClCompile Include="src\Table1303.cpp" />
+    <ClCompile Include="src\Table1610.cpp" />
+    <ClCompile Include="src\Table200.cpp" />
+    <ClCompile Include="src\Table201.cpp" />
+    <ClCompile Include="src\Table202.cpp" />
+    <ClCompile Include="src\Table204.cpp" />
+    <ClCompile Include="src\Table301.cpp" />
+    <ClCompile Include="src\Table302.cpp" />
+    <ClCompile Include="src\Table303.cpp" />
+    <ClCompile Include="src\Table350.cpp" />
+    <ClCompile Include="src\Table550.cpp" />
+    <ClCompile Include="src\Table560.cpp" />
+    <ClCompile Include="src\Table570.cpp" />
+    <ClCompile Include="src\Table590.cpp" />
+    <ClCompile Include="src\Table603.cpp" />
+    <ClCompile Include="src\Table604.cpp" />
+    <ClCompile Include="src\Table610.cpp" />
+    <ClCompile Include="src\Table630.cpp" />
+    <ClCompile Include="src\TrainAgentSubscriber.cpp" />
+    <ClCompile Include="src\TrainDVABroadcast.cpp" />
+    <ClCompile Include="src\TrainLiveBroadcast.cpp" />
+    <ClCompile Include="src\VersionGen.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractBroadcast.h" />
+    <ClInclude Include="src\AbstractBroadcastCircularList.h" />
+    <ClInclude Include="src\AbstractNonTrainDVABroadcast.h" />
+    <ClInclude Include="src\AbstractPAAgent.h" />
+    <ClInclude Include="src\PasTableReadCounter.h" />
+    <ClInclude Include="src\AbstractPASTable.h" />
+    <ClInclude Include="src\AbstractStationBroadcast.h" />
+    <ClInclude Include="src\AbstractTrainBroadcast.h" />
+    <ClInclude Include="src\AbstractWriteablePASTable.h" />
+    <ClInclude Include="src\AtsAgentSubscriber.h" />
+    <ClInclude Include="src\BroadcastManager.h" />
+    <ClInclude Include="src\BroadcastWorker.h" />
+    <ClInclude Include="src\CachedConfig.h" />
+    <ClInclude Include="src\CircularList.h" />
+    <ClInclude Include="src\ConnectToPAFEPC.h" />
+    <ClInclude Include="src\DataPointWriteQueueProcessor.h" />
+    <ClInclude Include="src\DisconnectFromPAFEPC.h" />
+    <ClInclude Include="src\DVARecordingBroadcast.h" />
+    <ClInclude Include="src\FireCountdownAckMonitor.h" />
+    <ClInclude Include="src\InvalidatePASDataPoints.h" />
+    <ClInclude Include="src\MasterDVABroadcast.h" />
+    <ClInclude Include="src\MasterLiveBroadcast.h" />
+    <ClInclude Include="src\MasterPAAgent.h" />
+    <ClInclude Include="src\MasterPasTableManager.h" />
+    <ClInclude Include="src\PASConnection.h" />
+    <ClInclude Include="src\PASEvent.h" />
+    <ClInclude Include="src\PasHelpers.h" />
+    <ClInclude Include="src\PASReadEvent.h" />
+    <ClInclude Include="src\PasTableManager.h" />
+    <ClInclude Include="src\PASWriteEvent.h" />
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\ProgressReportSentry.h" />
+    <ClInclude Include="src\StationDVABroadcast.h" />
+    <ClInclude Include="src\StationLiveBroadcast.h" />
+    <ClInclude Include="src\StationMusicBroadcast.h" />
+    <ClInclude Include="src\StationPAAgent.h" />
+    <ClInclude Include="src\StationPasTableManager.h" />
+    <ClInclude Include="src\Table100.h" />
+    <ClInclude Include="src\Table1200.h" />
+    <ClInclude Include="src\Table1201.h" />
+    <ClInclude Include="src\Table1204.h" />
+    <ClInclude Include="src\Table1301.h" />
+    <ClInclude Include="src\Table1303.h" />
+    <ClInclude Include="src\Table1610.h" />
+    <ClInclude Include="src\Table200.h" />
+    <ClInclude Include="src\Table201.h" />
+    <ClInclude Include="src\Table202.h" />
+    <ClInclude Include="src\Table204.h" />
+    <ClInclude Include="src\Table301.h" />
+    <ClInclude Include="src\Table302.h" />
+    <ClInclude Include="src\Table303.h" />
+    <ClInclude Include="src\Table350.h" />
+    <ClInclude Include="src\Table550.h" />
+    <ClInclude Include="src\Table560.h" />
+    <ClInclude Include="src\Table570.h" />
+    <ClInclude Include="src\Table590.h" />
+    <ClInclude Include="src\Table603.h" />
+    <ClInclude Include="src\Table604.h" />
+    <ClInclude Include="src\Table610.h" />
+    <ClInclude Include="src\Table630.h" />
+    <ClInclude Include="src\TrainAgentSubscriber.h" />
+    <ClInclude Include="src\TrainDVABroadcast.h" />
+    <ClInclude Include="src\TrainLiveBroadcast.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

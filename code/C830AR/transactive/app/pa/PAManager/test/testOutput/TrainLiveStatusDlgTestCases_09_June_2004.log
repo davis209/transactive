@@ -1,0 +1,164 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'TrainLiveStatusDlgTestCases'
+Results File:	'TrainLiveStatusDlgTestCases.log '
+Suite File:		''
+
+Testing method:	'testConstructor'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnReportUpdate_continueRequired'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnReportUpdate_invalidation'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnTrainPttStateChange'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnButtonBeginLiveAnnouncement'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnButtonContinueLiveAnnouncement'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnButtonEndLiveAnnouncement'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnRadioOverride'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnRadioNormal'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnDestroy'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDestroyStatusModel'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnTrainStatusCloseBtn'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnTrainStatusRetryFailuresBtn'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnTrainStatusRetryAllBtn'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnBroadcastStateChanged_invalid'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnBroadcastStateChanged_creation'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnBroadcastStateChanged_execution'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnBroadcastStateChanged_runtime'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnBroadcastStateChanged_termination_pendingRemoval'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSetContinueButtonEnabledState'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testUpdateContinueButtonState'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessContinueRequiredStateChange'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testResetContinueRequiredButton'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testTDDefect_1981'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: TrainLiveStatusDlgTestCases.log 
+
+OK (24 tests)
+Tests Ran: 24		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 1.95 seconds.
+
+**********************************************************************************************************************
+
+

@@ -1,0 +1,38 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'LockedPacketTestCases'
+Results File:	'LockedPacketTest.log'
+Suite File:		''
+
+Testing method:	'testConstructor_newLock'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testConstructor_existingLock'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testCopyConstructor'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: LockedPacketTest.log
+
+OK (3 tests)
+Tests Ran: 3		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 1.22 seconds.
+
+**********************************************************************************************************************
+
+

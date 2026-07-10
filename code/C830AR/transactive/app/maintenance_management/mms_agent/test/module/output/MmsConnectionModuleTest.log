@@ -1,0 +1,56 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'MmsConnectionModuleTest'
+Results File:	'output/MmsConnectionModuleTest.log'
+Suite File:		''
+
+Testing method:	'submitAlarmMessageTest'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'submitJobRequestMessageTest'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'submitCounterMessageTest'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'submitMeasurementMessageTest'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'pingTest'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'clearMessagesTest'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: output/MmsConnectionModuleTest.log
+
+OK (6 tests)
+Tests Ran: 6		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 1.36 seconds.
+
+**********************************************************************************************************************
+
+

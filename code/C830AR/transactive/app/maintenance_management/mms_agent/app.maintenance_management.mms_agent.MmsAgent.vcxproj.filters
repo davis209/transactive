@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{7ae798b0-7657-4bd7-a593-4f9367de9315}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DatabaseCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsAlarmSubmitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsApiWrapper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsConnectionTester.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsJobRequestSubmitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsMessageUtil.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsPeriodicSubmitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsServerState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PeriodicThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DatabaseCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InvalidArgException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsAlarmSubmitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsApiWrapper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsConnectionException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsConnectionTester.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsJobRequestSubmitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsMessageUtil.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsPeriodicSubmitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsServerState.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PeriodicThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

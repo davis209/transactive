@@ -1,0 +1,26 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'ElementTestCases'
+Results File:	'ElementTest.log'
+Suite File:		''
+
+Testing method:	'testElementClass'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: ElementTest.log
+
+OK (1 tests)
+Tests Ran: 1		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 0.00 seconds.
+
+**********************************************************************************************************************
+
+

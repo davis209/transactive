@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{86697800-df88-44ad-9910-db81f54e4bbd}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{184d912b-22c0-4247-b0c1-54817b52d429}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuditMessageUtility.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobRequestMgr.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobRequestMgrDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobRequestMgrGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AuditMessageUtility.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BadRunParamException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobRequestMgr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobRequestMgrDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobRequestMgrGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\JobRequestMgr.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\JobRequestMgr.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\JobRequestMgr.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\ReadMe.txt" />
+  </ItemGroup>
+</Project>

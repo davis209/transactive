@@ -1,0 +1,122 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'DvaMessageChangeSubscriberTestCases'
+Results File:	'DvaMessageChangeSubscriberTest.log'
+Suite File:		''
+
+Testing method:	'testOnCachedMapChanged'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRegisterWatchOnTypeChange'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRegisterWatchOnLabelChange'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testClearAllChangeWatches'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testHasTypeChangeWatchBeenCleared'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testUpdateMessageQueue_multipleMessages'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testUpdateMessageQueue_singleMessage'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetNotificationData'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnSubscriptionSuccessful'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnPreProcessMessage'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDisplayForeignUpdateWarning'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testClearExpectedConfigUpdate'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDisplayForeignUpdateWarning'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testClearFirstMatchingExpectedConfigUpdateKey'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testTestForReceiptOfFlaggedDvaChange'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testResetCachedMapDvaMessageChangeObserverRegistration'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDvaUpdateReceivedDetection'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: DvaMessageChangeSubscriberTest.log
+
+OK (17 tests)
+Tests Ran: 17		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 7.75 seconds.
+
+**********************************************************************************************************************
+
+

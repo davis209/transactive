@@ -1,0 +1,254 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MMSCONTROLLER_DIALOG DIALOGEX 0, 0, 255, 193
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MMS Controller"
+MENU IDR_DNC_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Global MMS Message Inhibit",IDC_STATIC,2,6,251,30
+    CONTROL         "Inhibit All Messages to MMS System",IDC_CHECK_GLOBAL_INHIBIT,
+                    "Button",BS_AUTO3STATE | WS_TABSTOP,8,18,130,10
+    PUSHBUTTON      "Apply",IDC_BUTTON_GLOBAL_APPLY,196,16,50,14
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",0x0,2,41,251,146
+END
+
+IDD_SCADAINHIBIT DIALOG 0, 0, 248, 132
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | TVS_NOTOOLTIPS | TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,5,7,113,118
+    CONTROL         "Inhibit Subsystem MMS Alarms",IDC_CHECK_INHIBIT_SUBSYSTEM,
+                    "Button",BS_AUTO3STATE | WS_TABSTOP,127,47,108,12
+    PUSHBUTTON      "Apply",IDC_BUTTON_SUBSYSTEM_APPLY,151,75,63,17
+END
+
+IDD_SUBSYSTEMSINHIBIT DIALOG 0, 0, 248, 132
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_LIST_SYSTEM_MMS_INHIBIT,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,5,7,236,54
+    CONTROL         "Tree1",IDC_TREE_SYSTEM,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | TVS_NOTOOLTIPS | WS_TABSTOP,5,66,152,59
+    PUSHBUTTON      "Add",IDC_BUTTON_ADD_SYSTEM,178,65,63,17
+    PUSHBUTTON      "Remove",IDC_BUTTON_REMOVE_SYSTEM,178,86,63,17
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY_SYSTEMINHIBIT,178,107,63,17
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 99,99,99,99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "MmsController MFC Application"
+            VALUE "FileVersion", "99, 99, 99, 99"
+            VALUE "InternalName", "MmsController"
+            VALUE "LegalCopyright", "Copyright (C) 2004"
+            VALUE "OriginalFilename", "MmsController.EXE"
+            VALUE "ProductName", "MmsController Application"
+            VALUE "ProductVersion", "99, 99, 99, 99"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_MMSCONTROLLER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 253
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_SCADAINHIBIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_SUBSYSTEMSINHIBIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MmsController.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DNC                 ICON                    "..\\res\\EquipmentStatusViewer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_DNC_MENU MENU
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Exit",                        ID_APP_EXIT
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "MMS Controller Help",         ID_HELP_HELP
+        MENUITEM "About MMS Controller",        ID_HELP_ABOUTMMSCONTROLLER
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_DNC_TOOLBAR TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_TOOLBAR_HELP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_DNC_TOOLBAR         BITMAP                  "..\\res\\dnc_tool.bmp"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MmsController.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

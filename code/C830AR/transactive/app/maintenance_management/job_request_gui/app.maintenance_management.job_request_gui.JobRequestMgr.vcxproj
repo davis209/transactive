@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.maintenance_management.job_request_gui</ProjectName>
+    <ProjectGuid>{F446FF63-051E-42F2-9319-361EC5FA7FCB}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.28307.799</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../../../../bin/win32_nd\</OutDir>
+    <IntDir>.\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../../bin/win32_nd/app.maintenance_management.job_request_gui.JobRequestMgr.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./src/;../../../;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.0.5/include;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/bus/scada/datapointcorbadef/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/bus/maintenance_management/mmscorbadef/IDL/src;../../../../;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/synchronisation/src;../../../../../sdk/include/transactive/core/utilities/src;../../../../../sdk/include/transactive/core/data_access_interface/user_settings/src;../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../sdk/include/cots/boost/boost_1_39_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;WIN32;_MBCS_MBCS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/app.maintenance_management.job_request_gui.JobRequestMgr.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>omnithread30_rtd.lib;omniORB405_rtd.lib;omniDynamic405_rtd.lib;COS405_rtd.lib;oci.lib;htmlhelp.lib;Rpcrt4.lib;acemfcd.lib;TA_IRS_Core_d.lib;TA_Base_Core_d.lib;TA_IRS_Bus_d.lib;TA_Base_Bus_d.lib;stracelib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../../../../bin/win32_nd/JobRequestManager.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7;../../../../../sdk/win32_nd;../../../../../build/win32_nd;../../../../../sdk/lib;../../../../../sdk/include/cots/WinStackTrace\build\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../../../../../bin/win32_nd/JobRequestManager.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nd/app.maintenance_management.job_request_gui.JobRequestMgr.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../../bin/win32_nr/app.maintenance_management.job_request_gui.JobRequestMgr.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;WIN32;_MBCS_MBCS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>htmlhelp.lib;Rpcrt4.lib;TA_IRS_Core.lib;TA_Base_Core.lib;TA_IRS_Bus.lib;TA_Base_Bus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <DataExecutionPrevention />
+      <OutputFile>$(OutDir)JobRequestManager$(TargetExt)</OutputFile>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nr/app.maintenance_management.job_request_gui.JobRequestMgr.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuditMessageUtility.cpp" />
+    <ClCompile Include="src\JobRequestMgr.cpp" />
+    <ClCompile Include="src\JobRequestMgrDlg.cpp" />
+    <ClCompile Include="src\JobRequestMgrGUI.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AuditMessageUtility.h" />
+    <ClInclude Include="src\BadRunParamException.h" />
+    <ClInclude Include="src\JobRequestMgr.h" />
+    <ClInclude Include="src\JobRequestMgrDlg.h" />
+    <ClInclude Include="src\JobRequestMgrGUI.h" />
+    <ClInclude Include="src\Resource.h" />
+    <ClInclude Include="src\StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\JobRequestMgr.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\JobRequestMgr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\JobRequestMgr.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

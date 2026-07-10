@@ -1,0 +1,38 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'Table201TestCases'
+Results File:	'Table201Test.log'
+Suite File:		''
+
+Testing method:	'testConstructor'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSetTableDataAndWrite_dataVerification'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSetTableDataAndWrite_lockVerification'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: Table201Test.log
+
+OK (3 tests)
+Tests Ran: 3		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 6.20 seconds.
+
+**********************************************************************************************************************
+
+

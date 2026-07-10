@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Master PA Agent">
+      <UniqueIdentifier>{75e10369-affa-484a-bee9-70791dde0cc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Station PA Agent">
+      <UniqueIdentifier>{733a800f-730b-444f-9ed3-0dfe1633093b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{a2cba44c-5065-4c9b-b1b5-929290c06507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Table Classes">
+      <UniqueIdentifier>{fa4d1111-317d-4cf5-8896-31592deeb1e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Broadcast Classes">
+      <UniqueIdentifier>{dc5b9722-f3d8-4dc8-b1fe-f82b1cf4882f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\MasterPAAgent.cpp">
+      <Filter>Master PA Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationPAAgent.cpp">
+      <Filter>Station PA Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractPAAgent.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsAgentSubscriber.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CachedConfig.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointWriteQueueProcessor.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FireCountdownAckMonitor.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PASConnection.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PasHelpers.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractPASTable.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractWriteablePASTable.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConnectToPAFEPC.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisconnectFromPAFEPC.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InvalidatePASDataPoints.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterPasTableManager.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PASEvent.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PASReadEvent.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PasTableManager.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PASWriteEvent.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationPasTableManager.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table100.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table1200.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table1201.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table1204.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table1301.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table1303.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table1610.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table200.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table201.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table202.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table204.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table301.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table302.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table303.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table350.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table550.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table560.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table570.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table590.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table603.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table604.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table610.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table630.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractBroadcastCircularList.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractNonTrainDVABroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractStationBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractTrainBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BroadcastManager.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BroadcastWorker.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DVARecordingBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterDVABroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterLiveBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProgressReportSentry.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationDVABroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationLiveBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationMusicBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainAgentSubscriber.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainDVABroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainLiveBroadcast.cpp">
+      <Filter>Broadcast Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PasTableReadCounter.cpp">
+      <Filter>Table Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\MasterPAAgent.h">
+      <Filter>Master PA Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationPAAgent.h">
+      <Filter>Station PA Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractPAAgent.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsAgentSubscriber.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CachedConfig.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CircularList.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointWriteQueueProcessor.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FireCountdownAckMonitor.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PASConnection.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PasHelpers.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractPASTable.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractWriteablePASTable.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConnectToPAFEPC.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisconnectFromPAFEPC.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InvalidatePASDataPoints.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterPasTableManager.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PASEvent.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PASReadEvent.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PasTableManager.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PASWriteEvent.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationPasTableManager.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table100.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table1200.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table1201.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table1204.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table1301.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table1303.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table1610.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table200.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table201.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table202.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table204.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table301.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table302.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table303.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table350.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table550.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table560.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table570.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table590.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table603.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table604.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table610.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table630.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractBroadcastCircularList.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractNonTrainDVABroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractStationBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractTrainBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BroadcastManager.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BroadcastWorker.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DVARecordingBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterDVABroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterLiveBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProgressReportSentry.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationDVABroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationLiveBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationMusicBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainAgentSubscriber.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainDVABroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainLiveBroadcast.h">
+      <Filter>Broadcast Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PasTableReadCounter.h">
+      <Filter>Table Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3cbcf24d-583c-4d12-b7cb-a37d3954f8ac}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{7f316c14-f64e-4ad0-85dd-2e5fc4d59c99}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ButtonUpdateType.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CachedConfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRightsChangeListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MainTabControl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsController.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsControllerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsControllerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsControllerModel.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsControllerOnlineUpdater.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsEntityFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsInhibitListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NonPhysicalEntityFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NonPhysicalEntityItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NonPhysicalSubsystemMmsInhibit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NonPhysicalSubsystemTree.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsChangedWindowNotificationHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaMmsInhibit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubsystemLimitedScadaTree.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CachedConfig.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainTabControl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsControllerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsControllerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsControllerModel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsControllerOnlineUpdater.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsEntityFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsInhibitListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NonPhysicalEntityFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NonPhysicalEntityItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NonPhysicalSubsystemMmsInhibit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NonPhysicalSubsystemTree.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsChangedWindowNotificationHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaMmsInhibit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubsystemLimitedScadaTree.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\dnc_tool.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\EquipmentStatusViewer.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\MmsController.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\MmsController.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MmsController.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

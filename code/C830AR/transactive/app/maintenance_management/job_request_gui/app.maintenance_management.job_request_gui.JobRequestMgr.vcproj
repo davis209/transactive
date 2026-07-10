@@ -1,0 +1,93 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.maintenance_management.job_request_gui" ProjectGUID="{F446FF63-051E-42F2-9319-361EC5FA7FCB}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.maintenance_management.job_request_gui.JobRequestMgr.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src/,../../../,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/transactive/core/exceptions/src,../../../../../sdk/include/transactive/bus/scada/datapointcorbadef/src,../../../../../sdk/include/transactive/core/process_management/idl/src,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/bus/maintenance_management/mmscorbadef/IDL/src,../../../../,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive/core/synchronisation/src,../../../../../sdk/include/transactive/core/utilities/src,../../../../../sdk/include/transactive/core/data_access_interface/user_settings/src,../../../../../sdk/include/transactive/core/alarm/IDL/src,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="_DEBUG;_WINDOWS;WIN32;_MBCS_MBCS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/app.maintenance_management.job_request_gui.JobRequestMgr.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/maintenance_management/job_request_gui/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rtd.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib oci.lib htmlhelp.lib Rpcrt4.lib acemfcd.lib TA_IRS_Core_d.lib TA_Base_Core_d.lib TA_IRS_Bus_d.lib TA_Base_Bus_d.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/JobRequestManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/win32_nd,../../../../../build/win32_nd,../../../../../sdk/lib,../../../../../sdk/include/cots/WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/JobRequestManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.maintenance_management.job_request_gui.JobRequestMgr.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/maintenance_management/job_request_gui" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.maintenance_management.job_request_gui.JobRequestMgr.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src/,../../../,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/transactive/core/exceptions/src,../../../../../sdk/include/transactive/bus/scada/datapointcorbadef/src,../../../../../sdk/include/transactive/core/process_management/idl/src,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/bus/maintenance_management/mmscorbadef/IDL/src,../../../../,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive/core/synchronisation/src,../../../../../sdk/include/transactive/core/utilities/src,../../../../../sdk/include/transactive/core/data_access_interface/user_settings/src,../../../../../sdk/include/transactive/core/alarm/IDL/src,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="NDEBUG;_WINDOWS;WIN32;_MBCS_MBCS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/maintenance_management/job_request_gui/app.maintenance_management.job_request_gui.JobRequestMgr.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/maintenance_management/job_request_gui/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/maintenance_management/job_request_gui/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/maintenance_management/job_request_gui/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rt.lib omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib oci.lib htmlhelp.lib Rpcrt4.lib acemfc.lib TA_IRS_Core.lib TA_Base_Core.lib TA_IRS_Bus.lib TA_Base_Bus.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/JobRequestManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/win32_nr,../../../../../build/win32_nr,../../../../../sdk/lib,../../../../../sdk/include/cots/WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/JobRequestManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.maintenance_management.job_request_gui.JobRequestMgr.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;h">
+			<File RelativePath="src\AuditMessageUtility.cpp">
+			</File>
+			<File RelativePath="src\AuditMessageUtility.h">
+			</File>
+			<File RelativePath="src\BadRunParamException.h">
+			</File>
+			<File RelativePath="src\JobRequestMgr.cpp">
+			</File>
+			<File RelativePath="src\JobRequestMgr.h">
+			</File>
+			<File RelativePath="src\JobRequestMgr.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\JobRequestMgrDlg.cpp">
+			</File>
+			<File RelativePath="src\JobRequestMgrDlg.h">
+			</File>
+			<File RelativePath="src\JobRequestMgrGUI.cpp">
+			</File>
+			<File RelativePath="src\JobRequestMgrGUI.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\JobRequestMgr.ico">
+			</File>
+			<File RelativePath="res\JobRequestMgr.rc2">
+			</File>
+		</Filter>
+		<File RelativePath="src\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

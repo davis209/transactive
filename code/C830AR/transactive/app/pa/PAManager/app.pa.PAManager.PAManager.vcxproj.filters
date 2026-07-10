@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{0ca10bfa-ebf4-43ff-ae67-4fcb1687d380}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{87e57619-2186-4d84-9e26-80a839c8f659}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Station Page Classes">
+      <UniqueIdentifier>{5f5e6429-6da5-4d60-97f5-ba4b8daf7e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Station Page Classes\Models">
+      <UniqueIdentifier>{c375722c-fd8a-427a-aad6-6bbb1fdcf441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Station Page Classes\Pages">
+      <UniqueIdentifier>{69123fb5-691a-4708-b866-2b0d006ea540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Station Page Classes\Pages\StationStatusDlg">
+      <UniqueIdentifier>{f06ba05c-bc5c-4b21-be9a-ec36a1d926bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Train Page Classes">
+      <UniqueIdentifier>{ced7a279-7877-4103-883d-057c7cc63931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Train Page Classes\Train selector">
+      <UniqueIdentifier>{fa1127c8-b13a-45a3-8833-1f6f45987dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Train Page Classes\Model">
+      <UniqueIdentifier>{839569ad-5135-425c-a579-0e84e088544e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Train Page Classes\Components">
+      <UniqueIdentifier>{b9a097a7-0947-41bb-868e-cced8b62463b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Train Page Classes\Page">
+      <UniqueIdentifier>{b2d6b365-4b69-4116-9972-bb4f8341cb6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Train Page Classes\Page\TrainStatusDlg">
+      <UniqueIdentifier>{1185d110-85a4-479f-b20d-67895953c41b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Versions Page Classes">
+      <UniqueIdentifier>{6e218c56-cf05-4cb3-b2eb-c55e64366cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{541a479d-666b-4e0b-b7a6-278e85e90c23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="From PA Agent">
+      <UniqueIdentifier>{58b56a37-5635-419b-8c03-5e2b9db2b8c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common_GUI">
+      <UniqueIdentifier>{be8d4678-8252-4bc2-a5bc-7236ded9ed47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common_GUI\Status Dialog">
+      <UniqueIdentifier>{7aea99fa-4bd4-4df4-b131-588401e077dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common_GUI\Status Dialog\DVA Status">
+      <UniqueIdentifier>{82ba2d88-13f9-4212-884a-8a9c0dd01066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common_GUI\Status Dialog\Live Status">
+      <UniqueIdentifier>{5908114f-bd02-444e-b920-f1665ada9ad8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common_GUI\Broadcast">
+      <UniqueIdentifier>{ebdc5c43-3deb-4f4e-a06f-97c49567cdc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Listeners">
+      <UniqueIdentifier>{ff37f811-d3c0-439f-be9e-64633ce4e1f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Listeners\Helper Components">
+      <UniqueIdentifier>{eb2f5a78-904a-4db8-a70f-11f142755d20}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CachedConfig.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CachedMapLoader.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GraphworxComms.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAManagerDlg.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAManagerGUI.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAManagerModel.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaRightsManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SplashScreenEx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TAPropertySheet.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AdhocMessageRecordModel.cpp">
+      <Filter>Station Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AdhocMessageRecordPage.cpp">
+      <Filter>Station Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaListCtrl.cpp">
+      <Filter>Station Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaListCtrlModel.cpp">
+      <Filter>Station Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListCtrlSort.cpp">
+      <Filter>Station Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OperatorTerminalDvaPlaybackModel.cpp">
+      <Filter>Station Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAZoneListCtrl.cpp">
+      <Filter>Station Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationBroadcastModel.cpp">
+      <Filter>Station Page Classes\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationDvaStatusModel.cpp">
+      <Filter>Station Page Classes\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationLiveStatusModel.cpp">
+      <Filter>Station Page Classes\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationBroadcastPage.cpp">
+      <Filter>Station Page Classes\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationDvaStatusDlg.cpp">
+      <Filter>Station Page Classes\Pages\StationStatusDlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationLiveStatusDlg.cpp">
+      <Filter>Station Page Classes\Pages\StationStatusDlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainBroadcastModel.cpp">
+      <Filter>Train Page Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainDvaStatusModel.cpp">
+      <Filter>Train Page Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainLiveStatusModel.cpp">
+      <Filter>Train Page Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainListUpdateContainer.cpp">
+      <Filter>Train Page Classes\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainRadioPttMonitor.cpp">
+      <Filter>Train Page Classes\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainBroadcastPage.cpp">
+      <Filter>Train Page Classes\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainDvaStatusDlg.cpp">
+      <Filter>Train Page Classes\Page\TrainStatusDlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainLiveStatusDlg.cpp">
+      <Filter>Train Page Classes\Page\TrainStatusDlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaVersionListCtrl.cpp">
+      <Filter>Versions Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DVAVersionsPage.cpp">
+      <Filter>Versions Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainDvaVersionsPage.cpp">
+      <Filter>Versions Page Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AsyncCancelDialog.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BroadcastParametersDlg.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CreateNewGroupDlg.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DlgStatusNameWarning.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LockControlRedraw.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MemTracker.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAErrorHandler.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PALayoutHelper.cpp">
+      <Filter>Common_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationStatusHelper.cpp">
+      <Filter>Common_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainStatusHelper.cpp">
+      <Filter>Common_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericStatusModel.cpp">
+      <Filter>Common_GUI\Status Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericStatusPage.cpp">
+      <Filter>Common_GUI\Status Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeBroadcastId.cpp">
+      <Filter>Common_GUI\Status Dialog\DVA Status</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DVAStatusModel.cpp">
+      <Filter>Common_GUI\Status Dialog\DVA Status</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaStatusPage.cpp">
+      <Filter>Common_GUI\Status Dialog\DVA Status</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LiveStatusModel.cpp">
+      <Filter>Common_GUI\Status Dialog\Live Status</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LiveStatusPage.cpp">
+      <Filter>Common_GUI\Status Dialog\Live Status</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericBroadcastModel.cpp">
+      <Filter>Common_GUI\Broadcast</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaMessageChangeSubscriber.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaPrivateVersionChangeSubscriber.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaPublicVersionChangeSubscriber.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DvaVersionChangeSubscriber.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HMISelectionListener.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAProgressReportSubscriber.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PAStatusNameChangeSubscriber.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PrioritySchemeUpdateSubscriber.cpp">
+      <Filter>Listeners</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CachedMapChangedWindowNotificationHandler.cpp">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsChangedWindowNotificationHandler.cpp">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RunParamListener.cpp">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CachedConfig.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CachedMapLoader.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GraphworxComms.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAManagerDlg.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAManagerGUI.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAManagerModel.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaRightsManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SplashScreenEx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TAPropertySheet.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AdhocMessageRecordModel.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AdhocMessageRecordPage.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaListCtrl.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaListCtrlModel.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListCtrlSort.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OperatorTerminalDvaPlaybackModel.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAZoneListCtrl.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SortedListCtrl.h">
+      <Filter>Station Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationBroadcastModel.h">
+      <Filter>Station Page Classes\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationDvaStatusModel.h">
+      <Filter>Station Page Classes\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationLiveStatusModel.h">
+      <Filter>Station Page Classes\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStationBroadcastPage.h">
+      <Filter>Station Page Classes\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationBroadcastPage.h">
+      <Filter>Station Page Classes\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationDvaStatusDlg.h">
+      <Filter>Station Page Classes\Pages\StationStatusDlg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationLiveStatusDlg.h">
+      <Filter>Station Page Classes\Pages\StationStatusDlg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\bus\trains\TrainSelectionComponent\src\ITrainSelectorGUI.h">
+      <Filter>Train Page Classes\Train selector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\bus\trains\TrainSelectionComponent\src\TrainSelector.h">
+      <Filter>Train Page Classes\Train selector</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainBroadcastModel.h">
+      <Filter>Train Page Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainDvaStatusModel.h">
+      <Filter>Train Page Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainLiveStatusModel.h">
+      <Filter>Train Page Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainListUpdateContainer.h">
+      <Filter>Train Page Classes\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainRadioPttMonitor.h">
+      <Filter>Train Page Classes\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainBroadcastPage.h">
+      <Filter>Train Page Classes\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainBroadcastPage.h">
+      <Filter>Train Page Classes\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainDvaStatusDlg.h">
+      <Filter>Train Page Classes\Page\TrainStatusDlg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainLiveStatusDlg.h">
+      <Filter>Train Page Classes\Page\TrainStatusDlg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaVersionListCtrl.h">
+      <Filter>Versions Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DVAVersionsPage.h">
+      <Filter>Versions Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainDvaVersionsPage.h">
+      <Filter>Versions Page Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AsyncCancelDialog.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BroadcastParametersDlg.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CreateNewGroupDlg.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DlgStatusNameWarning.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LockControlRedraw.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MemTracker.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAErrorHandler.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\PAAgentComms_MessageTypes.h">
+      <Filter>From PA Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\PAAgentExceptions.h">
+      <Filter>From PA Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PALayoutHelper.h">
+      <Filter>Common_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationStatusHelper.h">
+      <Filter>Common_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainStatusHelper.h">
+      <Filter>Common_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericStatusModel.h">
+      <Filter>Common_GUI\Status Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericStatusPage.h">
+      <Filter>Common_GUI\Status Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeBroadcastId.h">
+      <Filter>Common_GUI\Status Dialog\DVA Status</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DVAStatusModel.h">
+      <Filter>Common_GUI\Status Dialog\DVA Status</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaStatusPage.h">
+      <Filter>Common_GUI\Status Dialog\DVA Status</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LiveStatusModel.h">
+      <Filter>Common_GUI\Status Dialog\Live Status</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LiveStatusPage.h">
+      <Filter>Common_GUI\Status Dialog\Live Status</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericBroadcastModel.h">
+      <Filter>Common_GUI\Broadcast</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IGenericBroadcastPage.h">
+      <Filter>Common_GUI\Broadcast</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaMessageChangeSubscriber.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaPrivateVersionChangeSubscriber.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaPublicVersionChangeSubscriber.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DvaVersionChangeSubscriber.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HMISelectionListener.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAProgressReportSubscriber.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PAStatusNameChangeSubscriber.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PrioritySchemeUpdateSubscriber.h">
+      <Filter>Listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CachedMapChangedWindowNotificationHandler.h">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PAAgent\src\ICachedMapObserverRegistry.h">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRightsChangeListener.h">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsChangedWindowNotificationHandler.h">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RunParamListener.h">
+      <Filter>Listeners\Helper Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\PAManager.rc">
+      <Filter>Common</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ahr_dele.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ahr_play.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ahr_rec.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\dva_icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00003.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00004.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00005.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_rec.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\live_icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\music_dpt.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\music_occ.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\music_off.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\music_stn.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAFormDVA.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAFormLive.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAFormOCCMusic.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAFormPlay.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAFormRecord.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAFormStnMusic.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAFormStop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PAManager.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\play.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\play_ico.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\splash.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\stnmusic.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\stop.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\resource.h">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,74 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'RunParamListenerTestCases'
+Results File:	'RunParamListenerTest.log'
+Suite File:		''
+
+Testing method:	'testProcessInternalRunParamChange'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRegisterListener'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDeRegisterListener'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRetrieveInitialRunParamIdentity'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFindVirtualLocation'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testExtractActualComand'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDispatchChangeToListener'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFindEndOfIdentityString'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testExtractStringIdentifierString'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: RunParamListenerTest.log
+
+OK (9 tests)
+Tests Ran: 9		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 1.94 seconds.
+
+**********************************************************************************************************************
+
+

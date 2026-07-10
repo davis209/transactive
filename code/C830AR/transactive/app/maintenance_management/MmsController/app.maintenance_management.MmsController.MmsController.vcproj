@@ -1,0 +1,147 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.maintenance_management.MmsController" ProjectGUID="{D83D2F2D-6316-410B-8921-B12EE1714EA7}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/maintenance_management/MmsController" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.maintenance_management.MmsController.MmsController.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src/,../../../,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/transactive/core/exceptions/src,../../../../../sdk/include/transactive/core/process_management/idl/src,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../,../../../../../sdk/include/transactive/core/synchronisation/src,../../../../../sdk/include/transactive/core/threads/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/maintenance_management/MmsController/app.maintenance_management.MmsController.MmsController.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/maintenance_management/MmsController/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/maintenance_management/MmsController/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/maintenance_management/MmsController/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rtd.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib TA_IRS_Core_d.lib TA_Base_Core_d.lib TA_IRS_Bus_d.lib TA_Base_Bus_d.lib acemfcd.lib oci.lib htmlhelp.lib Rpcrt4.lib ws2_32.lib Msimg32.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/MmsController.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd,../../../../../build/win32_nd,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/lib,../../../../../sdk/include/cots/WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/MmsController.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.maintenance_management.MmsController.MmsController.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/maintenance_management/MmsController" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.maintenance_management.MmsController.MmsController.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src/,../../../,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/transactive/core/exceptions/src,../../../../../sdk/include/transactive/core/process_management/idl/src,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../,../../../../../sdk/include/transactive/core/synchronisation/src,../../../../../sdk/include/transactive/core/threads/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/maintenance_management/MmsController/app.maintenance_management.MmsController.MmsController.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/maintenance_management/MmsController/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/maintenance_management/MmsController/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/maintenance_management/MmsController/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rt.lib omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib TA_IRS_Core.lib TA_Base_Core.lib TA_IRS_Bus.lib TA_Base_Bus.lib acemfc.lib oci.lib htmlhelp.lib Rpcrt4.lib ws2_32.lib Msimg32.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/MmsController.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr,../../../../../build/win32_nr,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/lib,../../../../../sdk/include/cots/WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/MmsController.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.maintenance_management.MmsController.MmsController.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;h">
+			<File RelativePath="src\ButtonUpdateType.h">
+			</File>
+			<File RelativePath="src\CachedConfig.cpp">
+			</File>
+			<File RelativePath="src\CachedConfig.h">
+			</File>
+			<File RelativePath="src\IRightsChangeListener.h">
+			</File>
+			<File RelativePath="src\MainTabControl.cpp">
+			</File>
+			<File RelativePath="src\MainTabControl.h">
+			</File>
+			<File RelativePath="src\MmsController.cpp">
+			</File>
+			<File RelativePath="src\MmsController.h">
+			</File>
+			<File RelativePath="src\MmsControllerDlg.cpp">
+			</File>
+			<File RelativePath="src\MmsControllerDlg.h">
+			</File>
+			<File RelativePath="src\MmsControllerGUI.cpp">
+			</File>
+			<File RelativePath="src\MmsControllerGUI.h">
+			</File>
+			<File RelativePath="src\MmsControllerModel.cpp">
+			</File>
+			<File RelativePath="src\MmsControllerModel.h">
+			</File>
+			<File RelativePath="src\MmsControllerOnlineUpdater.cpp">
+			</File>
+			<File RelativePath="src\MmsControllerOnlineUpdater.h">
+			</File>
+			<File RelativePath="src\MmsEntityFactory.cpp">
+			</File>
+			<File RelativePath="src\MmsEntityFactory.h">
+			</File>
+			<File RelativePath="src\MmsInhibitListCtrl.cpp">
+			</File>
+			<File RelativePath="src\MmsInhibitListCtrl.h">
+			</File>
+			<File RelativePath="src\NonPhysicalEntityFactory.cpp">
+			</File>
+			<File RelativePath="src\NonPhysicalEntityFactory.h">
+			</File>
+			<File RelativePath="src\NonPhysicalEntityItem.cpp">
+			</File>
+			<File RelativePath="src\NonPhysicalEntityItem.h">
+			</File>
+			<File RelativePath="src\NonPhysicalSubsystemMmsInhibit.cpp">
+			</File>
+			<File RelativePath="src\NonPhysicalSubsystemMmsInhibit.h">
+			</File>
+			<File RelativePath="src\NonPhysicalSubsystemTree.cpp">
+			</File>
+			<File RelativePath="src\NonPhysicalSubsystemTree.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\RightsChangedWindowNotificationHandler.cpp">
+			</File>
+			<File RelativePath="src\RightsChangedWindowNotificationHandler.h">
+			</File>
+			<File RelativePath="src\ScadaMmsInhibit.cpp">
+			</File>
+			<File RelativePath="src\ScadaMmsInhibit.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\SubsystemLimitedScadaTree.cpp">
+			</File>
+			<File RelativePath="src\SubsystemLimitedScadaTree.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\dnc_tool.bmp">
+			</File>
+			<File RelativePath="res\EquipmentStatusViewer.ico">
+			</File>
+			<File RelativePath="res\MmsController.ico">
+			</File>
+			<File RelativePath="src\MmsController.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="res\MmsController.rc2">
+			</File>
+		</Filter>
+		<File RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

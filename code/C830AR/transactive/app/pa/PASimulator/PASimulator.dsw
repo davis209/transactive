@@ -1,0 +1,149 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "MiSynchronisation"=..\..\..\core\synchronisation\MiSynchronisation.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MiThread"=..\..\..\core\threads\MiThread.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MiUtil"=..\..\..\core\utilities\MiUtil.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MiVersion"=..\..\..\core\versioning\MiVersion.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "PASimulator"=.\PASimulator.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name MiThread
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name PASimulatorLibrary
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_GenericSimulator
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Sockets
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiSynchronisation
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiVersion
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Exceptions
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "PASimulatorLibrary"=..\PASimulatorLibrary\PASimulatorLibrary.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_Exceptions"=..\..\..\core\exceptions\TA_Exceptions.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_GenericSimulator"=..\..\..\bus\generic_simulator\TA_GenericSimulator.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_Sockets"=..\..\..\core\sockets\TA_Sockets.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

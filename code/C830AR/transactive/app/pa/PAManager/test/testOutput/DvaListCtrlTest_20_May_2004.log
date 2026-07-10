@@ -1,0 +1,128 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'DvaListCtrlTestCases'
+Results File:	'DvaListCtrlTest.log'
+Suite File:		''
+
+Testing method:	'testRefreshContents'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessDvaMessageUpdates_uniqueItems'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessDvaMessageUpdates_duplicateItems'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDoesMessageKeyExist'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRemoveSingleDvaMessage'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetSelectedMessageKey'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetRecordFromIndex'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testCollectMatchingKeys_returnvalue'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testCollectMatchingKeys_listOutputs'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testCollectMatchingKeys_typeLabelOutputs'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSortAlphabeticallyAscending'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFindItemIndices'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDeleteAllItems'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDeleteItem'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSetItemData_replaceInvalid'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSetItemData_addReplace'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSetItemData_duplicateKeys'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFindSortedIdInsertionPoint'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: DvaListCtrlTest.log
+
+OK (18 tests)
+Tests Ran: 18		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 2.70 seconds.
+
+**********************************************************************************************************************
+
+

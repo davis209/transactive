@@ -1,0 +1,116 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'HmiSelectionListenerTestCases'
+Results File:	'HmiSelectionListenerTest.log'
+Suite File:		''
+
+Testing method:	'testConstructor'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetZoneList'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessRunParamChange_select_deselect'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessRunParamChange_select_deselect_single'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessRunParamChange_select_deselect_byStation'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessRunParamChange_select_deselect_byArea'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessRunParamChange_select_deselect_byZoneName'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessZoneRefresh_singleCall'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testProcessZoneRefresh_multipleCalls'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testOnZoneSelectionChange'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testRefreshSelectionUsingZones'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testClearAllZonesFromSelection'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testAddAllZonesToSelection'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetTokenValue'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testModifyZoneSelection'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetSpecifiedZones'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: HmiSelectionListenerTest.log
+
+OK (16 tests)
+Tests Ran: 16		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 1.80 seconds.
+
+**********************************************************************************************************************
+
+

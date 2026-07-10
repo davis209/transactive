@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AbstractBroadcast.cpp" />
+    <ClCompile Include="..\src\AbstractBroadcastCircularList.cpp" />
+    <ClCompile Include="..\src\AbstractNonTrainDVABroadcast.cpp" />
+    <ClCompile Include="..\src\AbstractPAAgent.cpp" />
+    <ClCompile Include="..\src\AbstractPASTable.cpp" />
+    <ClCompile Include="..\src\AbstractStationBroadcast.cpp" />
+    <ClCompile Include="..\src\AbstractTrainBroadcast.cpp" />
+    <ClCompile Include="..\src\AbstractWriteablePASTable.cpp" />
+    <ClCompile Include="..\src\AtsAgentSubscriber.cpp" />
+    <ClCompile Include="..\src\BroadcastManager.cpp" />
+    <ClCompile Include="..\src\BroadcastWorker.cpp" />
+    <ClCompile Include="..\src\CachedConfig.cpp" />
+    <ClCompile Include="..\src\ConnectToPAFEPC.cpp" />
+    <ClCompile Include="..\src\DataPointWriteQueueProcessor.cpp" />
+    <ClCompile Include="..\src\DisconnectFromPAFEPC.cpp" />
+    <ClCompile Include="..\src\DVARecordingBroadcast.cpp" />
+    <ClCompile Include="..\src\FireCountdownAckMonitor.cpp" />
+    <ClCompile Include="..\src\InvalidatePASDataPoints.cpp" />
+    <ClCompile Include="..\src\MasterDVABroadcast.cpp" />
+    <ClCompile Include="..\src\MasterLiveBroadcast.cpp" />
+    <ClCompile Include="..\src\MasterPAAgent.cpp" />
+    <ClCompile Include="..\src\MasterPasTableManager.cpp" />
+    <ClCompile Include="..\src\PASConnection.cpp" />
+    <ClCompile Include="..\src\PASEvent.cpp" />
+    <ClCompile Include="..\src\PasHelpers.cpp" />
+    <ClCompile Include="..\src\PASReadEvent.cpp" />
+    <ClCompile Include="..\src\PasTableManager.cpp" />
+    <ClCompile Include="..\src\PASWriteEvent.cpp" />
+    <ClCompile Include="..\src\ProgressReportSentry.cpp" />
+    <ClCompile Include="..\src\StationDVABroadcast.cpp" />
+    <ClCompile Include="..\src\StationLiveBroadcast.cpp" />
+    <ClCompile Include="..\src\StationMusicBroadcast.cpp" />
+    <ClCompile Include="..\src\StationPAAgent.cpp" />
+    <ClCompile Include="..\src\StationPasTableManager.cpp" />
+    <ClCompile Include="..\src\Table100.cpp" />
+    <ClCompile Include="..\src\Table1200.cpp" />
+    <ClCompile Include="..\src\Table1201.cpp" />
+    <ClCompile Include="..\src\Table1204.cpp" />
+    <ClCompile Include="..\src\Table1301.cpp" />
+    <ClCompile Include="..\src\Table1303.cpp" />
+    <ClCompile Include="..\src\Table1610.cpp" />
+    <ClCompile Include="..\src\Table200.cpp" />
+    <ClCompile Include="..\src\Table201.cpp" />
+    <ClCompile Include="..\src\Table202.cpp" />
+    <ClCompile Include="..\src\Table204.cpp" />
+    <ClCompile Include="..\src\Table301.cpp" />
+    <ClCompile Include="..\src\Table302.cpp" />
+    <ClCompile Include="..\src\Table303.cpp" />
+    <ClCompile Include="..\src\Table350.cpp" />
+    <ClCompile Include="..\src\Table550.cpp" />
+    <ClCompile Include="..\src\Table560.cpp" />
+    <ClCompile Include="..\src\Table570.cpp" />
+    <ClCompile Include="..\src\Table590.cpp" />
+    <ClCompile Include="..\src\Table603.cpp" />
+    <ClCompile Include="..\src\Table604.cpp" />
+    <ClCompile Include="..\src\Table610.cpp" />
+    <ClCompile Include="..\src\Table630.cpp" />
+    <ClCompile Include="..\src\TrainAgentSubscriber.cpp" />
+    <ClCompile Include="..\src\TrainDVABroadcast.cpp" />
+    <ClCompile Include="..\src\TrainLiveBroadcast.cpp" />
+    <ClCompile Include="src\PaHelperTest.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\pch.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.pa.PAAgent.boost_test</ProjectName>
+    <ProjectGuid>{C6789BAE-066C-4998-8A7B-5FF8B3F78CE7}</ProjectGuid>
+    <RootNamespace>test</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27924.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;disable_BOOST_CHRONO_HEADER_ONLY;BOOST_ASIO_HAS_IOCP;BOOST_ASIO_HAS_WINDOWS_RANDOM_ACCESS_HANDLE;TA_DEBUGUTIL_USE_MACROS_LOG_LEVEL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>src;..\src;Database;DAI;DatabaseStatusMonitor;F:\COTS_everything\googletest-master\googletest;F:\COTS_everything\googletest-master\googletest\include;F:\COTS_everything\googletest-master\googlemock;F:\COTS_everything\googletest-master\googlemock\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>TA_Utilities$(TA_LibrarySuffix).lib;TA_DAI$(TA_LibrarySuffix).lib;TA_DatabaseStatusMonitor$(TA_LibrarySuffix).lib;TA_Thread$(TA_LibrarySuffix).lib;TA_Base_Core$(TA_LibrarySuffix).lib;$(TA_Cots_Library);gmockd.lib;gmock_maind.lib;gtestd.lib;gtest_maind.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>F:\COTS_everything\googletest-master\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;TA_ASSERT_FAIL=FAIL_RUNTIME;BOOST_ASIO_HAS_IOCP;BOOST_ASIO_HAS_WINDOWS_RANDOM_ACCESS_HANDLE;BOOST_USE_NTDDI_VERSION=BOOST_WINAPI_NTDDI_WIN10_RS2;TA_DEBUGUTIL_USE_MACROS_LOG_LEVEL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>.;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>TA_Synchronisation.lib;TA_ProcessManagementCorbaDef$(TA_LibSuffix).lib;TA_DAI$(TA_LibSuffix).lib;TA_Util$(TA_LibSuffix).lib;TA_Message$(TA_LibSuffix).lib;TA_DataAccess$(TA_LibSuffix).lib;TA_DatabaseStatusMonitor$(TA_LibrarySuffix).lib;TA_Thread$(TA_LibrarySuffix).lib;TA_RightsLibrary$(TA_LibrarySuffix).lib;TA_Base_Core$(TA_LibSuffix).lib;TA_Base_Bus.lib;TA_IRS_Core.lib;TA_IRS_Bus.lib;$(TA_AllCotsLib);ws2_32.lib;Rpcrt4.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference />
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

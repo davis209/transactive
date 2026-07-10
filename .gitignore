@@ -1,0 +1,10 @@
+*.obj
+*.db
+*.pdb
+.lib
+.ipch
+*.zip
+*.7z
+*.iso
+*.bak
+.vs/

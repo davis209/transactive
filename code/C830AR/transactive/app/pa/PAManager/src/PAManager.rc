@@ -1,0 +1,907 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PAManager"
+FONT 10, "Arial Bold"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,12,17,20,20
+    LTEXT           "PA Manager Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    CONTROL         "",IDC_FRAME1,"{6E182020-F460-11CE-9BCD-00AA00608E01}",
+                    WS_TABSTOP,13,0,192,118
+END
+
+IDD_STATION_BROADCAST DIALOGEX 0, 0, 620, 328
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "Station Broadcast"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "Check1",IDC_OCC_MUSIC_BTN,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,26,22,31,34
+    CONTROL         "Check1",IDC_STN_MUSIC_BTN,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,68,22,31,34
+    CONTROL         "Check1",IDC_STN_LIVE_BTN,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,110,22,31,34
+    CONTROL         "Check1",IDC_STN_DVA_BTN,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,152,22,31,34
+    CONTROL         "List2",IDC_STN_NORMAL_MESSAGES_LST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,220,18,115,138
+    CONTROL         "List2",IDC_STN_EMERGENCY_MESSAGES_LST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,344,18,115,138
+    EDITTEXT        IDC_STN_NORMAL_FILTER_TB,220,167,115,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STN_EMERGENCY_FILTER_TB,344,167,115,13,
+                    ES_AUTOHSCROLL
+    CONTROL         "List3",IDC_STN_ADHOC_MESSAGES_LST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,486,18,115,73
+    PUSHBUTTON      "Record",IDC_STN_RECORD_BTN,486,94,115,15
+    CONTROL         "",IDC_STN_PLAY_BTN,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,494,156,32,15
+    PUSHBUTTON      "S",IDC_STN_STOP_BTN,561,156,32,15,BS_ICON
+    CONTROL         "List2",IDC_STN_ZONE_SELECTION_LST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER,15,83,179,187
+    COMBOBOX        IDC_STN_ZONE_GROUP_COMBO,15,282,179,74,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_HASSTRINGS | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Save",IDC_STN_SAVE_BTN,15,297,60,15
+    PUSHBUTTON      "Delete",IDC_STN_DELETE_BTN,134,297,60,15
+    GROUPBOX        "Broadcast Configuration",IDC_STATIC,211,195,399,125
+    CONTROL         "List2",IDC_STN_SELECTED_MESSAGES_LST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,220,208,229,49
+    PUSHBUTTON      "Clear One",IDC_STN_CLEAR_ONE_BTN,220,265,49,15
+    PUSHBUTTON      "Clear All",IDC_STN_CLEAR_ALL_BTN,278,265,49,15
+    CONTROL         "",IDC_STN_STIS_CB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    228,287,8,8
+    CONTROL         "Chime",IDC_STN_CHIME_CB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,298,37,14,WS_EX_TRANSPARENT
+    CONTROL         "Multi-Broadcast",IDC_STN_MULTI_CB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,369,260,61,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "DateTimePicker1",IDC_STN_MB_DWELL_SEC,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,392,288,
+                    20,11
+    CONTROL         "Cyclical Broadcast",IDC_STN_CYCLIC_CB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,455,204,71,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "DateTimePicker2",IDC_CYCLICAL_START_DATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_LONGDATEFORMAT | 
+                    WS_TABSTOP,516,219,75,11
+    CONTROL         "DateTimePicker1",IDC_STN_CYCLICAL_START_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,516,234,39,11
+    CONTROL         "DateTimePicker2",IDC_CYCLICAL_STOP_DATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_LONGDATEFORMAT | 
+                    WS_TABSTOP,516,255,75,11
+    CONTROL         "DateTimePicker1",IDC_STN_CYCLICAL_STOP_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,516,270,39,11
+    CONTROL         "DateTimePicker1",IDC_STN_CYCLICAL_INTERVAL,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,525,292,30,11
+    GROUPBOX        "PA Mode",IDC_STATIC,7,7,196,59
+    GROUPBOX        "Zone List",IDC_STATIC,7,71,196,249
+    GROUPBOX        "Pre-recorded Messages",IDC_STATIC,211,7,258,182
+    LTEXT           "Filter",IDC_STATIC,220,159,18,8,0,WS_EX_TRANSPARENT
+    LTEXT           "Filter",IDC_STATIC,344,159,18,8,0,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,458,204,143,109
+    GROUPBOX        "",IDC_STATIC,372,260,76,53
+    LTEXT           "Dwell Time",IDC_STATIC,392,275,37,8
+    LTEXT           "Start",IDC_STATIC,471,220,16,8,SS_CENTERIMAGE
+    LTEXT           "Interval (mm:ss)",IDC_STATIC,471,293,51,8,
+                    SS_CENTERIMAGE
+    LTEXT           "Stop",IDC_STATIC,471,256,16,8,SS_CENTERIMAGE
+    LTEXT           "s",IDC_STATIC,416,291,8,8
+    LTEXT           "hh:mm:ss",IDC_STATIC,471,235,31,8
+    LTEXT           "hh:mm:ss",IDC_STATIC,471,271,31,8
+    GROUPBOX        "Ad-hoc Messages",IDC_STATIC,477,7,133,108
+    GROUPBOX        "Play Selected Message",IDC_STATIC,477,138,133,51
+    LTEXT           "Play",IDC_STATIC,503,174,15,8
+    LTEXT           "Stop",IDC_STATIC,569,174,15,8
+    LTEXT           "STIS",IDC_STIS_TEXT,250,287,16,10
+    LTEXT           " Broadcast",IDC_STN_STIS_CB_TEXT2,265,287,35,10
+    LTEXT           "PA/",IDC_STN_STIS_CB_TEXT1,238,287,12,10,0,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_TRAIN_BROADCAST DIALOGEX 0, 0, 620, 328
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "Train Broadcast"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "List2",IDC_STN_OUTBOUND_SELECTION_LST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    195,34,167,196
+    CONTROL         "List2",IDC_STN_INBOUND_SELECTION_LST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    18,34,167,196
+    PUSHBUTTON      "All Outer Track",IDC_BUTTONALLOUTBOUND,249,237,58,14
+    PUSHBUTTON      "All Inner Track",IDC_BUTTONALLINBOUND,72,237,58,14
+    PUSHBUTTON      "All Trains",IDC_BUTTONALLTRAINS,291,268,56,14
+    PUSHBUTTON      "Clear All",IDC_BUTTONCLEARALL,291,290,56,14
+    COMBOBOX        IDC_DYNAMIC_GROUPS,25,271,135,74,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save Selection",IDC_BUTTON_SAVE_GROUP_SEL,25,290,63,13
+    PUSHBUTTON      "Delete Group",IDC_BUTTON_DELETE_GROUP,97,290,63,13
+    COMBOBOX        IDC_STATIC_GROUPS,190,271,80,74,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "GOA Static Groups",IDC_STATIC,180,257,100,34
+    CONTROL         "Check1",IDC_TRN_LIVE_BTN,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,392,20,31,34
+    CONTROL         "Check1",IDC_TRN_DVA_BTN,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,436,20,31,34
+    CONTROL         "List2",IDC_TRN_DVA_MESSAGES_LST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,391,93,210,126
+    EDITTEXT        IDC_TRN_MESSAGE_FILTER_TB,391,232,210,13,ES_AUTOHSCROLL | 
+                    WS_GROUP
+    CONTROL         "Cyclical Broadcast",IDC_TRN_CYCLIC_CB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,389,252,75,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "DateTimePicker1",IDC_TRN_CYCLICAL_STOP,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,499,266,57,11
+    CONTROL         "DateTimePicker1",IDC_TRN_CYCLICAL_START,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,499,288,57,11
+    GROUPBOX        "PA Modes",IDC_STATIC,382,8,228,53
+    GROUPBOX        "Broadcast Configuration",IDC_STATIC,382,67,228,251
+    LTEXT           "Filter",IDC_STATIC,391,222,18,8,0,WS_EX_TRANSPARENT
+    LTEXT           "Message Selection",IDC_STATIC,391,82,61,8
+    GROUPBOX        "",IDC_STATIC,391,251,210,57
+    LTEXT           "Inner Track",IDC_INBOUND_LABEL,18,25,37,8,
+                    SS_CENTERIMAGE
+    LTEXT           "Outer Track",IDC_OUTBOUND_LABEL,195,25,38,8,
+                    SS_CENTERIMAGE
+    GROUPBOX        "Dynamic Groups",IDC_STATIC,15,258,155,50
+    LTEXT           "Interval (hh:mm:ss)",IDC_STATIC,416,267,61,8,
+                    SS_CENTERIMAGE
+    LTEXT           "Duration (hh:mm:ss)",IDC_STATIC,413,289,64,8,
+                    SS_CENTERIMAGE
+    CONTROL         "Tab1",IDC_TRAINLIST_TAB,"SysTabControl32",WS_TABSTOP,7,
+                    8,366,310,WS_EX_TRANSPARENT
+    CONTROL         "Normal",IDC_RADIO_NORMAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,487,20,39,10
+    CONTROL         "Override",IDC_RADIO_OVERRIDE,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,487,34,39,10
+END
+
+IDD_DVA_VERSIONS DIALOG DISCARDABLE  0, 0, 621, 328
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "Station DVA Set Versions"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_DVA_VERSION_MAIN,"SysListView32",LVS_REPORT | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,10,38,601,
+                    264
+    CONTROL         "List1",IDC_DVA_HEADER_LST,"SysListView32",LVS_REPORT | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER,10,16,601,11
+    CONTROL         "List1",IDC_DVA_HEADER_LST_2,"SysListView32",LVS_REPORT | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER,10,27,601,11
+    GROUPBOX        "Station DVA Set Versions",IDC_STATIC_DVA_LABEL,5,4,611,
+                    320
+    LTEXT           "A1 - Ad-hoc 1",IDC_STATIC,10,308,43,10,NOT WS_VISIBLE
+    LTEXT           "A2 - Ad-hoc 2",IDC_STATIC,64,308,43,10,NOT WS_VISIBLE
+    LTEXT           "A3 - Ad-hoc 3",IDC_STATIC,118,308,43,10,NOT WS_VISIBLE
+    LTEXT           "A4 - Ad-hoc 4",IDC_STATIC,172,308,43,10,NOT WS_VISIBLE
+    LTEXT           "A5 - Ad-hoc 5",IDC_STATIC,226,308,43,10,NOT WS_VISIBLE
+    LTEXT           "A6 - Ad-hoc 6",IDC_STATIC,280,308,43,10,NOT WS_VISIBLE
+    LTEXT           "P - Pre-recorded",IDC_STATIC,334,308,53,10,NOT 
+                    WS_VISIBLE
+END
+
+IDD_MAIN_DLG DIALOGEX 0, 0, 636, 382
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Public Address Manager"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Help",IDC_HELP_BTN,5,358,34,17
+    PUSHBUTTON      "About",IDC_ABOUTBUTTON,41,358,34,17
+    COMBOBOX        IDC_STATUS_CB,110,360,163,86,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Restore DVA",IDC_RESTORE_STATUS_BTN,275,358,52,17
+    PUSHBUTTON      "Clear DVA",IDC_KILL_STATUS_BTN,329,358,52,17
+    PUSHBUTTON      "Clear All DVA",IDC_KILL_ALL_STATUS_BTN,383,358,52,17
+    PUSHBUTTON      "Execute",IDC_EXECUTE_BTN,521,358,39,17
+    DEFPUSHBUTTON   "Close",IDC_CLOSE_BTN,590,358,39,17
+    LTEXT           "Static",IDC_TABMARKER,5,7,631,348,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Clear All Ongoing DVA",IDC_KILL_ALL_GOING_DVA,437,358,
+                    82,17
+END
+
+IDD_BROADCAST_PARAMETERS_DLG DIALOG DISCARDABLE  0, 0, 486, 334
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Broadcast Parameters"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "HIDE",IDOK,429,7,50,14
+    EDITTEXT        IDC_EDIT1,7,7,414,311,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_STATION_BROADCAST_DVA_STATUS DIALOG DISCARDABLE  0, 0, 444, 387
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Station DVA Broadcast Status"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List2",IDC_STN_STATUS_PROGRESS_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,14,19,198,153
+    CONTROL         "List2",IDC_STN_STATUS_FAILURES_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,232,19,198,120
+    PUSHBUTTON      "Retry On Unsuccessful Zones Only",
+                    ID_STN_STATUS_RETRY_FAILURES_BTN,243,158,125,14
+    PUSHBUTTON      "Retry All",ID_STN_STATUS_RETRY_ALL_BTN,375,158,47,14
+    EDITTEXT        IDC_STATION_STATUS_BROADCAST_ID_TB_NEW,87,193,168,12,
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Help",ID_STN_HELP,7,365,84,15
+    PUSHBUTTON      "Abort",ID_STN_STATUS_ABORT_BTN,258,365,84,15
+    DEFPUSHBUTTON   "Close",ID_STN_STATUS_CLOSE_BTN,353,365,84,15
+    GROUPBOX        "DVA Broadcast Configuration",IDC_STATIC,7,182,429,87
+    GROUPBOX        "Broadcast Progress",IDC_STATIC,7,7,212,172
+    GROUPBOX        "Broadcast Failures",IDC_STATIC,225,7,212,172
+    LTEXT           "Current Status Name",IDC_STATIC,14,211,67,8
+    LTEXT           "Chime",IDC_STATIC,14,228,22,8
+    LTEXT           "Dwell (s)",IDC_STATIC,14,256,28,8
+    LTEXT           "Stop",IDC_STATIC,144,256,16,8
+    LTEXT           "Interval (s)",IDC_STATIC,144,228,34,8
+    LTEXT           "Start",IDC_STATIC,144,242,16,8
+    LTEXT           "Message(s)",IDC_STATIC,265,197,36,8
+    EDITTEXT        IDC_STATION_STATUS_BROADCAST_ID_TB,87,207,168,12,
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_STATION_STATUS_CHIME_TB,69,224,69,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_STATION_STATUS_DWELL_TB,69,252,69,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_STATION_STATUS_PERIOD_TB,186,224,69,12,
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_STATION_STATUS_START_TB,186,238,69,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_STATION_STATUS_STOP_TB,186,252,69,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "List2",IDC_STATION_SELECTED_MESSAGES_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER,262,208,168,56
+    LTEXT           "New Status Name",IDC_STATIC,14,197,57,8
+    LISTBOX         IDC_STATUS_TEXT,14,285,416,66,NOT LBS_NOTIFY | 
+                    LBS_DISABLENOSCROLL | LBS_NOSEL | WS_VSCROLL
+    GROUPBOX        "DVA Broadcast Status",IDC_STATIC,7,272,430,87
+END
+
+IDD_DIALOGNAMEWARNING DIALOG DISCARDABLE  0, 0, 186, 62
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "PA Manager"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,41,50,14
+    PUSHBUTTON      "Cancel Name Change and Exit",ID_CANCEL_CHANGES,74,41,
+                    105,14
+    CTEXT           "The New Status Name entered is already in use, or there was an error processing the name change request.  Please try a different Status Name.",
+                    IDC_STATIC,7,7,172,28
+END
+
+IDD_STATION_BROADCAST_LIVE_STATUS DIALOG DISCARDABLE  0, 0, 444, 299
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Station Live Broadcast Status"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List2",IDC_STN_STATUS_PROGRESS_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,14,19,198,243
+    CONTROL         "List2",IDC_STN_STATUS_FAILURES_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,232,19,198,157
+    PUSHBUTTON      "Retry On Unsuccessful Zones Only",
+                    ID_STN_STATUS_RETRY_FAILURES_BTN,243,182,125,14
+    PUSHBUTTON      "Retry All",ID_STN_STATUS_RETRY_ALL_BTN,375,182,47,14
+    PUSHBUTTON      "Help",ID_STN_HELP,7,277,84,15
+    DEFPUSHBUTTON   "Close",ID_STN_STATUS_CLOSE_BTN,353,277,84,15
+    GROUPBOX        "Live Announcement Status",IDC_STATIC,225,208,212,61
+    GROUPBOX        "Broadcast Progress",IDC_STATIC,7,7,212,262
+    GROUPBOX        "Broadcast Failures",IDC_STATIC,225,7,212,196
+    LISTBOX         IDC_LIVE_STATUS,232,220,198,42,NOT LBS_NOTIFY | 
+                    LBS_DISABLENOSCROLL | LBS_NOSEL | WS_VSCROLL
+END
+
+IDD_TRAIN_BROADCAST_DVA_STATUS DIALOG DISCARDABLE  0, 0, 444, 299
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Train DVA Broadcast Status"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List2",IDC_TRAIN_STATUS_PROGRESS_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,14,19,198,153
+    CONTROL         "List2",IDC_TRAIN_STATUS_FAILURES_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,232,19,198,120
+    CONTROL         "Normal",IDC_RADIO_NORMAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,308,144,39,10
+    CONTROL         "Override",IDC_RADIO_OVERRIDE,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,359,144,39,10
+    PUSHBUTTON      "Retry On Unsuccessful Trains Only",
+                    ID_TRAIN_STATUS_RETRY_FAILURES_BTN,243,158,125,14
+    PUSHBUTTON      "Retry All",ID_TRAIN_STATUS_RETRY_ALL_BTN,375,158,47,14
+    EDITTEXT        IDC_TRAIN_STATUS_BROADCAST_ID_TB_NEW,84,197,141,12,
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Help",ID_TRAIN_HELP,7,277,84,15
+    PUSHBUTTON      "Abort",ID_TRAIN_STATUS_ABORT_BTN,258,277,84,15
+    DEFPUSHBUTTON   "Close",ID_TRAIN_STATUS_CLOSE_BTN,353,277,84,15
+    GROUPBOX        "DVA Broadcast Configuration",IDC_STATIC,7,182,429,87
+    GROUPBOX        "Broadcast Progress",IDC_STATIC,7,7,212,172
+    GROUPBOX        "Broadcast Failures",IDC_STATIC,225,7,212,172
+    LTEXT           "Current Status Name",IDC_STATIC,14,214,67,8
+    LTEXT           "Duration (hh:mm:ss)",IDC_STATIC,244,214,64,8
+    LTEXT           "Interval (hh:mm:ss)",IDC_STATIC,244,199,61,8
+    LTEXT           "Message",IDC_STATIC,14,244,29,8
+    EDITTEXT        IDC_TRAIN_STATUS_BROADCAST_ID_TB,84,212,141,12,
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_TRAIN_STATUS_STOP_TB,310,212,120,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_TRAIN_STATUS_START_TB,310,197,120,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "New Status Name",IDC_STATIC,14,199,57,8
+    EDITTEXT        IDC_TRAIN_MESSAGE_TO_BROADCAST,84,242,346,12,
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Retry mode:",IDC_STATIC,249,145,40,8
+END
+
+IDD_TRAIN_BROADCAST_LIVE_STATUS DIALOG DISCARDABLE  0, 0, 444, 299
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Train Live Broadcast Status"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List2",IDC_TRAIN_STATUS_PROGRESS_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,14,19,198,153
+    CONTROL         "List2",IDC_TRAIN_STATUS_FAILURES_LST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,232,19,198,120
+    CONTROL         "Normal",IDC_RADIO_NORMAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,308,144,39,10
+    CONTROL         "Override",IDC_RADIO_OVERRIDE,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,359,144,39,10
+    PUSHBUTTON      "Retry On Unsuccessful Trains Only",
+                    ID_TRAIN_STATUS_RETRY_FAILURES_BTN,243,158,125,14
+    PUSHBUTTON      "Retry All",ID_TRAIN_STATUS_RETRY_ALL_BTN,375,158,47,14
+    PUSHBUTTON      "Establishing Live Announcement",IDC_BUTTON_BEGIN,13,252,
+                    131,13
+    CONTROL         "Continue Broadcast",IDC_BUTTON_CONTINUE,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,156,252,131,13
+    PUSHBUTTON      "End Live Announcement",IDC_BUTTON_END,299,252,131,13
+    PUSHBUTTON      "Help",ID_TRAIN_HELP,7,277,84,15
+    DEFPUSHBUTTON   "Close",ID_TRAIN_STATUS_CLOSE_BTN,353,277,84,15
+    GROUPBOX        "Live Announcement Status",IDC_STATIC,7,182,429,87
+    GROUPBOX        "Broadcast Progress",IDC_STATIC,7,7,212,172
+    GROUPBOX        "Broadcast Failures",IDC_STATIC,225,7,212,172
+    LTEXT           "Retry mode:",IDC_STATIC,249,145,40,8
+    LISTBOX         IDC_LIVE_STATUS,14,195,416,52,NOT LBS_NOTIFY | 
+                    LBS_DISABLENOSCROLL | LBS_NOSEL | WS_VSCROLL
+END
+
+IDD_DIALOGENTERSAVENAME DIALOG DISCARDABLE  0, 0, 186, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_EDITNAME,7,26,172,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,45,50,14
+    PUSHBUTTON      "Cancel",ID_CLOSE,129,45,50,14
+    CTEXT           "",IDC_STATICTEXT,7,12,172,9
+END
+
+IDD_TRAIN_DVA_VERSIONS DIALOG DISCARDABLE  0, 0, 621, 328
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "Train DVA Set Versions"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_DVA_HEADER_LST,"SysListView32",LVS_REPORT | 
+                    LVS_NOSCROLL | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,10,34,153,11
+    GROUPBOX        "Train DVA Set Versions",IDC_STATIC,5,4,164,320
+    CONTROL         "List1",IDC_DVA_VERSION_MAIN,"SysListView32",LVS_REPORT | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,10,45,153,
+                    257
+    LTEXT           "ISCS Configuration Version:",IDC_STATIC,10,18,90,8
+    LTEXT           "",IDC_ISCS_VERSION_FIELD,102,18,41,8
+END
+
+IDD_ADHOC_RECORD DIALOG DISCARDABLE  0, 0, 428, 205
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Ad-hoc Message Record"
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_EDIT_DESCRIPTION,72,20,337,24,ES_MULTILINE
+    EDITTEXT        IDC_EDIT_TIME,72,52,59,13,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "Emergency",IDC_CHECK_TYPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,143,53,51,10
+    LISTBOX         IDC_RECORD_STATUS,16,94,393,55,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | LBS_NOSEL | 
+                    WS_VSCROLL
+    PUSHBUTTON      "Help",IDC_BUTTON_HLP,256,168,49,18
+    PUSHBUTTON      "Start",IDC_START,7,168,49,18,BS_ICON
+    PUSHBUTTON      "Listen",IDC_LISTEN,66,168,49,18,BS_ICON
+    PUSHBUTTON      "Delete",IDC_DELETE,190,168,49,18,BS_ICON
+    PUSHBUTTON      "Stop",IDC_STOP,123,168,49,18,BS_ICON
+    DEFPUSHBUTTON   "Close",IDOK,314,168,49,18
+    GROUPBOX        "Ad-hoc Message Recording Status",IDC_STATIC,7,80,414,78
+    GROUPBOX        "Ad-hoc Message Description",IDC_STATIC,7,7,414,67
+    LTEXT           "Description",IDC_STATIC,19,20,36,8
+    LTEXT           "Time",IDC_STATIC,19,52,16,8
+    PUSHBUTTON      "Cancel",IDCANCEL,372,168,49,18
+    LTEXT           "Start",IDC_STATIC,23,189,16,8
+    LTEXT           "Playback",IDC_STATIC,75,189,30,8
+    LTEXT           "Stop",IDC_STATIC,139,189,16,8
+    LTEXT           "Delete",IDC_STATIC,203,189,22,8
+END
+
+IDD_DIALOGOVERWRITING_BROADCAST DIALOG DISCARDABLE  0, 0, 203, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PA Manager"
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,76,25,50,14
+    LTEXT           "Overwriting existing broadcast, please wait.",
+                    IDC_MAINTEXT,27,7,169,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PA Manager MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "PAManager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PAManager.EXE\0"
+            VALUE "ProductName", "PA Manager Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_STATION_BROADCAST, DIALOG
+    BEGIN
+        VERTGUIDE, 7
+        VERTGUIDE, 15
+        VERTGUIDE, 24
+        VERTGUIDE, 183
+        VERTGUIDE, 203
+        VERTGUIDE, 211
+        VERTGUIDE, 220
+        VERTGUIDE, 477
+        VERTGUIDE, 486
+        VERTGUIDE, 499
+        VERTGUIDE, 601
+        VERTGUIDE, 610
+        BOTTOMMARGIN, 320
+        HORZGUIDE, 7
+        HORZGUIDE, 18
+        HORZGUIDE, 56
+        HORZGUIDE, 101
+        HORZGUIDE, 156
+        HORZGUIDE, 222
+        HORZGUIDE, 237
+        HORZGUIDE, 252
+    END
+
+    IDD_TRAIN_BROADCAST, DIALOG
+    BEGIN
+        RIGHTMARGIN, 610
+        VERTGUIDE, 15
+        VERTGUIDE, 18
+        VERTGUIDE, 25
+        VERTGUIDE, 43
+        VERTGUIDE, 160
+        VERTGUIDE, 170
+        VERTGUIDE, 180
+        VERTGUIDE, 190
+        VERTGUIDE, 195
+        VERTGUIDE, 267
+        VERTGUIDE, 270
+        VERTGUIDE, 280
+        VERTGUIDE, 363
+        VERTGUIDE, 382
+        VERTGUIDE, 477
+        BOTTOMMARGIN, 318
+        HORZGUIDE, 8
+        HORZGUIDE, 34
+        HORZGUIDE, 159
+        HORZGUIDE, 230
+        HORZGUIDE, 251
+        HORZGUIDE, 257
+        HORZGUIDE, 262
+        HORZGUIDE, 271
+        HORZGUIDE, 291
+        HORZGUIDE, 308
+    END
+
+    IDD_DVA_VERSIONS, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 611
+        HORZGUIDE, 4
+        HORZGUIDE, 9
+        HORZGUIDE, 16
+        HORZGUIDE, 27
+        HORZGUIDE, 38
+        HORZGUIDE, 302
+        HORZGUIDE, 318
+        HORZGUIDE, 324
+    END
+
+    IDD_MAIN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 629
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 375
+    END
+
+    IDD_BROADCAST_PARAMETERS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 479
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 327
+    END
+
+    IDD_STATION_BROADCAST_DVA_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        VERTGUIDE, 14
+        VERTGUIDE, 127
+        VERTGUIDE, 144
+        VERTGUIDE, 176
+        VERTGUIDE, 212
+        VERTGUIDE, 219
+        VERTGUIDE, 225
+        VERTGUIDE, 232
+        VERTGUIDE, 300
+        VERTGUIDE, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 380
+        HORZGUIDE, 19
+        HORZGUIDE, 172
+        HORZGUIDE, 208
+        HORZGUIDE, 259
+    END
+
+    IDD_DIALOGNAMEWARNING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_STATION_BROADCAST_LIVE_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        VERTGUIDE, 14
+        VERTGUIDE, 127
+        VERTGUIDE, 144
+        VERTGUIDE, 176
+        VERTGUIDE, 212
+        VERTGUIDE, 219
+        VERTGUIDE, 225
+        VERTGUIDE, 232
+        VERTGUIDE, 300
+        VERTGUIDE, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 292
+        HORZGUIDE, 19
+        HORZGUIDE, 196
+        HORZGUIDE, 203
+        HORZGUIDE, 262
+        HORZGUIDE, 269
+    END
+
+    IDD_TRAIN_BROADCAST_DVA_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        VERTGUIDE, 14
+        VERTGUIDE, 84
+        VERTGUIDE, 127
+        VERTGUIDE, 144
+        VERTGUIDE, 176
+        VERTGUIDE, 212
+        VERTGUIDE, 219
+        VERTGUIDE, 225
+        VERTGUIDE, 232
+        VERTGUIDE, 244
+        VERTGUIDE, 289
+        VERTGUIDE, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 292
+        HORZGUIDE, 19
+        HORZGUIDE, 172
+        HORZGUIDE, 209
+        HORZGUIDE, 224
+        HORZGUIDE, 239
+        HORZGUIDE, 254
+    END
+
+    IDD_TRAIN_BROADCAST_LIVE_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        VERTGUIDE, 14
+        VERTGUIDE, 127
+        VERTGUIDE, 144
+        VERTGUIDE, 176
+        VERTGUIDE, 212
+        VERTGUIDE, 219
+        VERTGUIDE, 225
+        VERTGUIDE, 232
+        VERTGUIDE, 300
+        VERTGUIDE, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 292
+        HORZGUIDE, 19
+        HORZGUIDE, 172
+        HORZGUIDE, 195
+        HORZGUIDE, 251
+        HORZGUIDE, 265
+    END
+
+    IDD_DIALOGENTERSAVENAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_TRAIN_DVA_VERSIONS, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 163
+        HORZGUIDE, 9
+        HORZGUIDE, 16
+        HORZGUIDE, 27
+        HORZGUIDE, 302
+        HORZGUIDE, 314
+        HORZGUIDE, 324
+    END
+
+    IDD_ADHOC_RECORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 421
+        VERTGUIDE, 19
+        VERTGUIDE, 72
+        VERTGUIDE, 214
+        VERTGUIDE, 409
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+        HORZGUIDE, 20
+        HORZGUIDE, 52
+        HORZGUIDE, 168
+    END
+
+    IDD_DIALOGOVERWRITING_BROADCAST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ABOUTBOX DLGINIT
+BEGIN
+    IDC_FRAME1, 0x378, 0, 0
+    0
+END
+
+IDD_TRAIN_BROADCAST DLGINIT
+BEGIN
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0031, 
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0032, 
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0033, 
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0034, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_RECORD_BITMAP       BITMAP  DISCARDABLE     "..\\res\\PAFormRecord.bmp"
+IDB_PLAY_BITMAP         BITMAP  DISCARDABLE     "..\\res\\PAFormPlay.bmp"
+IDB_STOP_BITMAP         BITMAP  DISCARDABLE     "..\\res\\PAFormStop.bmp"
+IDB_STNMUSIC_BITMAP     BITMAP  DISCARDABLE     "..\\res\\PAFormStnMusic.bmp"
+IDB_OCCMUSIC_BITMAP     BITMAP  DISCARDABLE     "..\\res\\PAFormOCCMusic.bmp"
+IDB_DVA_BITMAP          BITMAP  DISCARDABLE     "..\\res\\PAFormDVA.bmp"
+IDB_LIVE_BITMAP         BITMAP  DISCARDABLE     "..\\res\\PAFormLive.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\PAManager.ico"
+IDI_LIVE_ICON           ICON    DISCARDABLE     "..\\res\\live_icon.ico"
+IDI_DVA_ICON            ICON    DISCARDABLE     "..\\res\\dva_icon.ico"
+IDI_MUSICOFF_ICON       ICON    DISCARDABLE     "..\\res\\music_off.ico"
+IDI_STNMUSIC_ICON       ICON    DISCARDABLE     "..\\res\\music_stn.ico"
+IDI_OCCMUSIC_ICON       ICON    DISCARDABLE     "..\\res\\music_occ.ico"
+IDI_PLAY_ICON           ICON    DISCARDABLE     "..\\res\\play.ico"
+IDI_STOP_ICON           ICON    DISCARDABLE     "..\\res\\stop.ico"
+IDI_AHR_RECORD          ICON    DISCARDABLE     "..\\res\\ahr_rec.ico"
+IDI_AHR_DELETE          ICON    DISCARDABLE     "..\\res\\ahr_dele.ico"
+IDI_DEPOTMUSIC_ICON     ICON    DISCARDABLE     "..\\res\\music_dpt.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About PAManager..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SPLASH              BITMAP  DISCARDABLE     "..\\res\\splash.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PAManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\PAManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

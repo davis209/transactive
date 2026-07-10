@@ -1,0 +1,779 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.pa.PAManager" ProjectGUID="{011DBCD8-3414-49A5-8381-24A8E9D92778}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/pa/PAManager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.pa.PAManager.PAManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm200 " Optimization="0" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/bus/trains/trainagentcorbadef/idl/src,../../../,../../../../../sdk/include/transactive/core/exceptions/src,../../../../../sdk/include/transactive/core/threads/src,../../../../../sdk/include/transactive/core/synchronisation/src,../../../../../sdk/include/transactive/core/process_management\idl\src,..\..\..\..\..\sdk\omniORB\omniORB_4.0.5\include,..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0,..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__OSVERSION__=4;__x86__;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/pa/PAManager/app.pa.PAManager.PAManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/pa/PAManager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/pa/PAManager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/pa/PAManager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="COS405_rtd.lib omniORB405_rtd.lib omnithread30_rtd.lib omniDynamic405_rtd.lib oci.lib htmlhelp.lib Rpcrt4.lib acemfcd.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Core_d.lib TA_IRS_Bus_d.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/PAManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/win32_nd,../../../../../sdk/lib,../../../../../build/win32_nd,../../../../../sdk/include/cots/WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/PAManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.pa.PAManager.PAManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/pa/PAManager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.pa.PAManager.PAManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm200 " Optimization="2" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/bus/trains/trainagentcorbadef/idl/src,../../../,../../../../../sdk/include/transactive/core/exceptions/src,../../../../../sdk/include/transactive/core/threads/src,../../../../../sdk/include/transactive/core/synchronisation/src,../../../../../sdk/include/transactive/core/process_management\idl\src,..\..\..\..\..\sdk\omniORB\omniORB_4.0.5\include,..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0,..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__OSVERSION__=4;__x86__;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/pa/PAManager/app.pa.PAManager.PAManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/pa/PAManager/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/pa/PAManager/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/pa/PAManager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="COS405_rt.lib omniORB405_rt.lib omnithread30_rt.lib omniDynamic405_rt.lib oci.lib htmlhelp.lib Rpcrt4.lib acemfc.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Core.lib TA_IRS_Bus.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/PAManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/win32_nr,../../../../../sdk/lib,../../../../../build/win32_nr,../../../../../sdk/include/cots/WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/PAManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.pa.PAManager.PAManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Common" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\CachedConfig.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CachedConfig.h">
+			</File>
+			<File RelativePath="src\CachedMapLoader.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CachedMapLoader.h">
+			</File>
+			<File RelativePath="src\GraphworxComms.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\GraphworxComms.h">
+			</File>
+			<File RelativePath="src\PAManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAManager.h">
+			</File>
+			<File RelativePath="src\PAManager.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAManagerDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAManagerDlg.h">
+			</File>
+			<File RelativePath="src\PAManagerGUI.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAManagerGUI.h">
+			</File>
+			<File RelativePath="src\PAManagerModel.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAManagerModel.h">
+			</File>
+			<File RelativePath="src\PaRightsManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PaRightsManager.h">
+			</File>
+			<File RelativePath="src\SplashScreenEx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SplashScreenEx.h">
+			</File>
+			<File RelativePath="src\TAPropertySheet.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TAPropertySheet.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\ahr_dele.ico">
+			</File>
+			<File RelativePath="res\ahr_play.ico">
+			</File>
+			<File RelativePath="res\ahr_rec.ico">
+			</File>
+			<File RelativePath="res\dva_icon.ico">
+			</File>
+			<File RelativePath="res\ico00001.ico">
+			</File>
+			<File RelativePath="res\ico00002.ico">
+			</File>
+			<File RelativePath="res\ico00003.ico">
+			</File>
+			<File RelativePath="res\ico00004.ico">
+			</File>
+			<File RelativePath="res\ico00005.ico">
+			</File>
+			<File RelativePath="res\icon1.ico">
+			</File>
+			<File RelativePath="res\icon2.ico">
+			</File>
+			<File RelativePath="res\icon_rec.ico">
+			</File>
+			<File RelativePath="res\live_icon.ico">
+			</File>
+			<File RelativePath="res\music_dpt.ico">
+			</File>
+			<File RelativePath="res\music_occ.ico">
+			</File>
+			<File RelativePath="res\music_off.ico">
+			</File>
+			<File RelativePath="res\music_stn.ico">
+			</File>
+			<File RelativePath="res\PAFormDVA.bmp">
+			</File>
+			<File RelativePath="res\PAFormLive.bmp">
+			</File>
+			<File RelativePath="res\PAFormOCCMusic.bmp">
+			</File>
+			<File RelativePath="res\PAFormPlay.bmp">
+			</File>
+			<File RelativePath="res\PAFormRecord.bmp">
+			</File>
+			<File RelativePath="res\PAFormStnMusic.bmp">
+			</File>
+			<File RelativePath="res\PAFormStop.bmp">
+			</File>
+			<File RelativePath="res\PAManager.ico">
+			</File>
+			<File RelativePath="res\play.ico">
+			</File>
+			<File RelativePath="res\play_ico.ico">
+			</File>
+			<File RelativePath="src\resource.h">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration></File>
+			<File RelativePath="res\splash.bmp">
+			</File>
+			<File RelativePath="res\stnmusic.ico">
+			</File>
+			<File RelativePath="res\stop.ico">
+			</File>
+			<File RelativePath="res\toolbar1.bmp">
+			</File>
+		</Filter>
+		<Filter Name="Station Page Classes">
+			<File RelativePath="src\AdhocMessageRecordModel.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AdhocMessageRecordModel.h">
+			</File>
+			<File RelativePath="src\AdhocMessageRecordPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AdhocMessageRecordPage.h">
+			</File>
+			<File RelativePath="src\DvaListCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DvaListCtrl.h">
+			</File>
+			<File RelativePath="src\DvaListCtrlModel.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DvaListCtrlModel.h">
+			</File>
+			<File RelativePath="src\ListCtrlSort.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ListCtrlSort.h">
+			</File>
+			<File RelativePath="src\OperatorTerminalDvaPlaybackModel.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\OperatorTerminalDvaPlaybackModel.h">
+			</File>
+			<File RelativePath="src\PAZoneListCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAZoneListCtrl.h">
+			</File>
+			<File RelativePath="src\SortedListCtrl.h">
+			</File>
+			<Filter Name="Models">
+				<File RelativePath="src\StationBroadcastModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\StationBroadcastModel.h">
+				</File>
+				<File RelativePath="src\StationDvaStatusModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\StationDvaStatusModel.h">
+				</File>
+				<File RelativePath="src\StationLiveStatusModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\StationLiveStatusModel.h">
+				</File>
+			</Filter>
+			<Filter Name="Pages">
+				<File RelativePath="src\IStationBroadcastPage.h">
+				</File>
+				<File RelativePath="src\StationBroadcastPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\StationBroadcastPage.h">
+				</File>
+				<Filter Name="StationStatusDlg">
+					<File RelativePath="src\StationDvaStatusDlg.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\StationDvaStatusDlg.h">
+					</File>
+					<File RelativePath="src\StationLiveStatusDlg.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\StationLiveStatusDlg.h">
+					</File>
+				</Filter>
+			</Filter>
+		</Filter>
+		<Filter Name="Train Page Classes">
+			<Filter Name="Train selector">
+				<File RelativePath="..\..\..\bus\trains\TrainSelectionComponent\src\ITrainSelectorGUI.h">
+				</File>
+				<File RelativePath="..\..\..\bus\trains\TrainSelectionComponent\src\TrainSelector.h">
+				</File>
+			</Filter>
+			<Filter Name="Model">
+				<File RelativePath="src\TrainBroadcastModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainBroadcastModel.h">
+				</File>
+				<File RelativePath="src\TrainDvaStatusModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainDvaStatusModel.h">
+				</File>
+				<File RelativePath="src\TrainLiveStatusModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainLiveStatusModel.h">
+				</File>
+			</Filter>
+			<Filter Name="Components">
+				<File RelativePath="src\TrainListUpdateContainer.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainListUpdateContainer.h">
+				</File>
+				<File RelativePath="src\TrainRadioPttMonitor.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainRadioPttMonitor.h">
+				</File>
+			</Filter>
+			<Filter Name="Page">
+				<File RelativePath="src\ITrainBroadcastPage.h">
+				</File>
+				<File RelativePath="src\TrainBroadcastPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainBroadcastPage.h">
+				</File>
+				<Filter Name="TrainStatusDlg">
+					<File RelativePath="src\TrainDvaStatusDlg.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\TrainDvaStatusDlg.h">
+					</File>
+					<File RelativePath="src\TrainLiveStatusDlg.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\TrainLiveStatusDlg.h">
+					</File>
+				</Filter>
+			</Filter>
+		</Filter>
+		<Filter Name="Versions Page Classes">
+			<File RelativePath="src\DvaVersionListCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DvaVersionListCtrl.h">
+			</File>
+			<File RelativePath="src\DVAVersionsPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DVAVersionsPage.h">
+			</File>
+			<File RelativePath="src\TrainDvaVersionsPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainDvaVersionsPage.h">
+			</File>
+		</Filter>
+		<Filter Name="misc">
+			<File RelativePath="src\AsyncCancelDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AsyncCancelDialog.h">
+			</File>
+			<File RelativePath="src\BroadcastParametersDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\BroadcastParametersDlg.h">
+			</File>
+			<File RelativePath="src\CreateNewGroupDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CreateNewGroupDlg.h">
+			</File>
+			<File RelativePath="src\DlgStatusNameWarning.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DlgStatusNameWarning.h">
+			</File>
+			<File RelativePath="src\LockControlRedraw.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\LockControlRedraw.h">
+			</File>
+			<File RelativePath="src\MemTracker.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MemTracker.h">
+			</File>
+			<File RelativePath="src\PAErrorHandler.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAErrorHandler.h">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="From PA Agent">
+			<File RelativePath="..\..\..\core\message\types\PAAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="..\..\..\core\exceptions\src\PAAgentExceptions.h">
+			</File>
+		</Filter>
+		<Filter Name="Common_GUI">
+			<File RelativePath="src\PALayoutHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PALayoutHelper.h">
+			</File>
+			<File RelativePath="src\StationStatusHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StationStatusHelper.h">
+			</File>
+			<File RelativePath="src\TrainStatusHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainStatusHelper.h">
+			</File>
+			<Filter Name="Status Dialog">
+				<File RelativePath="src\GenericStatusModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\GenericStatusModel.h">
+				</File>
+				<File RelativePath="src\GenericStatusPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\GenericStatusPage.h">
+				</File>
+				<Filter Name="DVA Status">
+					<File RelativePath="src\ChangeBroadcastId.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\ChangeBroadcastId.h">
+					</File>
+					<File RelativePath="src\DVAStatusModel.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\DVAStatusModel.h">
+					</File>
+					<File RelativePath="src\DvaStatusPage.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\DvaStatusPage.h">
+					</File>
+				</Filter>
+				<Filter Name="Live Status">
+					<File RelativePath="src\LiveStatusModel.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\LiveStatusModel.h">
+					</File>
+					<File RelativePath="src\LiveStatusPage.cpp">
+						<FileConfiguration Name="Debug|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32">
+							<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+						</FileConfiguration></File>
+					<File RelativePath="src\LiveStatusPage.h">
+					</File>
+				</Filter>
+			</Filter>
+			<Filter Name="Broadcast">
+				<File RelativePath="src\GenericBroadcastModel.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\GenericBroadcastModel.h">
+				</File>
+				<File RelativePath="src\IGenericBroadcastPage.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="Listeners">
+			<File RelativePath="src\DvaMessageChangeSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DvaMessageChangeSubscriber.h">
+			</File>
+			<File RelativePath="src\DvaPrivateVersionChangeSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DvaPrivateVersionChangeSubscriber.h">
+			</File>
+			<File RelativePath="src\DvaPublicVersionChangeSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DvaPublicVersionChangeSubscriber.h">
+			</File>
+			<File RelativePath="src\DvaVersionChangeSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DvaVersionChangeSubscriber.h">
+			</File>
+			<File RelativePath="src\HMISelectionListener.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\HMISelectionListener.h">
+			</File>
+			<File RelativePath="src\PAProgressReportSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAProgressReportSubscriber.h">
+			</File>
+			<File RelativePath="src\PAStatusNameChangeSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PAStatusNameChangeSubscriber.h">
+			</File>
+			<File RelativePath="src\PrioritySchemeUpdateSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PrioritySchemeUpdateSubscriber.h">
+			</File>
+			<Filter Name="Helper Components">
+				<File RelativePath="src\CachedMapChangedWindowNotificationHandler.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\CachedMapChangedWindowNotificationHandler.h">
+				</File>
+				<File RelativePath="..\PAAgent\src\ICachedMapObserverRegistry.h">
+				</File>
+				<File RelativePath="src\IRightsChangeListener.h">
+				</File>
+				<File RelativePath="src\RightsChangedWindowNotificationHandler.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RightsChangedWindowNotificationHandler.h">
+				</File>
+				<File RelativePath="src\RunParamListener.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RunParamListener.h">
+				</File>
+			</Filter>
+		</Filter>
+		<File RelativePath="..\..\..\..\..\sdk\include\transactive\app\pa\PAManager\src\PAErrorHandler.h">
+		</File>
+		<File RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

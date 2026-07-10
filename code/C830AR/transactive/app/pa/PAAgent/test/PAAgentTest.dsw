@@ -1,0 +1,368 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "PAAgentTest"=.\PAAgentTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name tstfwk
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Exceptions
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DataPointCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DataNodeCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name RightsAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_AlarmAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ATSAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TrainAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name PAAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DataPointCorbaDef_Impl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_RightsLibrary
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_PADAI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_TISAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Bus
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Core
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Cots
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name generic_agent
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Sockets
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScadaCommonLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.ats.ats_agent.IDL.TA_AtsAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.generic_agent.TA_GenericAgent
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.pa.pa_agent.IDL.TA_PaAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.scada.common_library.TA_ScadaCommonLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.scada.datanode_library.idl.TA_DataNodeCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.scada.datapointagentcorbadef_impl.TA_DataPointAgentCorbaDef_Impl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.scada.datapointcorbadef.TA_DataPointCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.security.rights_agent.idl.TA_RightsAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.security.rights_library.TA_RightsLibrary
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.trains.trainagentcorbadef.idl.TA_TrainAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name core.alarm.idl.TA_AlarmAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name core.dai.TA_DAI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name core.exceptions.TA_Exceptions
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name core.sockets.TA_Sockets
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name app.pa.PAAgent.PAAgent
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.event.TA_EventScheduler
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name bus.pa_4669.pa_agent.IDL.TA_PaAgentCorbaDef_4669
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name core.dai.tis_agent.IDL.TA_TISAgentCorbaDef_4669
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TA_TISAgentCorbaDef"=..\..\..\signs\tis_agent\IDL\TA_TISAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "app.pa.PAAgent.PAAgent"=..\app.pa.PAAgent.PAAgent.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.ats.ats_agent.IDL.TA_AtsAgentCorbaDef"=..\..\..\..\bus\ats\ats_agent\IDL\bus.ats.ats_agent.IDL.TA_AtsAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.event.TA_EventScheduler"=..\..\..\..\bus\event\bus.event.TA_EventScheduler.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.generic_agent.TA_GenericAgent"=..\..\..\..\..\..\..\base\code\transactive\bus\generic_agent\bus.generic_agent.TA_GenericAgent.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.pa_4669.pa_agent.IDL.TA_PaAgentCorbaDef_4669"=..\..\..\..\..\..\..\base\code\transactive\bus\pa_4669\pa_agent\IDL\bus.pa_4669.pa_agent.IDL.TA_PaAgentCorbaDef_4669.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.scada.common_library.TA_ScadaCommonLib"=..\..\..\..\..\..\..\base\code\transactive\bus\scada\common_library\bus.scada.common_library.TA_ScadaCommonLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.scada.datanode_library.idl.TA_DataNodeCorbaDef"=..\..\..\..\..\..\..\base\code\transactive\bus\scada\datanode_library\IDL\bus.scada.datanode_library.idl.TA_DataNodeCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.scada.datapointagentcorbadef_impl.TA_DataPointAgentCorbaDef_Impl"=..\..\..\..\..\..\..\base\code\transactive\bus\scada\DataPointAgentCorbaDef_Impl\bus.scada.datapointagentcorbadef_impl.TA_DataPointAgentCorbaDef_Impl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.scada.datapointcorbadef.TA_DataPointCorbaDef"=..\..\..\..\..\..\..\base\code\transactive\bus\scada\DataPointCorbaDef\bus.scada.datapointcorbadef.TA_DataPointCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.security.rights_agent.idl.TA_RightsAgentCorbaDef"=..\..\..\..\..\..\..\base\code\transactive\bus\security\rights_agent\IDL\bus.security.rights_agent.idl.TA_RightsAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.security.rights_library.TA_RightsLibrary"=..\..\..\..\..\..\..\base\code\transactive\bus\security\rights_library\bus.security.rights_library.TA_RightsLibrary.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bus.trains.trainagentcorbadef.idl.TA_TrainAgentCorbaDef"=..\..\..\..\..\..\..\base\code\transactive\bus\trains\TrainAgentCorbaDef\idl\bus.trains.trainagentcorbadef.idl.TA_TrainAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "core.alarm.idl.TA_AlarmAgentCorbaDef"=..\..\..\..\..\..\..\base\code\transactive\core\alarm\IDL\core.alarm.idl.TA_AlarmAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "core.dai.TA_DAI"=..\..\..\..\..\..\..\base\code\transactive\core\data_access_interface\core.dai.TA_DAI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "core.dai.tis_agent.IDL.TA_TISAgentCorbaDef_4669"=..\..\..\..\..\..\..\base\code\transactive\core\data_access_interface\tis_agent_4669\IDL\core.dai.tis_agent.IDL.TA_TISAgentCorbaDef_4669.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "core.exceptions.TA_Exceptions"=..\..\..\..\..\..\..\base\code\transactive\core\exceptions\core.exceptions.TA_Exceptions.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "core.sockets.TA_Sockets"=..\..\..\..\..\..\..\base\code\transactive\core\sockets\core.sockets.TA_Sockets.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "tstfwk"=..\..\..\..\..\..\..\base\code\cots\CppUnit\CppUnit.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

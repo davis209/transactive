@@ -1,0 +1,44 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'DvaListCtrlModelTestCases'
+Results File:	'DvaListCtrlModelTest.log'
+Suite File:		''
+
+Testing method:	'testFetchLatestRecords'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetMessageData'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testClearMapping'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testDoesMappingExist'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: DvaListCtrlModelTest.log
+
+OK (4 tests)
+Tests Ran: 4		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 0.72 seconds.
+
+**********************************************************************************************************************
+
+

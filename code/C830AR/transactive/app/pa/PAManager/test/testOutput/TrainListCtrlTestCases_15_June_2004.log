@@ -1,0 +1,62 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'TrainListCtrlTestCases'
+Results File:	'TrainListCtrlTestCases.log '
+Suite File:		''
+
+Testing method:	'testUpdateTrainList'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFindSortedInsertionPoint'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testFindTrainIndex'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetLocationString'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetServiceString'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testGetTrainIdString'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testSelectionUpdating'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: TrainListCtrlTestCases.log 
+
+OK (7 tests)
+Tests Ran: 7		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 0.78 seconds.
+
+**********************************************************************************************************************
+
+

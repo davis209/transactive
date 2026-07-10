@@ -1,0 +1,653 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ConfigurationUpdates"=..\..\..\core\configuration_updates\ConfigurationUpdates.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Data Access Interface"="..\..\..\core\data_access_interface\Data Access Interface.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DataAccessLib"=..\..\..\core\database\DataAccessLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DataNodeCorbaDef"=..\..\..\bus\scada\DataNodeCorbaDef\DataNodeCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DataPointCorbaDef"=..\..\..\bus\scada\DataPointCorbaDef\DataPointCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DataPointCorbaDef_Impl"=..\..\..\bus\scada\DataPointCorbaDef_Impl\DataPointCorbaDef_Impl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EntityAccess"=..\..\..\core\data_access_interface\entity_access\TA_EntityAccess.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "GenericGUI"=..\..\..\bus\generic_gui\GenericGUI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ManagedProcess
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ProcessManagementCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_CorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_MessageCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiSynchronisation
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ManagedProcess"=..\..\..\core\process_management\ManagedProcess.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ProcessManagementCorbaDef
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MathematicalEvaluation"=..\..\..\bus\mathematical_evaluation\MathematicalEvaluation.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MiSynchronisation"=..\..\..\core\synchronisation\MiSynchronisation.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MiThread"=..\..\..\core\threads\MiThread.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MiUtil"=..\..\..\core\utilities\MiUtil.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MiVersion"=..\..\..\core\versioning\MiVersion.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "PAAgentCorbaDef"=..\..\..\bus\pa\PAAgentCorbaDef\PAAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "PAManager"=.\PAManager.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name GenericGUI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name UserSettings
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Exceptions
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_CorbaUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ManagedProcess
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Message
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityAccess
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiThread
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Naming
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Data Access Interface
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TAuuid
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiVersion
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mfc_extensions
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DataAccessLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ProcessManagementCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_NamingCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MiSynchronisation
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TransActiveAbout
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ConfigurationUpdates
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_CorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_MessageCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_UserSettingsDAI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name RightsAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_Alarm
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_AlarmAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_RightsLibrary
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_PADAI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_TrainSelectionComponent
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DataPointCorbaDef_Impl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DataPointCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MathematicalEvaluation
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScadaCommonLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DataNodeCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name PTTMonitorLibrary
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name RadioAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TrainAgentCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_DerivedDataPointDAI
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "PTTMonitorLibrary"=..\..\..\bus\radio\PTTMonitorLibrary\PTTMonitorLibrary.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "PaCachedMaps"=..\..\..\bus\pa\cachedmaps\PACachedMaps.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ProcessManagementCorbaDef"=..\..\..\core\process_management\IDL\ProcessManagementCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "RadioAgentCorbaDef"=..\..\..\bus\radio\RadioAgentCorbaDef\RadioAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "RightsAgentCorbaDef"=..\..\..\bus\security\rights_library\IDL\RightsAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ScadaCommonLib"=..\..\scada\common\ScadaCommonLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_Alarm"=..\..\..\core\alarm\TA_Alarm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_AlarmAgentCorbaDef"=..\..\..\core\alarm\IDL\TA_AlarmAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_CorbaDef"=..\..\..\core\corba\IDL\TA_CorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_CorbaUtil"=..\..\..\core\corba\CorbaUtil.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name TA_CorbaDef
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TA_DerivedDataPointDAI"=..\..\..\core\data_access_interface\derived_datapoints\TA_DerivedDataPointDAI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_Exceptions"=..\..\..\core\exceptions\TA_Exceptions.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_Message"=..\..\..\core\message\TA_Message.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_MessageCorbaDef"=..\..\..\core\message\IDL\TA_MessageCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_Naming"=..\..\..\core\naming\TA_Naming.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name TA_NamingCorbaDef
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TA_MessageCorbaDef
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TA_NamingCorbaDef"=..\..\..\core\naming\IDL\TA_NamingCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_PADAI"=..\..\..\core\data_access_interface\pa\TA_PADAI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_RightsLibrary"=..\..\..\bus\security\rights_library\TA_RightsLibrary.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_TrainSelectionComponent"=..\..\..\bus\trains\TrainSelectionComponent\TA_TrainSelectionComponent.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TA_UserSettingsDAI"=..\..\..\core\data_access_interface\user_settings\TA_UserSettingsDAI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TAuuid"=..\..\..\core\uuid\TAuuid.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TrainAgentCorbaDef"=..\..\..\bus\trains\TrainAgentCorbaDef\TrainAgentCorbaDef.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TransActiveAbout"=..\..\..\bus\about_box\TransActiveAbout.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "UserSettings"=..\..\..\bus\user_settings\UserSettings.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name TA_UserSettingsDAI
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "mfc_extensions"=..\..\..\bus\mfc_extensions\mfc_extensions.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

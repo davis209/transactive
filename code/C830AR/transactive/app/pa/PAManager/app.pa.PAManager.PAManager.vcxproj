@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.pa.PAManager</ProjectName>
+    <ProjectGuid>{011DBCD8-3414-49A5-8381-24A8E9D92778}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.28307.799</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../../../../bin/win32_nd\</OutDir>
+    <IntDir>.\../../../../../build/win32_nd/transactive/app/pa/PAManager\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../../bin/win32_nd/app.pa.PAManager.PAManager.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive;../../../../../sdk/include/transactive/bus/trains/trainagentcorbadef/idl/src;../../../;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/core/threads/src;../../../../../sdk/include/transactive/core/synchronisation/src;../../../../../sdk/include/transactive/core/process_management\idl\src;..\..\..\..\..\sdk\omniORB\omniORB_4.0.5\include;..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__OSVERSION__=4;__x86__;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../../../../../build/win32_nd/transactive/app/pa/PAManager/app.pa.PAManager.PAManager.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../../build/win32_nd/transactive/app/pa/PAManager/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../../build/win32_nd/transactive/app/pa/PAManager/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../../build/win32_nd/transactive/app/pa/PAManager/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>COS405_rtd.lib;omniORB405_rtd.lib;omnithread30_rtd.lib;omniDynamic405_rtd.lib;oci.lib;htmlhelp.lib;Rpcrt4.lib;acemfcd.lib;TA_Base_Core_d.lib;TA_Base_Bus_d.lib;TA_IRS_Core_d.lib;TA_IRS_Bus_d.lib;stracelib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../../../../bin/win32_nd/PAManager.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7;../../../../../sdk/win32_nd;../../../../../sdk/lib;../../../../../build/win32_nd;../../../../../sdk/include/cots/WinStackTrace\build\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../../../../../bin/win32_nd/PAManager.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nd/app.pa.PAManager.PAManager.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../../bin/win32_nr/app.pa.PAManager.PAManager.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__OSVERSION__=4;__x86__;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TA_Util.lib;TA_PACachedMaps.lib;htmlhelp.lib;Rpcrt4.lib;TA_Base_Core.lib;TA_Base_Bus.lib;TA_IRS_Core.lib;TA_IRS_Bus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nr/app.pa.PAManager.PAManager.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AdhocMessageRecordModel.cpp" />
+    <ClCompile Include="src\AdhocMessageRecordPage.cpp" />
+    <ClCompile Include="src\AsyncCancelDialog.cpp" />
+    <ClCompile Include="src\BroadcastParametersDlg.cpp" />
+    <ClCompile Include="src\CachedConfig.cpp" />
+    <ClCompile Include="src\CachedMapChangedWindowNotificationHandler.cpp" />
+    <ClCompile Include="src\CachedMapLoader.cpp" />
+    <ClCompile Include="src\ChangeBroadcastId.cpp" />
+    <ClCompile Include="src\CreateNewGroupDlg.cpp" />
+    <ClCompile Include="src\DlgStatusNameWarning.cpp" />
+    <ClCompile Include="src\DvaListCtrl.cpp" />
+    <ClCompile Include="src\DvaListCtrlModel.cpp" />
+    <ClCompile Include="src\DvaMessageChangeSubscriber.cpp" />
+    <ClCompile Include="src\DvaPrivateVersionChangeSubscriber.cpp" />
+    <ClCompile Include="src\DvaPublicVersionChangeSubscriber.cpp" />
+    <ClCompile Include="src\DVAStatusModel.cpp" />
+    <ClCompile Include="src\DvaStatusPage.cpp" />
+    <ClCompile Include="src\DvaVersionChangeSubscriber.cpp" />
+    <ClCompile Include="src\DvaVersionListCtrl.cpp" />
+    <ClCompile Include="src\DVAVersionsPage.cpp" />
+    <ClCompile Include="src\GenericBroadcastModel.cpp" />
+    <ClCompile Include="src\GenericStatusModel.cpp" />
+    <ClCompile Include="src\GenericStatusPage.cpp" />
+    <ClCompile Include="src\GraphworxComms.cpp" />
+    <ClCompile Include="src\HMISelectionListener.cpp" />
+    <ClCompile Include="src\ListCtrlSort.cpp" />
+    <ClCompile Include="src\LiveStatusModel.cpp" />
+    <ClCompile Include="src\LiveStatusPage.cpp" />
+    <ClCompile Include="src\LockControlRedraw.cpp" />
+    <ClCompile Include="src\MemTracker.cpp" />
+    <ClCompile Include="src\OperatorTerminalDvaPlaybackModel.cpp" />
+    <ClCompile Include="src\PAErrorHandler.cpp" />
+    <ClCompile Include="src\PALayoutHelper.cpp" />
+    <ClCompile Include="src\PAManager.cpp" />
+    <ClCompile Include="src\PAManagerDlg.cpp" />
+    <ClCompile Include="src\PAManagerGUI.cpp" />
+    <ClCompile Include="src\PAManagerModel.cpp" />
+    <ClCompile Include="src\PAProgressReportSubscriber.cpp" />
+    <ClCompile Include="src\PaRightsManager.cpp" />
+    <ClCompile Include="src\PAStatusNameChangeSubscriber.cpp" />
+    <ClCompile Include="src\PAZoneListCtrl.cpp" />
+    <ClCompile Include="src\PrioritySchemeUpdateSubscriber.cpp" />
+    <ClCompile Include="src\RightsChangedWindowNotificationHandler.cpp" />
+    <ClCompile Include="src\RunParamListener.cpp" />
+    <ClCompile Include="src\SplashScreenEx.cpp" />
+    <ClCompile Include="src\StationBroadcastModel.cpp" />
+    <ClCompile Include="src\StationBroadcastPage.cpp" />
+    <ClCompile Include="src\StationDvaStatusDlg.cpp" />
+    <ClCompile Include="src\StationDvaStatusModel.cpp" />
+    <ClCompile Include="src\StationLiveStatusDlg.cpp" />
+    <ClCompile Include="src\StationLiveStatusModel.cpp" />
+    <ClCompile Include="src\StationStatusHelper.cpp" />
+    <ClCompile Include="src\StdAfx.cpp" />
+    <ClCompile Include="src\TAPropertySheet.cpp" />
+    <ClCompile Include="src\TrainBroadcastModel.cpp" />
+    <ClCompile Include="src\TrainBroadcastPage.cpp" />
+    <ClCompile Include="src\TrainDvaStatusDlg.cpp" />
+    <ClCompile Include="src\TrainDvaStatusModel.cpp" />
+    <ClCompile Include="src\TrainDvaVersionsPage.cpp" />
+    <ClCompile Include="src\TrainListUpdateContainer.cpp" />
+    <ClCompile Include="src\TrainLiveStatusDlg.cpp" />
+    <ClCompile Include="src\TrainLiveStatusModel.cpp" />
+    <ClCompile Include="src\TrainRadioPttMonitor.cpp" />
+    <ClCompile Include="src\TrainStatusHelper.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\bus\trains\TrainSelectionComponent\src\ITrainSelectorGUI.h" />
+    <ClInclude Include="..\..\..\bus\trains\TrainSelectionComponent\src\TrainSelector.h" />
+    <ClInclude Include="..\..\..\core\exceptions\src\PAAgentExceptions.h" />
+    <ClInclude Include="..\..\..\core\message\types\PAAgentComms_MessageTypes.h" />
+    <ClInclude Include="..\PAAgent\src\ICachedMapObserverRegistry.h" />
+    <ClInclude Include="src\AdhocMessageRecordModel.h" />
+    <ClInclude Include="src\AdhocMessageRecordPage.h" />
+    <ClInclude Include="src\AsyncCancelDialog.h" />
+    <ClInclude Include="src\BroadcastParametersDlg.h" />
+    <ClInclude Include="src\CachedConfig.h" />
+    <ClInclude Include="src\CachedMapChangedWindowNotificationHandler.h" />
+    <ClInclude Include="src\CachedMapLoader.h" />
+    <ClInclude Include="src\ChangeBroadcastId.h" />
+    <ClInclude Include="src\CreateNewGroupDlg.h" />
+    <ClInclude Include="src\DlgStatusNameWarning.h" />
+    <ClInclude Include="src\DvaListCtrl.h" />
+    <ClInclude Include="src\DvaListCtrlModel.h" />
+    <ClInclude Include="src\DvaMessageChangeSubscriber.h" />
+    <ClInclude Include="src\DvaPrivateVersionChangeSubscriber.h" />
+    <ClInclude Include="src\DvaPublicVersionChangeSubscriber.h" />
+    <ClInclude Include="src\DVAStatusModel.h" />
+    <ClInclude Include="src\DvaStatusPage.h" />
+    <ClInclude Include="src\DvaVersionChangeSubscriber.h" />
+    <ClInclude Include="src\DvaVersionListCtrl.h" />
+    <ClInclude Include="src\DVAVersionsPage.h" />
+    <ClInclude Include="src\GenericBroadcastModel.h" />
+    <ClInclude Include="src\GenericStatusModel.h" />
+    <ClInclude Include="src\GenericStatusPage.h" />
+    <ClInclude Include="src\GraphworxComms.h" />
+    <ClInclude Include="src\HMISelectionListener.h" />
+    <ClInclude Include="src\IGenericBroadcastPage.h" />
+    <ClInclude Include="src\IRightsChangeListener.h" />
+    <ClInclude Include="src\IStationBroadcastPage.h" />
+    <ClInclude Include="src\ITrainBroadcastPage.h" />
+    <ClInclude Include="src\ListCtrlSort.h" />
+    <ClInclude Include="src\LiveStatusModel.h" />
+    <ClInclude Include="src\LiveStatusPage.h" />
+    <ClInclude Include="src\LockControlRedraw.h" />
+    <ClInclude Include="src\MemTracker.h" />
+    <ClInclude Include="src\OperatorTerminalDvaPlaybackModel.h" />
+    <ClInclude Include="src\PAErrorHandler.h" />
+    <ClInclude Include="src\PALayoutHelper.h" />
+    <ClInclude Include="src\PAManager.h" />
+    <ClInclude Include="src\PAManagerDlg.h" />
+    <ClInclude Include="src\PAManagerGUI.h" />
+    <ClInclude Include="src\PAManagerModel.h" />
+    <ClInclude Include="src\PAProgressReportSubscriber.h" />
+    <ClInclude Include="src\PaRightsManager.h" />
+    <ClInclude Include="src\PAStatusNameChangeSubscriber.h" />
+    <ClInclude Include="src\PAZoneListCtrl.h" />
+    <ClInclude Include="src\PrioritySchemeUpdateSubscriber.h" />
+    <CustomBuild Include="src\resource.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClInclude Include="src\RightsChangedWindowNotificationHandler.h" />
+    <ClInclude Include="src\RunParamListener.h" />
+    <ClInclude Include="src\SortedListCtrl.h" />
+    <ClInclude Include="src\SplashScreenEx.h" />
+    <ClInclude Include="src\StationBroadcastModel.h" />
+    <ClInclude Include="src\StationBroadcastPage.h" />
+    <ClInclude Include="src\StationDvaStatusDlg.h" />
+    <ClInclude Include="src\StationDvaStatusModel.h" />
+    <ClInclude Include="src\StationLiveStatusDlg.h" />
+    <ClInclude Include="src\StationLiveStatusModel.h" />
+    <ClInclude Include="src\StationStatusHelper.h" />
+    <ClInclude Include="src\StdAfx.h" />
+    <ClInclude Include="src\TAPropertySheet.h" />
+    <ClInclude Include="src\TrainBroadcastModel.h" />
+    <ClInclude Include="src\TrainBroadcastPage.h" />
+    <ClInclude Include="src\TrainDvaStatusDlg.h" />
+    <ClInclude Include="src\TrainDvaStatusModel.h" />
+    <ClInclude Include="src\TrainDvaVersionsPage.h" />
+    <ClInclude Include="src\TrainListUpdateContainer.h" />
+    <ClInclude Include="src\TrainLiveStatusDlg.h" />
+    <ClInclude Include="src\TrainLiveStatusModel.h" />
+    <ClInclude Include="src\TrainRadioPttMonitor.h" />
+    <ClInclude Include="src\TrainStatusHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\PAManager.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ahr_dele.ico" />
+    <Image Include="res\ahr_play.ico" />
+    <Image Include="res\ahr_rec.ico" />
+    <Image Include="res\dva_icon.ico" />
+    <Image Include="res\ico00001.ico" />
+    <Image Include="res\ico00002.ico" />
+    <Image Include="res\ico00003.ico" />
+    <Image Include="res\ico00004.ico" />
+    <Image Include="res\ico00005.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\icon2.ico" />
+    <Image Include="res\icon_rec.ico" />
+    <Image Include="res\live_icon.ico" />
+    <Image Include="res\music_dpt.ico" />
+    <Image Include="res\music_occ.ico" />
+    <Image Include="res\music_off.ico" />
+    <Image Include="res\music_stn.ico" />
+    <Image Include="res\PAFormDVA.bmp" />
+    <Image Include="res\PAFormLive.bmp" />
+    <Image Include="res\PAFormOCCMusic.bmp" />
+    <Image Include="res\PAFormPlay.bmp" />
+    <Image Include="res\PAFormRecord.bmp" />
+    <Image Include="res\PAFormStnMusic.bmp" />
+    <Image Include="res\PAFormStop.bmp" />
+    <Image Include="res\PAManager.ico" />
+    <Image Include="res\play.ico" />
+    <Image Include="res\play_ico.ico" />
+    <Image Include="res\splash.bmp" />
+    <Image Include="res\stnmusic.ico" />
+    <Image Include="res\stop.ico" />
+    <Image Include="res\toolbar1.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

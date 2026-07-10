@@ -1,0 +1,80 @@
+**********************************************************************************************************************
+Running the following methods from the Test Class:	'MmsControllerModelTestCases'
+Results File:	'MmsControllerModelTestCases.log '
+Suite File:		''
+
+Testing method:	'testgetGlobalMmsInhibit'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testsetGlobalMmsInhibit_success'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testsetGlobalMmsInhibit_failure'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testgetSubsystemMmsInhibit'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testsetSubsystemMmsInhibit_success'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testsetSubsystemMmsInhibit_failure'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testgetDatanodeProxy'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testsendGlobalInhibitAuditMessage'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testsendSubsystemInhibitAuditMessage'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+
+Testing method:	'testsubmitAuditMessage'
+Input data file:	''
+Ouput data file:	''
+Looping:		'1'
+
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Test Results for: MmsControllerModelTestCases.log 
+
+OK (10 tests)
+Tests Ran: 10		Failures: 0		Exceptions: 0
+
+There were no Test Errors
+There were no Test Failures
+
+Time Taken For Test Case: 0.03 seconds.
+
+**********************************************************************************************************************
+
+
