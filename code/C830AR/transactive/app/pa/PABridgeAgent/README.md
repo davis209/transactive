@@ -16,7 +16,7 @@ JSON parsing and serialisation are handled by `code/C830AR/cots/nlohmann-json/js
 - `--PaBridgeConsoleId=<key>`: console/workstation key used to request the bridge session.
 - `--PaBridgePassword=<password>`: password used to authenticate the bridge session.
 - `--RestPort=<port>`: REST listen port, default `8088`.
-- `--KafkaTopicPrefix=<prefix>`: topic prefix, default `paagent`.
+- Kafka topic prefix is fixed as `pa`.
 - `--KafkaBootstrapServers=<host:port,...>`: enables Kafka publishing through
   `code/C830AR/cots/librdkafka`.
 - `--KafkaSpoolFile=<path>`: optional fallback that writes Kafka-style records to a file
