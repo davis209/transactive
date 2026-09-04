@@ -77,6 +77,42 @@ Published when broadcast state, global state, or local zone/train execution stat
 | overridingSourcePriorityForZonesOnly | number | Overriding source priority, used only by zone broadcasts. |
 | errorOccurred | boolean | Whether an error occurred. |
 
+#### broadcastState enumeration values
+
+| Value | Meaning |
+| --- | --- |
+| `Creation` | Broadcast created; in the initialisation/configuration phase. |
+| `Execution` | Start-up phase is being executed. |
+| `Runtime` | Broadcast has entered normal runtime. |
+| `Termination` | Broadcast is ending or has been terminated abnormally. |
+| `PendingRemoval` | Broadcast has ended and is awaiting removal from the current-broadcast list. |
+
+#### globalState enumeration values
+
+| Value | Enum name | Meaning |
+| --- | --- | --- |
+| 0 | `GLOBAL_STATE_NO_FAILURE` | No global failure. |
+| 1 | `GLOBAL_STATE_NO_FREE_ANNOUNCE_ID` | No free announce ID. |
+| 2 | `GLOBAL_STATE_NO_FREE_MESSAGE_SEQ_ID` | No free message sequence ID. |
+| 3 | `GLOBAL_STATE_NO_FREE_DVA_CHANNEL` | No free DVA channel. |
+| 4 | `GLOBAL_STATE_RECORDING_SOURCE_BUSY` | Recording source busy. |
+| 5 | `GLOBAL_STATE_MESSAGE_BUSY_RECORDING` | Message is currently being recorded and cannot be used. |
+| 6 | `GLOBAL_STATE_MESSAGE_BUSY_BROADCASTING` | Message is currently being broadcast and cannot be used. |
+| 7 | `GLOBAL_STATE_COMMS_FAILURE_TRAIN_AGENT` | Communication failure with Train Agent. |
+| 8 | `GLOBAL_STATE_COMMS_FAILURE_TIS_AGENT` | Communication failure with TIS Agent. |
+| 9 | `GLOBAL_STATE_COMMS_FAILURE_AUTHENTICATION_AGENT` | Communication failure with Authentication Agent. |
+| 10 | `GLOBAL_STATE_HARDWARE_FAILURE_TRAIN_AGENT` | Hardware failure on the Train Agent side. |
+| 11 | `GLOBAL_STATE_HARDWARE_FAILURE_TIS_AGENT` | Hardware failure on the TIS Agent side. |
+| 12 | `GLOBAL_STATE_HARDWARE_FAILURE_PA_AGENT` | Hardware failure on the PA Agent/PAS side. |
+| 13 | `GLOBAL_STATE_NO_PERMISSION_FAILURE_TRAIN_AGENT` | No permission to operate Train Agent. |
+| 14 | `GLOBAL_STATE_NO_PERMISSION_FAILURE_TIS_AGENT` | No permission to operate TIS Agent. |
+| 15 | `GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_TRAIN_AGENT` | Invalid Train Agent protocol/message. |
+| 16 | `GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_TIS_AGENT` | Invalid TIS Agent protocol/message. |
+| 17 | `GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_PA_AGENT` | Invalid PA Agent/PAS protocol or message. |
+| 18 | `GLOBAL_STATE_PUBLIC_DVA_SET_VERSION_CONFLICT` | Public DVA-set version conflict. |
+| 19 | `GLOBAL_STATE_RADIO_CALL_RESET` | Radio call for a train live broadcast was lost or reset. |
+| 20 | `GLOBAL_STATE_STATIC_GROUP_IN_USE` | Static group is in use. |
+
 #### localState enumeration values
 
 | Value | Enum name | Meaning |

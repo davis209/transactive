@@ -77,6 +77,42 @@ PABridgeAgent 当前订阅并转发以下全部 PAAgentComms 事件。DVA 版本
 | overridingSourcePriorityForZonesOnly | number | 仅 zone 广播使用的覆盖源优先级。 |
 | errorOccurred | boolean | 是否发生错误。 |
 
+#### broadcastState 枚举值
+
+| 值 | 含义 |
+| --- | --- |
+| `Creation` | 广播已创建，处于初始化/配置阶段。 |
+| `Execution` | 正在执行启动阶段。 |
+| `Runtime` | 广播已进入正常运行阶段。 |
+| `Termination` | 广播正在结束或因异常终止。 |
+| `PendingRemoval` | 广播已结束，等待从当前广播列表移除。 |
+
+#### globalState 枚举值
+
+| 值 | 枚举名 | 含义 |
+| --- | --- | --- |
+| 0 | `GLOBAL_STATE_NO_FAILURE` | 无全局故障。 |
+| 1 | `GLOBAL_STATE_NO_FREE_ANNOUNCE_ID` | 无可用公告 ID。 |
+| 2 | `GLOBAL_STATE_NO_FREE_MESSAGE_SEQ_ID` | 无可用消息序列 ID。 |
+| 3 | `GLOBAL_STATE_NO_FREE_DVA_CHANNEL` | 无可用 DVA 通道。 |
+| 4 | `GLOBAL_STATE_RECORDING_SOURCE_BUSY` | 录音源忙。 |
+| 5 | `GLOBAL_STATE_MESSAGE_BUSY_RECORDING` | 消息正在录制，无法使用。 |
+| 6 | `GLOBAL_STATE_MESSAGE_BUSY_BROADCASTING` | 消息正在被广播，无法使用。 |
+| 7 | `GLOBAL_STATE_COMMS_FAILURE_TRAIN_AGENT` | 与 Train Agent 通信失败。 |
+| 8 | `GLOBAL_STATE_COMMS_FAILURE_TIS_AGENT` | 与 TIS Agent 通信失败。 |
+| 9 | `GLOBAL_STATE_COMMS_FAILURE_AUTHENTICATION_AGENT` | 与认证 Agent 通信失败。 |
+| 10 | `GLOBAL_STATE_HARDWARE_FAILURE_TRAIN_AGENT` | Train Agent 侧硬件故障。 |
+| 11 | `GLOBAL_STATE_HARDWARE_FAILURE_TIS_AGENT` | TIS Agent 侧硬件故障。 |
+| 12 | `GLOBAL_STATE_HARDWARE_FAILURE_PA_AGENT` | PA Agent/PAS 侧硬件故障。 |
+| 13 | `GLOBAL_STATE_NO_PERMISSION_FAILURE_TRAIN_AGENT` | 无 Train Agent 操作权限。 |
+| 14 | `GLOBAL_STATE_NO_PERMISSION_FAILURE_TIS_AGENT` | 无 TIS Agent 操作权限。 |
+| 15 | `GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_TRAIN_AGENT` | Train Agent 协议/报文无效。 |
+| 16 | `GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_TIS_AGENT` | TIS Agent 协议/报文无效。 |
+| 17 | `GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_PA_AGENT` | PA Agent/PAS 协议或报文无效。 |
+| 18 | `GLOBAL_STATE_PUBLIC_DVA_SET_VERSION_CONFLICT` | 公共 DVA 集版本冲突。 |
+| 19 | `GLOBAL_STATE_RADIO_CALL_RESET` | 列车实时广播的无线呼叫丢失/被重置。 |
+| 20 | `GLOBAL_STATE_STATIC_GROUP_IN_USE` | 静态组正在被使用。 |
+
 #### localState 枚举值
 
 | 值 | 枚举名 | 含义 |
