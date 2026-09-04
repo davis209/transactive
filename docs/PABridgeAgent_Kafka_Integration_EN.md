@@ -77,6 +77,35 @@ Published when broadcast state, global state, or local zone/train execution stat
 | overridingSourcePriorityForZonesOnly | number | Overriding source priority, used only by zone broadcasts. |
 | errorOccurred | boolean | Whether an error occurred. |
 
+#### localState enumeration values
+
+| Value | Enum name | Meaning |
+| --- | --- | --- |
+| 0 | `LOCAL_STATE_IN_PROGRESS` | Broadcast in progress. |
+| 1 | `LOCAL_STATE_IN_PROGRESS_DWELL_TIME` | Broadcast in progress during dwell/interval time. |
+| 2 | `LOCAL_STATE_CONNECTING` | Connecting to the train. |
+| 3 | `LOCAL_STATE_TRAIN_READY` | Train ready. |
+| 4 | `LOCAL_STATE_CONTINUE_LIVE_ANNOUNCEMENT_REQUIRED` | A live announcement must be continued. |
+| 5 | `LOCAL_STATE_COMPLETED` | Completed. |
+| 6 | `LOCAL_STATE_ABORTED` | Aborted. |
+| 7 | `LOCAL_STATE_FAILED_CYCLE` | Broadcast cycle failed. |
+| 8 | `LOCAL_STATE_FAILED_ZONE` | Zone failed. |
+| 9 | `LOCAL_STATE_FAILED_OVERRIDDEN` | Overridden by a higher-priority source. |
+| 10 | `LOCAL_STATE_FAILED_TRAIN` | Train-side failure. |
+| 11 | `LOCAL_STATE_FAILED_CONNECTION_RESET` | Connection reset. |
+| 12 | `LOCAL_STATE_FAILED_INTERRUPTED` | Interrupted. |
+| 13 | `LOCAL_STATE_FAILED_VERSION_CONFLICT` | Version conflict. |
+| 14 | `LOCAL_STATE_FAILED_INVALID_REQUEST` | Invalid request. |
+| 15 | `LOCAL_STATE_FAILED_BUSY` | Target busy. |
+| 16 | `LOCAL_STATE_FAILED_BUSY_WITH_OVERRIDE_OPTION` | Target busy; an override can be selected. |
+| 17 | `LOCAL_STATE_FAILED_CONTINUE_LIVE_ANNOUNCEMENT_TIMEOUT` | TIMS continue-live-announcement request was not received before timeout. |
+| 18 | `LOCAL_STATE_FAILED_NO_PERMISSION` | No duty/permission for this train at the current location. |
+| 19 | `LOCAL_STATE_TRAIN_FIRST_CYCLE_CANCELLED` | Train first cycle cancelled. |
+| 20 | `LOCAL_STATE_FAILED_BAD_COMMAND` | Train returned an invalid/bad command. |
+| 21 | `LOCAL_STATE_FAILED_DIFFERENT_ORIGIN` | Origin does not match. |
+| 22 | `LOCAL_STATE_FAILED_DIFFERENT_VERSION` | Version does not match. |
+| 23 | `LOCAL_STATE_FAILED_MPU_CHANGEOVER` | MPU changeover failed. |
+
 ### 4.2 CurrentBroadcastsUpdate
 
 Published when a broadcast is created, removed, or renamed.

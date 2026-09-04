@@ -77,6 +77,35 @@ PABridgeAgent 当前订阅并转发以下全部 PAAgentComms 事件。DVA 版本
 | overridingSourcePriorityForZonesOnly | number | 仅 zone 广播使用的覆盖源优先级。 |
 | errorOccurred | boolean | 是否发生错误。 |
 
+#### localState 枚举值
+
+| 值 | 枚举名 | 含义 |
+| --- | --- | --- |
+| 0 | `LOCAL_STATE_IN_PROGRESS` | 广播进行中。 |
+| 1 | `LOCAL_STATE_IN_PROGRESS_DWELL_TIME` | 广播进行中，处于停留/间隔时间。 |
+| 2 | `LOCAL_STATE_CONNECTING` | 正在连接列车。 |
+| 3 | `LOCAL_STATE_TRAIN_READY` | 列车已就绪。 |
+| 4 | `LOCAL_STATE_CONTINUE_LIVE_ANNOUNCEMENT_REQUIRED` | 需要继续实时广播。 |
+| 5 | `LOCAL_STATE_COMPLETED` | 已完成。 |
+| 6 | `LOCAL_STATE_ABORTED` | 已中止。 |
+| 7 | `LOCAL_STATE_FAILED_CYCLE` | 广播循环失败。 |
+| 8 | `LOCAL_STATE_FAILED_ZONE` | Zone 故障。 |
+| 9 | `LOCAL_STATE_FAILED_OVERRIDDEN` | 被更高优先级来源覆盖。 |
+| 10 | `LOCAL_STATE_FAILED_TRAIN` | 列车侧失败。 |
+| 11 | `LOCAL_STATE_FAILED_CONNECTION_RESET` | 连接被重置。 |
+| 12 | `LOCAL_STATE_FAILED_INTERRUPTED` | 被中断。 |
+| 13 | `LOCAL_STATE_FAILED_VERSION_CONFLICT` | 版本冲突。 |
+| 14 | `LOCAL_STATE_FAILED_INVALID_REQUEST` | 请求无效。 |
+| 15 | `LOCAL_STATE_FAILED_BUSY` | 目标忙。 |
+| 16 | `LOCAL_STATE_FAILED_BUSY_WITH_OVERRIDE_OPTION` | 目标忙，但可选择覆盖。 |
+| 17 | `LOCAL_STATE_FAILED_CONTINUE_LIVE_ANNOUNCEMENT_TIMEOUT` | 未收到 TIMS 的继续广播请求，超时。 |
+| 18 | `LOCAL_STATE_FAILED_NO_PERMISSION` | 当前地点对此列车无 duty/权限。 |
+| 19 | `LOCAL_STATE_TRAIN_FIRST_CYCLE_CANCELLED` | 列车首个循环已取消。 |
+| 20 | `LOCAL_STATE_FAILED_BAD_COMMAND` | 列车返回无效/错误命令。 |
+| 21 | `LOCAL_STATE_FAILED_DIFFERENT_ORIGIN` | 来源不匹配。 |
+| 22 | `LOCAL_STATE_FAILED_DIFFERENT_VERSION` | 版本不匹配。 |
+| 23 | `LOCAL_STATE_FAILED_MPU_CHANGEOVER` | MPU 切换失败。 |
+
 ### 4.2 CurrentBroadcastsUpdate
 
 在广播创建、删除或广播 ID 变化时发布。
