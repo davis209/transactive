@@ -159,6 +159,16 @@ Published when station DVA-message configuration changes. The payload is an arra
 ]
 ```
 
+#### type enumeration values
+
+`type` is a single-character string that identifies the station DVA message type.
+
+| Value | Meaning |
+| --- | --- |
+| `N` | Normal DVA message. |
+| `E` | Emergency DVA message. |
+| `X` | Deleted/invalid message; it cannot be played or added to a broadcast. |
+
 ### 4.4 DVA Version Updates
 
 The payloads of `DvaVersionsUpdate`, `DvaPublicVersionsUpdate`, and `DvaPrivateVersionsUpdate` are arrays.

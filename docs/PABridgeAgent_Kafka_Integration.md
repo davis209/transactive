@@ -159,6 +159,16 @@ PABridgeAgent 当前订阅并转发以下全部 PAAgentComms 事件。DVA 版本
 ]
 ```
 
+#### type 枚举值
+
+`type` 是单字符字符串，用于表示站台 DVA 消息类型。
+
+| 值 | 含义 |
+| --- | --- |
+| `N` | Normal，普通 DVA 消息。 |
+| `E` | Emergency，紧急 DVA 消息。 |
+| `X` | Deleted，已删除/失效的消息；不可播放或加入广播。 |
+
 ### 4.4 DVA Version Updates
 
 `DvaVersionsUpdate`、`DvaPublicVersionsUpdate` 和 `DvaPrivateVersionsUpdate` 的 Payload 均为数组。
