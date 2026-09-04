@@ -126,6 +126,18 @@ PABridgeAgent 当前订阅并转发以下全部 PAAgentComms 事件。DVA 版本
 | broadcastType | string | 广播类型。 |
 | sessionId | string | PAAgent 原始消息中的会话标识。Consumer 不得使用它调用 REST 或 CORBA 接口，也不应记录或显示。 |
 
+#### broadcastType 枚举值
+
+| 值 | 含义 |
+| --- | --- |
+| `StationMusic` | 车站音乐广播。 |
+| `StationLive` | 车站实时广播。 |
+| `StationDva` | 车站 DVA（数字语音公告）广播。 |
+| `StationRecording` | 车站临时/adhoc 语音录制。 |
+| `TrainLive` | 列车实时广播。 |
+| `TrainDva` | 列车 DVA（数字语音公告）广播。 |
+| `Unknown` | 未识别的 PAAgent 广播类型；不是正常定义的广播类型。 |
+
 注意：当前实现会转发 `sessionId`。由于它属于敏感会话信息，生产环境应限制该 Topic 的访问权限；后续版本可能删除该字段。
 
 ### 4.3 DvaMessagesUpdate

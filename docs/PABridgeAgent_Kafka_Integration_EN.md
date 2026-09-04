@@ -126,6 +126,18 @@ Published when a broadcast is created, removed, or renamed.
 | broadcastType | string | Broadcast type. |
 | sessionId | string | Session identifier from the original PAAgent message. Consumers must not use it to invoke REST or CORBA APIs, and should neither log nor display it. |
 
+#### broadcastType enumeration values
+
+| Value | Meaning |
+| --- | --- |
+| `StationMusic` | Station music broadcast. |
+| `StationLive` | Station live broadcast. |
+| `StationDva` | Station DVA (digital voice announcement) broadcast. |
+| `StationRecording` | Station ad-hoc voice recording. |
+| `TrainLive` | Train live broadcast. |
+| `TrainDva` | Train DVA (digital voice announcement) broadcast. |
+| `Unknown` | Unrecognised PAAgent broadcast type; not a normally defined broadcast type. |
+
 The current implementation forwards `sessionId`. Because it is sensitive session information, production access to this topic must be restricted; a later version may remove this field.
 
 ### 4.3 DvaMessagesUpdate
