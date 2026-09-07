@@ -13,7 +13,8 @@ JSON parsing and serialisation are handled by `code/C830AR/cots/nlohmann-json/js
 - `--PaBridgeUserKey=<key>` or `--PaBridgeOperatorKey=<key>`: operator/user key used to request the bridge session.
 - `--PaBridgeProfileKey=<key>`: profile key used to request the bridge session.
 - `--PaBridgeLocationKey=<key>`: location key used to request the bridge session. Defaults to `--LocationKey` or the PAAgent location key when available.
-- `--PaBridgeConsoleId=<key>`: console/workstation key used to request the bridge session.
+- The console/workstation key is resolved from the local hostname. The hostname must
+  match exactly one undeleted `Console` entity's `address` in the database.
 - `--PaBridgePassword=<password>`: password used to authenticate the bridge session.
 - `--RestPort=<port>`: REST listen port, default `8088`.
 - Kafka topic prefix is fixed as `pa`.

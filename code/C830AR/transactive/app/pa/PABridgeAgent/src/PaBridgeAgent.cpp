@@ -3,14 +3,17 @@
 #include "bus/generic_agent/src/GenericAgent.h"
 #include "bus/security/authentication_library/src/AuthenticationLibrary.h"
 
+#include "core/data_access_interface/entity_access/src/ConsoleAccessFactory.h"
 #include "core/data_access_interface/entity_access/src/IEntityData.h"
 #include "core/exceptions/src/TransactiveException.h"
 #include "core/message/src/MessageSubscriptionManager.h"
 #include "core/utilities/src/DebugUtil.h"
+#include "core/utilities/src/Hostname.h"
 #include "core/utilities/src/RunParams.h"
 
 #include <chrono>
 #include <cstdlib>
+#include <memory>
 
 namespace TA_IRS_App
 {
@@ -132,15 +135,13 @@ namespace TA_IRS_App
             m_sessionLocationKey = getUnsignedRunParam("LocationKey", m_paAgentLocationKey);
         }
 
-        m_sessionConsoleId = getUnsignedRunParam("PaBridgeConsoleId", 0);
-        if (m_sessionConsoleId == 0)
-        {
-            m_sessionConsoleId = getUnsignedRunParam("WorkstationId", 0);
-        }
-        if (m_sessionConsoleId == 0)
-        {
-            m_sessionConsoleId = getUnsignedRunParam("ConsoleId", 0);
-        }
+        const std::string hostname = TA_Base_Core::Hostname::getHostname();
+        std::unique_ptr<TA_Base_Core::IConsole> console(
+            TA_Base_Core::ConsoleAccessFactory::getInstance().getConsoleFromAddress(hostname));
+        m_sessionConsoleId = console->getKey();
+        LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,
+            "PABridgeAgent resolved hostname %s to console key %lu",
+            hostname.c_str(), m_sessionConsoleId);
 
         m_sessionPassword = getStringRunParam("PaBridgePassword");
         if (m_sessionPassword.empty())
@@ -162,7 +163,7 @@ namespace TA_IRS_App
         }
         if (m_sessionConsoleId == 0)
         {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --PaBridgeConsoleId"));
+            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent could not resolve a console for the local hostname"));
         }
         if (m_sessionPassword.empty())
         {
