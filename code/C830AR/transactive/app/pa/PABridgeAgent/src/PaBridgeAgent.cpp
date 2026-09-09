@@ -97,7 +97,11 @@ namespace TA_IRS_App
 
         m_restPort = static_cast<unsigned short>(getUnsignedRunParam("RestPort", 8088));
 
-        m_kafkaTopicPrefix = "pa";
+        m_kafkaTopicPrefix = TA_Base_Core::RunParams::getInstance().get("KafkaTopicPrefix");
+        if (m_kafkaTopicPrefix.empty())
+        {
+            m_kafkaTopicPrefix = "pa";
+        }
 
         if (m_paAgentEntityName.empty())
         {

@@ -109,7 +109,7 @@ namespace TA_IRS_App
             progresses.push_back(JsonUtil::object({
                 JsonUtil::property("zoneKeyOrTrainId", number(item.zoneKeyOrTrainId), true),
                 JsonUtil::property("localState", localState(item.localState), true),
-                JsonUtil::property("overridingSourcePriorityForZonesOnly", number(item.overridingSourcePriorityForZonesOnly), true),
+                JsonUtil::property("overridingSourcePriorityForZonesOnly", number(static_cast<unsigned long>(item.overridingSourcePriorityForZonesOnly)), true),
                 JsonUtil::property("errorOccurred", boolean(item.errorOccurred), true)
             }));
         }
@@ -135,8 +135,8 @@ namespace TA_IRS_App
                 JsonUtil::property("label", item.m_label.in()),
                 JsonUtil::property("type", std::string(1, item.m_type)),
                 JsonUtil::property("tisMessageTag", number(item.m_tisMessageTag), true),
-                JsonUtil::property("tisLibrarySection", number(item.m_tisLibrarySection), true),
-                JsonUtil::property("tisLibraryVersion", number(item.m_tisLibraryVersion), true)
+                JsonUtil::property("tisLibrarySection", number(static_cast<unsigned long>(item.m_tisLibrarySection)), true),
+                JsonUtil::property("tisLibraryVersion", number(static_cast<unsigned long>(item.m_tisLibraryVersion)), true)
             }));
         }
         return JsonUtil::array(records);
@@ -223,7 +223,7 @@ namespace TA_IRS_App
                 std::vector<std::string> modes;
                 for (CORBA::ULong mode = 0; mode < data[station][zone].length(); ++mode)
                 {
-                    modes.push_back(number(data[station][zone][mode]));
+                    modes.push_back(number(static_cast<unsigned long>(data[station][zone][mode])));
                 }
                 zones.push_back(JsonUtil::array(modes));
             }
