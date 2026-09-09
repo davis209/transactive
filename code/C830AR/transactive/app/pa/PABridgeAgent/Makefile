@@ -16,7 +16,8 @@ PROJ_SOURCE     = PaBridgeAgentMain.cpp \
                 RestServer.cpp \
                 KafkaProducer.cpp \
                 PaJsonConverter.cpp \
-                JsonUtil.cpp
+                JsonUtil.cpp \
+                VersionGen.cpp
 
 PROJ_TYPE       = exe
 PROJ_IDL_INC    = $(PROJ_ROOT_DIR)/code/transactive $(PROJ_ROOT_DIR)/sdk/idl/transactive
