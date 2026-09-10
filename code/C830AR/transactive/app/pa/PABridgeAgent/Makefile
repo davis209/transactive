@@ -24,13 +24,13 @@ PROJ_IDL_INC    = $(PROJ_ROOT_DIR)/code/transactive $(PROJ_ROOT_DIR)/sdk/idl/tra
 PROJ_INC_DIR    = ./src \
                 $(PROJ_ROOT_DIR)/code/transactive \
                 $(PROJ_ROOT_DIR)/sdk/include/transactive \
-                $(PROJ_ROOT_DIR)/C830AR/cots/cpp-httplib \
-                $(PROJ_ROOT_DIR)/C830AR/cots/nlohmann-json \
-                $(PROJ_ROOT_DIR)/C830AR/cots/librdkafka/librdkafka-2.8.0/src
+                $(PROJ_ROOT_DIR)/code/cots/cpp-httplib \
+                $(PROJ_ROOT_DIR)/code/cots/nlohmann-json \
+                $(PROJ_ROOT_DIR)/code/cots/librdkafka/librdkafka-2.8.0/src
 PROJ_OUT_DIR    = $(PROJ_ROOT_DIR)/bin/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG)
 PROJ_LIB_DIRS   = $(PROJ_ROOT_DIR)/sdk/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG) \
                 $(PROJ_ROOT_DIR)/build/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG) \
-                $(PROJ_ROOT_DIR)/C830AR/cots/librdkafka/librdkafka-2.8.0/src
+                $(PROJ_ROOT_DIR)/code/cots/librdkafka/librdkafka-2.8.0/src
 
 PROJ_LIBS       = \
                 rdkafka \
@@ -70,7 +70,7 @@ PROJ_LIBS       = \
                 mysqlclient \
                 ACE
 
-PROJ_CFLAGS     = -DTA_ASSERT_LOG=1 -DUSE_LIBRDKAFKA -std=c++11
+PROJ_CFLAGS     = -DTA_ASSERT_LOG=1 -DUSE_LIBRDKAFKA 
 
 DEPENDENT_LIBRARIES =
 
