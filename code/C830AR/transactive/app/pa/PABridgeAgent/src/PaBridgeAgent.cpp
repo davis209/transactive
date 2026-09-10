@@ -74,16 +74,10 @@ namespace TA_IRS_App
 
     void PaBridgeAgent::loadConfiguration()
     {
-        m_paAgentEntityName = TA_Base_Core::RunParams::getInstance().get("PaAgentEntityName");
+        m_paAgentEntityName = TA_Base_Core::RunParams::getInstance().get("--pa-agent-name");
         if (m_paAgentEntityName.empty())
         {
-            m_paAgentEntityName = TA_Base_Core::RunParams::getInstance().get("PAAgentEntityName");
-        }
-
-        m_paAgentLocationKey = getUnsignedRunParam("PaAgentLocationKey", 0);
-        if (m_paAgentLocationKey == 0)
-        {
-            m_paAgentLocationKey = getUnsignedRunParam("LocationKey", 0);
+            m_paAgentEntityName = TA_Base_Core::RunParams::getInstance().get("OccPaAgent");
         }
 
         if (m_paAgentLocationKey == 0 && m_genericAgent != 0)
@@ -95,9 +89,9 @@ namespace TA_IRS_App
             }
         }
 
-        m_restPort = static_cast<unsigned short>(getUnsignedRunParam("RestPort", 8088));
+        m_restPort = static_cast<unsigned short>(getUnsignedRunParam("--rest-port", 8088));
 
-        m_kafkaTopicPrefix = TA_Base_Core::RunParams::getInstance().get("KafkaTopicPrefix");
+        m_kafkaTopicPrefix = TA_Base_Core::RunParams::getInstance().get("--kafka-topic-prefix");
         if (m_kafkaTopicPrefix.empty())
         {
             m_kafkaTopicPrefix = "pa";
@@ -105,11 +99,11 @@ namespace TA_IRS_App
 
         if (m_paAgentEntityName.empty())
         {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --PaAgentEntityName"));
+            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --pa-agent-name"));
         }
         if (m_paAgentLocationKey == 0)
         {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --PaAgentLocationKey or a configured agent location"));
+            TA_THROW(TA_Base_Core::TransactiveException("Failed to get location Id"));
         }
 
         loadAuthenticationConfiguration();
@@ -117,62 +111,40 @@ namespace TA_IRS_App
 
     void PaBridgeAgent::loadAuthenticationConfiguration()
     {
-        m_sessionUserKey = getUnsignedRunParam("PaBridgeUserKey", 0);
-        if (m_sessionUserKey == 0)
-        {
-            m_sessionUserKey = getUnsignedRunParam("PaBridgeOperatorKey", 0);
-        }
-        if (m_sessionUserKey == 0)
-        {
-            m_sessionUserKey = getUnsignedRunParam("UserKey", 0);
-        }
+        m_sessionUserKey = getUnsignedRunParam("--user-id", 0);
 
-        m_sessionProfileKey = getUnsignedRunParam("PaBridgeProfileKey", 0);
-        if (m_sessionProfileKey == 0)
-        {
-            m_sessionProfileKey = getUnsignedRunParam("ProfileKey", 0);
-        }
+		m_sessionPassword = getStringRunParam("--user-pwd");
 
-        m_sessionLocationKey = getUnsignedRunParam("PaBridgeLocationKey", 0);
-        if (m_sessionLocationKey == 0)
-        {
-            m_sessionLocationKey = getUnsignedRunParam("LocationKey", m_paAgentLocationKey);
-        }
+        m_sessionProfileKey = getUnsignedRunParam("--profile-id", 0);
+
+        m_sessionLocationKey = m_paAgentLocationKey;
 
         const std::string hostname = TA_Base_Core::Hostname::getHostname();
-        std::unique_ptr<TA_Base_Core::IConsole> console(
-            TA_Base_Core::ConsoleAccessFactory::getInstance().getConsoleFromAddress(hostname));
+        std::unique_ptr<TA_Base_Core::IConsole> console(TA_Base_Core::ConsoleAccessFactory::getInstance().getConsoleFromAddress(hostname));
         m_sessionConsoleId = console->getKey();
+
         LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,
             "PABridgeAgent resolved hostname %s to console key %lu",
             hostname.c_str(), m_sessionConsoleId);
 
-        m_sessionPassword = getStringRunParam("PaBridgePassword");
-        if (m_sessionPassword.empty())
-        {
-            m_sessionPassword = getStringRunParam("Password");
-        }
-
         if (m_sessionUserKey == 0)
         {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --PaBridgeUserKey or --PaBridgeOperatorKey"));
+            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --user-id"));
         }
         if (m_sessionProfileKey == 0)
         {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --PaBridgeProfileKey"));
+            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --profile-id"));
         }
-        if (m_sessionLocationKey == 0)
-        {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --PaBridgeLocationKey or --LocationKey"));
-        }
-        if (m_sessionConsoleId == 0)
-        {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent could not resolve a console for the local hostname"));
-        }
+
         if (m_sessionPassword.empty())
         {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --PaBridgePassword"));
+            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --user-pwd"));
         }
+
+		if (m_sessionConsoleId == 0)
+		{
+			TA_THROW(TA_Base_Core::TransactiveException("Add a console-type entity in DB for this local host"));
+		}
     }
 
     unsigned long PaBridgeAgent::getUnsignedRunParam(const std::string& name, unsigned long defaultValue) const
@@ -333,7 +305,7 @@ namespace TA_IRS_App
 
     KafkaProducerPtr PaBridgeAgent::createKafkaProducer() const
     {
-        const std::string bootstrapServers = TA_Base_Core::RunParams::getInstance().get("KafkaBootstrapServers");
+        const std::string bootstrapServers = TA_Base_Core::RunParams::getInstance().get("--kafka-servers");
 #if defined(USE_LIBRDKAFKA)
         if (!bootstrapServers.empty())
         {
@@ -347,7 +319,7 @@ namespace TA_IRS_App
         }
 #endif
 
-        const std::string spoolFile = TA_Base_Core::RunParams::getInstance().get("KafkaSpoolFile");
+        const std::string spoolFile = TA_Base_Core::RunParams::getInstance().get("--kafka-spool-file");
         if (!spoolFile.empty())
         {
             return KafkaProducerPtr(new FileKafkaProducer(spoolFile));
