@@ -4,7 +4,7 @@ PABridgeAgent bridges the existing PAAgent interface for Web PA clients.
 
 It does not require PAAgent code changes. It subscribes to the existing `PAAgentComms`
 messages and exposes selected PAAgent CORBA methods as JSON REST endpoints.
-JSON parsing and serialisation are handled by `code/C830AR/cots/nlohmann-json/json.hpp`.
+JSON parsing and serialisation are handled by the bundled `src/json.hpp`.
 
 ## Run parameters
 

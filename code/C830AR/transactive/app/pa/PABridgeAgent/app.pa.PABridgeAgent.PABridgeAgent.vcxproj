@@ -108,7 +108,7 @@
       <PreprocessorDefinitions>NOMINMAX;_CONSOLE;WIN32_LEAN_AND_MEAN;TA_PP_USE_PCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>../../../../cots/nlohmann-json;../../../../cots/cpp-httplib;../../../../cots/librdkafka/librdkafka-2.8.0/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../cots/librdkafka/librdkafka-2.8.0/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>

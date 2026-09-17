@@ -24,8 +24,6 @@ PROJ_IDL_INC    = $(PROJ_ROOT_DIR)/code/transactive $(PROJ_ROOT_DIR)/sdk/idl/tra
 PROJ_INC_DIR    = ./src \
                 $(PROJ_ROOT_DIR)/code/transactive \
                 $(PROJ_ROOT_DIR)/sdk/include/transactive \
-                $(PROJ_ROOT_DIR)/code/cots/cpp-httplib \
-                $(PROJ_ROOT_DIR)/code/cots/nlohmann-json \
                 $(PROJ_ROOT_DIR)/code/cots/librdkafka/librdkafka-2.8.0/src
 PROJ_OUT_DIR    = $(PROJ_ROOT_DIR)/bin/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG)
 PROJ_LIB_DIRS   = $(PROJ_ROOT_DIR)/sdk/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG) \
