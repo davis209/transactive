@@ -8,19 +8,18 @@ JSON parsing and serialisation are handled by the bundled `src/json.hpp`.
 
 ## Run parameters
 
-- `--PaAgentEntityName=<entity>`: PAAgent entity name used for CORBA resolution.
-- `--PaAgentLocationKey=<key>`: location/region key used to subscribe to local PAAgent messages.
-- `--PaBridgeUserKey=<key>` or `--PaBridgeOperatorKey=<key>`: operator/user key used to request the bridge session.
-- `--PaBridgeProfileKey=<key>`: profile key used to request the bridge session.
-- `--PaBridgeLocationKey=<key>`: location key used to request the bridge session. Defaults to `--LocationKey` or the PAAgent location key when available.
+- `--pa-agent-name=<entity>`: PAAgent entity name used for CORBA resolution. This is required unless the legacy `OccPaAgent` run parameter supplies the entity name.
+- The PAAgent location is read from the bridge agent's entity configuration and is used to subscribe to local PAAgent messages and request the bridge session.
+- `--user-id=<key>`: required operator/user key used to request the bridge session.
+- `--profile-id=<key>`: required profile key used to request the bridge session.
 - The console/workstation key is resolved from the local hostname. The hostname must
   match exactly one undeleted `Console` entity's `address` in the database.
-- `--PaBridgePassword=<password>`: password used to authenticate the bridge session.
-- `--RestPort=<port>`: REST listen port, default `8088`.
-- Kafka topic prefix is fixed as `pa`.
-- `--KafkaBootstrapServers=<host:port,...>`: enables Kafka publishing through
+- `--user-pwd=<password>`: required password used to authenticate the bridge session.
+- `--rest-port=<port>`: REST listen port; default `8088`.
+- `--kafka-topic-prefix=<prefix>`: Kafka topic prefix; default `pa`.
+- `--kafka-servers=<host:port,...>`: enables Kafka publishing through
   `code/C830AR/cots/librdkafka`.
-- `--KafkaSpoolFile=<path>`: optional fallback that writes Kafka-style records to a file
+- `--kafka-spool-file=<path>`: optional fallback that writes Kafka-style records to a file
   when no Kafka bootstrap server is configured.
 
 PABridgeAgent keeps retrying until it obtains a real Authentication session and
