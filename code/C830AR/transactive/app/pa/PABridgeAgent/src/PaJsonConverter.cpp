@@ -7,14 +7,8 @@
 
 namespace
 {
-    std::string number(unsigned long value)
-    {
-        std::ostringstream out;
-        out << value;
-        return out.str();
-    }
-
-    std::string number(long value)
+    template <typename T>
+    std::string number(T value)
     {
         std::ostringstream out;
         out << value;
