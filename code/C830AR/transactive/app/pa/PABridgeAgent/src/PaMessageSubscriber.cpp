@@ -22,14 +22,13 @@ namespace TA_IRS_App
 
     void PaMessageSubscriber::subscribe()
     {
-        TA_Base_Core::MessageSubscriptionManager& manager = TA_Base_Core::MessageSubscriptionManager::getInstance();
-        manager.unsubscribeToMessages(this);
+        TA_Base_Core::MessageSubscriptionManager::getInstance().unsubscribeToMessages(this);
 
-        manager.subscribeToCommsMessage(TA_Base_Core::PAAgentComms::BroadcastProgressUpdate, this, 0, 0, m_locationKey);
-        manager.subscribeToCommsMessage(TA_Base_Core::PAAgentComms::CurrentBroadcastsUpdate, this, 0, 0, m_locationKey);
-        manager.subscribeToCommsMessage(TA_Base_Core::PAAgentComms::DvaMessagesUpdate, this, 0, 0, m_locationKey);
-        manager.subscribeToCommsMessage(TA_Base_Core::PAAgentComms::DvaVersionsUpdate, this, 0, 0, m_locationKey);
-        manager.subscribeToCommsMessage(TA_Base_Core::PAAgentComms::PrioritySchemeUpdate, this, 0, 0, m_locationKey);
+        TA_Base_Core::MessageSubscriptionManager::getInstance().subscribeToCommsMessage(TA_Base_Core::PAAgentComms::BroadcastProgressUpdate, this, 0, 0, m_locationKey);
+        TA_Base_Core::MessageSubscriptionManager::getInstance().subscribeToCommsMessage(TA_Base_Core::PAAgentComms::CurrentBroadcastsUpdate, this, 0, 0, m_locationKey);
+        TA_Base_Core::MessageSubscriptionManager::getInstance().subscribeToCommsMessage(TA_Base_Core::PAAgentComms::DvaMessagesUpdate, this, 0, 0, m_locationKey);
+        TA_Base_Core::MessageSubscriptionManager::getInstance().subscribeToCommsMessage(TA_Base_Core::PAAgentComms::DvaVersionsUpdate, this, 0, 0, m_locationKey);
+        TA_Base_Core::MessageSubscriptionManager::getInstance().subscribeToCommsMessage(TA_Base_Core::PAAgentComms::PrioritySchemeUpdate, this, 0, 0, m_locationKey);
     }
 
     void PaMessageSubscriber::unsubscribe()
