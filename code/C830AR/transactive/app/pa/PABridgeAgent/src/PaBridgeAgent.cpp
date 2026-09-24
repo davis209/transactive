@@ -120,7 +120,7 @@ namespace TA_IRS_App
         m_sessionLocationKey = m_paAgentLocationKey;
 
         const std::string hostname = TA_Base_Core::Hostname::getHostname();
-        std::unique_ptr<TA_Base_Core::IConsole> console(TA_Base_Core::ConsoleAccessFactory::getInstance().getConsoleFromAddress(hostname));
+        std::unique_ptr<TA_Base_Core::IConsole> console(TA_Base_Core::ConsoleAccessFactory::getInstance().getConsole(hostname));
         m_sessionConsoleId = console->getKey();
 
         LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,
