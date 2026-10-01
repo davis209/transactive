@@ -76,15 +76,15 @@ def set_table_geometry(table, widths):
             cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
 
 
-def add_page_number(paragraph):
+def add_page_number(paragraph, product_name="PABridgeAgent"):
     paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    paragraph.add_run("PABridgeAgent  |  ").font.color.rgb = RGBColor.from_string(MUTED)
+    paragraph.add_run(product_name + "  |  ").font.color.rgb = RGBColor.from_string(MUTED)
     field = OxmlElement("w:fldSimple")
     field.set(qn("w:instr"), "PAGE")
     paragraph._p.append(field)
 
 
-def configure_document(doc, title):
+def configure_document(doc, title, product_name="PABridgeAgent"):
     section = doc.sections[0]
     section.top_margin = Inches(0.85)
     section.bottom_margin = Inches(0.8)
@@ -133,7 +133,7 @@ def configure_document(doc, title):
     header.runs[0].font.size = Pt(8)
     header.runs[0].font.color.rgb = RGBColor.from_string(MUTED)
     footer = section.footer.paragraphs[0]
-    add_page_number(footer)
+    add_page_number(footer, product_name)
 
 
 def add_code_block(doc, lines):
@@ -199,12 +199,12 @@ def add_text_paragraph(doc, line):
             run.bold = True
 
 
-def build_docx(source, target):
+def build_docx(source, target, product_name="PABridgeAgent"):
     with open(source, "r", encoding="utf-8") as handle:
         lines = handle.read().splitlines()
     title = next((line[2:].strip() for line in lines if line.startswith("# ")), os.path.basename(source))
     doc = Document()
-    configure_document(doc, title)
+    configure_document(doc, title, product_name)
     i = 0
     first_title = True
     while i < len(lines):
@@ -222,6 +222,7 @@ def build_docx(source, target):
         elif re.match(r"^#{1,3}\s+", line):
             level = len(line) - len(line.lstrip("#"))
             text = line[level:].strip()
+            text = re.sub(r"`([^`]+)`", r"\1", text).replace("**", "")
             if level == 1 and first_title:
                 p = doc.add_paragraph(style="Title")
                 p.add_run(text)
@@ -250,17 +251,29 @@ def build_docx(source, target):
 
 
 def main():
-    if len(sys.argv) != 2:
-        raise SystemExit("Usage: build_pabridge_docs.py <docs_directory>")
+    if len(sys.argv) not in (2, 3):
+        raise SystemExit(
+            "Usage: build_pabridge_docs.py <docs_directory> [PABridgeAgent|TISBridgeAgent]"
+        )
     directory = sys.argv[1]
-    pairs = (
-        ("PABridgeAgent_Kafka_Integration.md", "PABridgeAgent_Kafka_Integration.docx"),
-        ("PABridgeAgent_Kafka_Integration_EN.md", "PABridgeAgent_Kafka_Integration_EN.docx"),
-        ("PABridgeAgent_REST_API.md", "PABridgeAgent_REST_API.docx"),
-        ("PABridgeAgent_REST_API_EN.md", "PABridgeAgent_REST_API_EN.docx"),
+    product_name = sys.argv[2] if len(sys.argv) == 3 else "PABridgeAgent"
+    if product_name not in ("PABridgeAgent", "TISBridgeAgent"):
+        raise SystemExit("Unsupported product: " + product_name)
+    pairs = tuple(
+        (name + ".md", name + ".docx")
+        for name in (
+            product_name + "_Kafka_Integration",
+            product_name + "_Kafka_Integration_EN",
+            product_name + "_REST_API",
+            product_name + "_REST_API_EN",
+        )
     )
     for source, target in pairs:
-        build_docx(os.path.join(directory, source), os.path.join(directory, target))
+        build_docx(
+            os.path.join(directory, source),
+            os.path.join(directory, target),
+            product_name,
+        )
         print(target)
 
 
