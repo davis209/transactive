@@ -23,12 +23,10 @@ PROJ_TYPE       = exe
 PROJ_IDL_INC    = $(PROJ_ROOT_DIR)/code/transactive $(PROJ_ROOT_DIR)/sdk/idl/transactive
 PROJ_INC_DIR    = ./src \
                 $(PROJ_ROOT_DIR)/code/transactive \
-                $(PROJ_ROOT_DIR)/sdk/include/transactive \
-                $(PROJ_ROOT_DIR)/code/cots/librdkafka/librdkafka-2.8.0/src
+                $(PROJ_ROOT_DIR)/sdk/include/transactive
 PROJ_OUT_DIR    = $(PROJ_ROOT_DIR)/bin/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG)
 PROJ_LIB_DIRS   = $(PROJ_ROOT_DIR)/sdk/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG) \
-                $(PROJ_ROOT_DIR)/build/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG) \
-                $(PROJ_ROOT_DIR)/code/cots/librdkafka/librdkafka-2.8.0/src
+                $(PROJ_ROOT_DIR)/build/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG)
 
 PROJ_LIBS       = \
                 rdkafka \
@@ -39,12 +37,13 @@ PROJ_LIBS       = \
                 TA_ScadaCommonLib \
                 TA_DataPointLibrary \
                 TA_DataNodeLibrary \
-                TA_TISManagerCorbaDef_4669 \
                 TA_AuthenticationLibrary \
                 TA_AuthenticationCorbaDef \
                 TA_Message \
                 TA_MessageCorbaDef \
                 TA_CorbaUtil \
+		TA_TISManagerCorbaDef_4669 \
+		TA_TISAgentCorbaDef_4669 \
                 TA_Utilities \
                 TA_Version \
                 TA_Thread \
@@ -66,7 +65,27 @@ PROJ_LIBS       = \
                 clntsh \
                 mysqlcppconn \
                 mysqlclient \
-                ACE
+                ACE \
+                TA_DerivedDataPointDAI \
+                TA_EventTriggeredPlans \
+                TA_Alarm \
+                TA_TrainAgentCorba \
+                TA_TrainCorbaProxy \
+                TA_EventProcessing \
+                TA_PlanAgentLibrary \
+                TA_PlanBridgeLib \
+                TA_PlanAgentCorbaDef \
+                TA_PlanDAI \
+                TA_AlarmAgentCorbaDef \
+                TA_EntityStatusUpdateCorbaDef \
+                TA_Event \
+                TA_PrintDai \
+                TA_VideoSwitchAgentDAI \
+                TA_AlarmRuleDAI \
+                TA_PlanAgentDataCorbaDef \
+                TA_PlanDataAccess \
+                TA_PlanManagerCorbaDef \
+                TA_EventAgentCorbaDef
 
 PROJ_CFLAGS     = -DTA_ASSERT_LOG=1 -DUSE_LIBRDKAFKA
 
