@@ -29,9 +29,14 @@ namespace TA_IRS_App
           m_stopSessionRetry(false),
           m_sessionRetryRunning(false)
     {
+		LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo, "new generic agent");
         m_genericAgent = new TA_Base_Bus::GenericAgent(argc, argv, this);
+
+		LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo, "new authentication library");
         m_authenticationLibrary.reset(new TA_Base_Bus::AuthenticationLibrary());
         m_agentName = TA_Base_Core::RunParams::getInstance().get(RPARAM_ENTITYNAME);
+
+		LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo, "load config");
         loadConfiguration();
     }
 
@@ -56,17 +61,18 @@ namespace TA_IRS_App
 
     void PaBridgeAgent::startPaBridgeAgent()
     {
-        const std::string operationMode = TA_Base_Core::RunParams::getInstance().get(RPARAM_OPERATIONMODE);
-        if (RPARAM_CONTROL == operationMode)
-        {
-            agentSetControl();
-        }
-        else
-        {
-            agentSetMonitor();
-        }
-
-        if (m_genericAgent != 0)
+		try
+		{
+			LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,"begin to start bridge serivce");
+			startBridgeServices();
+			LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo, "end to start bridge serivce");
+		}
+		catch (...)
+		{
+			LOG_EXCEPTION_CATCH(SourceInfo, "Unknown Exception", "Caught unknown exception");
+		}
+		
+		if (m_genericAgent != 0)
         {
             m_genericAgent->run();
         }
@@ -377,7 +383,6 @@ namespace TA_IRS_App
             return;
         }
         m_operationMode = TA_Base_Core::Monitor;
-        startBridgeServices();
     }
 
     void PaBridgeAgent::agentSetControl()
@@ -387,7 +392,6 @@ namespace TA_IRS_App
             return;
         }
         m_operationMode = TA_Base_Core::Control;
-        startBridgeServices();
     }
 
     void PaBridgeAgent::agentTerminate()
