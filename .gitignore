@@ -5,6 +5,7 @@
 .ipch
 *.zip
 *.7z
+*.rar
 *.iso
 *.bak
 .vs/
