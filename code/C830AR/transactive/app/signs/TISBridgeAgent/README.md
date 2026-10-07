@@ -11,8 +11,8 @@ ID. Business endpoints return HTTP 503 while authentication is unavailable.
 
 ## Run parameters
 
-- `--stis-agent-name=<entity>`: STIS servant entity name.
-- `--ttis-agent-name=<entity>`: TTIS servant entity name.
+- `--stis-agent-name=<entity>`: STIS servant entity name. Optional when `--ttis-agent-name` is provided.
+- `--ttis-agent-name=<entity>`: TTIS servant entity name. Optional when `--stis-agent-name` is provided.
 - `--user-id=<key>`: operator key used by the bridge session.
 - `--profile-id=<key>`: profile key used by the bridge session.
 - `--user-pwd=<password>`: password used by the bridge session.
@@ -23,6 +23,11 @@ ID. Business endpoints return HTTP 503 while authentication is unavailable.
 
 The location is read from the TISBridgeAgent entity. The console key is resolved
 from the local hostname in the same way as PABridgeAgent.
+
+At least one TIS agent name must be configured. When only one is provided, the
+bridge uses that entity name for both the STIS and TTIS CORBA interfaces. When
+both are provided, each interface continues to use its explicitly configured
+entity name.
 
 ## Documents
 

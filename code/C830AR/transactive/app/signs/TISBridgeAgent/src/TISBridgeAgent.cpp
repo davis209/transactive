@@ -74,8 +74,13 @@ namespace TA_IRS_App
     {
         m_stisEntityName = getStringRunParam("--stis-agent-name");
         m_ttisEntityName = getStringRunParam("--ttis-agent-name");
-        if (m_stisEntityName.empty()) TA_THROW(TA_Base_Core::TransactiveException("TISBridgeAgent requires --stis-agent-name"));
-        if (m_ttisEntityName.empty()) TA_THROW(TA_Base_Core::TransactiveException("TISBridgeAgent requires --ttis-agent-name"));
+        if (m_stisEntityName.empty() && m_ttisEntityName.empty())
+        {
+            TA_THROW(TA_Base_Core::TransactiveException(
+                "TISBridgeAgent requires --stis-agent-name or --ttis-agent-name"));
+        }
+        if (m_stisEntityName.empty()) m_stisEntityName = m_ttisEntityName;
+        if (m_ttisEntityName.empty()) m_ttisEntityName = m_stisEntityName;
 
         if (m_genericAgent != 0)
         {
