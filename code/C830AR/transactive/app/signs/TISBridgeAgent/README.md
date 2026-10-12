@@ -11,8 +11,6 @@ ID. Business endpoints return HTTP 503 while authentication is unavailable.
 
 ## Run parameters
 
-- `--stis-agent-name=<entity>`: STIS servant entity name. Optional when `--ttis-agent-name` is provided.
-- `--ttis-agent-name=<entity>`: TTIS servant entity name. Optional when `--stis-agent-name` is provided.
 - `--user-id=<key>`: operator key used by the bridge session.
 - `--profile-id=<key>`: profile key used by the bridge session.
 - `--user-pwd=<password>`: password used by the bridge session.
@@ -20,6 +18,10 @@ ID. Business endpoints return HTTP 503 while authentication is unavailable.
 - `--kafka-topic-prefix=<prefix>`: Kafka topic prefix, default `tis`.
 - `--kafka-servers=<host:port,...>`: Kafka bootstrap servers.
 - `--kafka-spool-file=<path>`: optional file fallback for Kafka-style records.
+
+The STIS and TTIS servants are resolved automatically from the database for
+the TISBridgeAgent location, using the same discovery mechanism as STISManager
+and TTISManager.
 
 The location is read from the TISBridgeAgent entity. The console key is resolved
 from the local hostname in the same way as PABridgeAgent.

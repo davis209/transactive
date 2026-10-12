@@ -80,8 +80,6 @@ namespace TA_IRS_App
         std::unique_ptr<TA_Base_Bus::AuthenticationLibrary> m_authenticationLibrary;
         TA_Base_Core::EOperationMode m_operationMode;
         std::string m_agentName;
-        std::string m_stisEntityName;
-        std::string m_ttisEntityName;
         unsigned long m_locationKey;
         unsigned short m_restPort;
         std::string m_kafkaTopicPrefix;

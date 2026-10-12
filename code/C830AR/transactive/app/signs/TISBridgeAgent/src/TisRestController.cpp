@@ -34,11 +34,9 @@ namespace
 
 namespace TA_IRS_App
 {
-    TisRestController::TisRestController(const std::string& stisEntityName,
-                                         const std::string& ttisEntityName,
-                                         SessionIdProvider sessionIdProvider)
-        : m_stisAgent(stisEntityName, true),
-          m_ttisAgent(ttisEntityName, true),
+    TisRestController::TisRestController(SessionIdProvider sessionIdProvider)
+        : m_stisAgent(TA_Base_Bus::TISAgentAccessFactory::getInstance().getSTISAgent()),
+          m_ttisAgent(TA_Base_Bus::TISAgentAccessFactory::getInstance().getTTISAgent()),
           m_sessionIdProvider(sessionIdProvider)
     {
     }

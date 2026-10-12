@@ -72,16 +72,6 @@ namespace TA_IRS_App
 
     void TISBridgeAgent::loadConfiguration()
     {
-        m_stisEntityName = getStringRunParam("--stis-agent-name");
-        m_ttisEntityName = getStringRunParam("--ttis-agent-name");
-        if (m_stisEntityName.empty() && m_ttisEntityName.empty())
-        {
-            TA_THROW(TA_Base_Core::TransactiveException(
-                "TISBridgeAgent requires --stis-agent-name or --ttis-agent-name"));
-        }
-        if (m_stisEntityName.empty()) m_stisEntityName = m_ttisEntityName;
-        if (m_ttisEntityName.empty()) m_ttisEntityName = m_stisEntityName;
-
         if (m_genericAgent != 0)
         {
             TA_Base_Core::IEntityDataPtr data = m_genericAgent->getAgentEntityConfiguration();
@@ -247,14 +237,14 @@ namespace TA_IRS_App
         m_kafkaProducer = createKafkaProducer();
         m_messageSubscriber.reset(new TisMessageSubscriber(m_locationKey, m_kafkaProducer, m_kafkaTopicPrefix));
         m_messageSubscriber->subscribe();
-        m_restController.reset(new TisRestController(m_stisEntityName, m_ttisEntityName,
+        m_restController.reset(new TisRestController(
             [this]() { return getBridgeSessionId(); }));
         m_restServer.reset(new TisRestServer(m_restPort, *m_restController));
         m_restServer->start();
 
         LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,
-            "TISBridgeAgent started. stis=%s ttis=%s location=%lu restPort=%u kafkaTopicPrefix=%s",
-            m_stisEntityName.c_str(), m_ttisEntityName.c_str(), m_locationKey, m_restPort, m_kafkaTopicPrefix.c_str());
+            "TISBridgeAgent started. location=%lu restPort=%u kafkaTopicPrefix=%s",
+            m_locationKey, m_restPort, m_kafkaTopicPrefix.c_str());
     }
 
     void TISBridgeAgent::stopBridgeServices()

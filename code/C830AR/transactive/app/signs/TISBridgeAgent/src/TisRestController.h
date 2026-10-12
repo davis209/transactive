@@ -6,6 +6,7 @@
 
 #include "bus/signs_4669/TisManagerCorbaDef/src/ISTISManagerCorbaDef.h"
 #include "bus/signs_4669/TisManagerCorbaDef/src/ITTISManagerCorbaDef.h"
+#include "bus/signs_4669/tis_agent_access/src/TISAgentAccessFactory.h"
 #include "core/naming/src/NamedObject.h"
 
 namespace TA_IRS_App
@@ -23,9 +24,7 @@ namespace TA_IRS_App
     public:
         typedef std::function<std::string()> SessionIdProvider;
 
-        TisRestController(const std::string& stisEntityName,
-                          const std::string& ttisEntityName,
-                          SessionIdProvider sessionIdProvider);
+        explicit TisRestController(SessionIdProvider sessionIdProvider);
 
         std::string handle(const std::string& method, const std::string& path, const std::string& body, int& statusCode);
 
@@ -36,8 +35,8 @@ namespace TA_IRS_App
         TA_Base_Core::TTISFreeTextMessageParameters toTtisFreeText(const std::map<std::string, std::string>& request) const;
         TA_Base_Core::TTISMessageResetParameters toTtisReset(const std::map<std::string, std::string>& request) const;
 
-        STISAgentNamedObject m_stisAgent;
-        TTISAgentNamedObject m_ttisAgent;
+        STISAgentNamedObject& m_stisAgent;
+        TTISAgentNamedObject& m_ttisAgent;
         SessionIdProvider m_sessionIdProvider;
     };
 }

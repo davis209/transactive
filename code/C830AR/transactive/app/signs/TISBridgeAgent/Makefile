@@ -44,6 +44,7 @@ PROJ_LIBS       = \
                 TA_CorbaUtil \
 		TA_TISManagerCorbaDef_4669 \
 		TA_TISAgentCorbaDef_4669 \
+                TA_TISAgentAccess_4669 \
                 TA_Utilities \
                 TA_Version \
                 TA_Thread \
