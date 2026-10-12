@@ -4,7 +4,11 @@
 #include "bus/security/authentication_library/src/AuthenticationLibrary.h"
 
 #include "core/data_access_interface/entity_access/src/ConsoleAccessFactory.h"
+#include "core/data_access_interface/entity_access/src/EntityAccessFactory.h"
 #include "core/data_access_interface/entity_access/src/IEntityData.h"
+#include "core/data_access_interface/entity_access/src/MasterPAAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/StationPAAgentEntityData.h"
+#include "core/data_access_interface/src/LocationAccessFactory.h"
 #include "core/exceptions/src/TransactiveException.h"
 #include "core/message/src/MessageSubscriptionManager.h"
 #include "core/utilities/src/DebugUtil.h"
@@ -80,12 +84,6 @@ namespace TA_IRS_App
 
     void PaBridgeAgent::loadConfiguration()
     {
-        m_paAgentEntityName = TA_Base_Core::RunParams::getInstance().get("--pa-agent-name");
-        if (m_paAgentEntityName.empty())
-        {
-            m_paAgentEntityName = "OccPaAgent";
-        }
-
         if (m_paAgentLocationKey == 0 && m_genericAgent != 0)
         {
             TA_Base_Core::IEntityDataPtr agentEntityData = m_genericAgent->getAgentEntityConfiguration();
@@ -103,14 +101,37 @@ namespace TA_IRS_App
             m_kafkaTopicPrefix = "pa";
         }
 
-        if (m_paAgentEntityName.empty())
-        {
-            TA_THROW(TA_Base_Core::TransactiveException("PABridgeAgent requires --pa-agent-name"));
-        }
         if (m_paAgentLocationKey == 0)
         {
             TA_THROW(TA_Base_Core::TransactiveException("Failed to get location Id"));
         }
+
+        std::string paAgentType = TA_Base_Core::StationPAAgentEntityData::getStaticType();
+        TA_Base_Core::LocationAccessFactory& locationAccessFactory =
+            TA_Base_Core::LocationAccessFactory::getInstance();
+        if (m_paAgentLocationKey == locationAccessFactory.getOccLocationKey() ||
+            m_paAgentLocationKey == locationAccessFactory.getBoccLocationKeyOptional().value_or(0))
+        {
+            paAgentType = TA_Base_Core::MasterPAAgentEntityData::getStaticType();
+        }
+
+        const TA_Base_Core::CorbaNameList paAgents =
+            TA_Base_Core::EntityAccessFactory::getInstance().getCorbaNamesOfTypeAtLocation(
+                paAgentType, m_paAgentLocationKey, true);
+        if (paAgents.size() != 1)
+        {
+            LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugError,
+                "Expected one %s at location %lu, found %lu",
+                paAgentType.c_str(), m_paAgentLocationKey,
+                static_cast<unsigned long>(paAgents.size()));
+            TA_THROW(TA_Base_Core::TransactiveException(
+                "Failed to resolve a unique PAAgent from the database"));
+        }
+        m_paAgentEntityName = paAgents.front().getAgentName();
+
+        LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,
+            "PABridgeAgent resolved %s entity %s at location %lu",
+            paAgentType.c_str(), m_paAgentEntityName.c_str(), m_paAgentLocationKey);
 
         loadAuthenticationConfiguration();
     }

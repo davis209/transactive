@@ -8,8 +8,7 @@ JSON parsing and serialisation are handled by the bundled `src/json.hpp`.
 
 ## Run parameters
 
-- `--pa-agent-name=<entity>`: PAAgent entity name used for CORBA resolution. This is required unless the legacy `OccPaAgent` run parameter supplies the entity name.
-- The PAAgent location is read from the bridge agent's entity configuration and is used to subscribe to local PAAgent messages and request the bridge session.
+- The PAAgent location is read from the bridge agent's entity configuration. At OCC or BOCC, the bridge resolves the unique `MasterPAAgent` at that location from the database. At a station or depot, it resolves the unique local `StationPAAgent`. The same location is used to subscribe to PAAgent messages and request the bridge session.
 - `--user-id=<key>`: required operator/user key used to request the bridge session.
 - `--profile-id=<key>`: required profile key used to request the bridge session.
 - The console/workstation key is resolved from the local hostname. The hostname must
