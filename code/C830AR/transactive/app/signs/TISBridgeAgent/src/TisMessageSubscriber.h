@@ -21,7 +21,7 @@ namespace TA_IRS_App
         virtual void receiveSpecialisedMessage(const TA_Base_Core::CommsMessageCorbaDef& message);
 
     private:
-        void publishMessage(const std::string& messageName, const std::string& key, const std::string& payload);
+        void publishMessage(const std::string& messageName, const std::string& payload);
 
         unsigned long m_locationKey;
         TisKafkaProducerPtr m_producer;

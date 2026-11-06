@@ -1,6 +1,7 @@
 #include "PaMessageSubscriber.h"
 
 #include "PaJsonConverter.h"
+#include "JsonUtil.h"
 
 #include "core/message/src/MessageSubscriptionManager.h"
 #include "core/message/types/PAAgentComms_MessageTypes.h"
@@ -53,7 +54,7 @@ namespace TA_IRS_App
                 const TA_Base_Bus::IPAAgentCorbaDef::BroadcastProgressUpdateData* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("BroadcastProgressUpdate", data->broadcastId.in(), PaJsonConverter::toJson(*data));
+                    publishMessage("BroadcastProgressUpdate", PaJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::PAAgentComms::CurrentBroadcastsUpdate.getTypeKey())
@@ -61,7 +62,7 @@ namespace TA_IRS_App
                 const TA_Base_Bus::IPAAgentCorbaDef::CurrentBroadcastsUpdateData* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("CurrentBroadcastsUpdate", data->toBroadcastId.in(), PaJsonConverter::toJson(*data));
+                    publishMessage("CurrentBroadcastsUpdate", PaJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::PAAgentComms::DvaMessagesUpdate.getTypeKey())
@@ -69,7 +70,7 @@ namespace TA_IRS_App
                 const TA_Base_Bus::IPAAgentCorbaDef::DvaMessagesUpdateData* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("DvaMessagesUpdate", "", PaJsonConverter::toJson(*data));
+                    publishMessage("DvaMessagesUpdate", PaJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::PAAgentComms::DvaVersionsUpdate.getTypeKey())
@@ -79,15 +80,15 @@ namespace TA_IRS_App
                 const TA_Base_Bus::IPAAgentCorbaDef::DvaPrivateVersionRecords* privateData = 0;
                 if ((message.messageState >>= allData) != 0)
                 {
-                    publishMessage("DvaVersionsUpdate", "", PaJsonConverter::toJson(*allData));
+                    publishMessage("DvaVersionsUpdate", PaJsonConverter::toJson(*allData));
                 }
                 else if ((message.messageState >>= publicData) != 0)
                 {
-                    publishMessage("DvaPublicVersionsUpdate", "", PaJsonConverter::toJson(*publicData));
+                    publishMessage("DvaPublicVersionsUpdate", PaJsonConverter::toJson(*publicData));
                 }
                 else if ((message.messageState >>= privateData) != 0)
                 {
-                    publishMessage("DvaPrivateVersionsUpdate", "", PaJsonConverter::toJson(*privateData));
+                    publishMessage("DvaPrivateVersionsUpdate", PaJsonConverter::toJson(*privateData));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::PAAgentComms::PrioritySchemeUpdate.getTypeKey())
@@ -95,7 +96,7 @@ namespace TA_IRS_App
                 const TA_Base_Bus::IPAAgentCorbaDef::PriorityScheme* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("PrioritySchemeUpdate", "", PaJsonConverter::toJson(*data));
+                    publishMessage("PrioritySchemeUpdate", PaJsonConverter::toJson(*data));
                 }
             }
         }
@@ -106,12 +107,15 @@ namespace TA_IRS_App
         }
     }
 
-    void PaMessageSubscriber::publishMessage(const std::string& messageName, const std::string& key, const std::string& payload)
+    void PaMessageSubscriber::publishMessage(const std::string& messageName, const std::string& payload)
     {
-        const std::string topic = m_topicPrefix.empty() ? messageName : (m_topicPrefix + "." + messageName);
+        const std::string topic = m_topicPrefix.empty() ? "events" : (m_topicPrefix + ".events");
         if (m_producer.get() != 0)
         {
-            m_producer->publish(topic, key, payload);
+            m_producer->publish(topic, "", JsonUtil::object({
+                JsonUtil::property("eventType", messageName),
+                JsonUtil::property("payload", payload, true)
+            }));
         }
     }
 }

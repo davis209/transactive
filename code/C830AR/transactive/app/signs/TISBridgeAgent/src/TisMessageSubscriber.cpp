@@ -7,19 +7,6 @@
 #include "core/message/types/TISComms_MessageTypes.h"
 #include "core/utilities/src/DebugUtil.h"
 
-#include <sstream>
-
-namespace
-{
-    template <typename T>
-    std::string number(T value)
-    {
-        std::ostringstream out;
-        out << value;
-        return out.str();
-    }
-}
-
 namespace TA_IRS_App
 {
     TisMessageSubscriber::TisMessageSubscriber(unsigned long locationKey, TisKafkaProducerPtr producer, const std::string& topicPrefix)
@@ -67,7 +54,7 @@ namespace TA_IRS_App
                 const TA_Base_Core::TTISDisplayResult* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("TrainDisplayResult", number(static_cast<unsigned long>(data->trainId)), TisJsonConverter::toJson(*data));
+                    publishMessage("TrainDisplayResult", TisJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::TISComms::TisTrainDownloadUpdate.getTypeKey())
@@ -75,7 +62,7 @@ namespace TA_IRS_App
                 const TA_Base_Core::TrainDownloadStatus* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("TisTrainDownloadUpdate", number(static_cast<unsigned long>(data->trainNumber)), TisJsonConverter::toJson(*data));
+                    publishMessage("TisTrainDownloadUpdate", TisJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::TISComms::TisTrainDataVersionUpdate.getTypeKey())
@@ -83,7 +70,7 @@ namespace TA_IRS_App
                 const TA_Base_Core::TrainDataVersion* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("TisTrainDataVersionUpdate", number(static_cast<unsigned long>(data->trainNumber)), TisJsonConverter::toJson(*data));
+                    publishMessage("TisTrainDataVersionUpdate", TisJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::TISComms::TisTrainTimeScheduleChange.getTypeKey())
@@ -91,7 +78,7 @@ namespace TA_IRS_App
                 const TA_Base_Core::TimeScheduleChange* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("TisTrainTimeScheduleChange", number(data->timeSchedulePkey), TisJsonConverter::toJson(*data));
+                    publishMessage("TisTrainTimeScheduleChange", TisJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::TISComms::IncomingRATISMessage.getTypeKey())
@@ -99,7 +86,7 @@ namespace TA_IRS_App
                 const TA_Base_Bus::ISTISManagerCorbaDef::IncomingRATISEvent* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("IncomingRATISMessage", number(data->messageID), TisJsonConverter::toJson(*data));
+                    publishMessage("IncomingRATISMessage", TisJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::TISComms::RATISStatusUpdate.getTypeKey())
@@ -107,7 +94,7 @@ namespace TA_IRS_App
                 const TA_Base_Bus::ISTISManagerCorbaDef::RATISMessageApprovalDetails* data = 0;
                 if ((message.messageState >>= data) != 0)
                 {
-                    publishMessage("RATISStatusUpdate", number(data->messageID), TisJsonConverter::toJson(*data));
+                    publishMessage("RATISStatusUpdate", TisJsonConverter::toJson(*data));
                 }
             }
             else if (messageTypeKey == TA_Base_Core::TISComms::RATISVetting.getTypeKey())
@@ -115,7 +102,7 @@ namespace TA_IRS_App
                 CORBA::Boolean enabled = false;
                 if ((message.messageState >>= CORBA::Any::to_boolean(enabled)) != 0)
                 {
-                    publishMessage("RATISVetting", "", TisJsonUtil::object({
+                    publishMessage("RATISVetting", TisJsonUtil::object({
                         TisJsonUtil::property("enabled", enabled ? "true" : "false", true)
                     }));
                 }
@@ -128,9 +115,15 @@ namespace TA_IRS_App
         }
     }
 
-    void TisMessageSubscriber::publishMessage(const std::string& messageName, const std::string& key, const std::string& payload)
+    void TisMessageSubscriber::publishMessage(const std::string& messageName, const std::string& payload)
     {
-        const std::string topic = m_topicPrefix.empty() ? messageName : (m_topicPrefix + "." + messageName);
-        if (m_producer.get() != 0) m_producer->publish(topic, key, payload);
+        const std::string topic = m_topicPrefix.empty() ? "events" : (m_topicPrefix + ".events");
+        if (m_producer.get() != 0)
+        {
+            m_producer->publish(topic, "", TisJsonUtil::object({
+                TisJsonUtil::property("eventType", messageName),
+                TisJsonUtil::property("payload", payload, true)
+            }));
+        }
     }
 }

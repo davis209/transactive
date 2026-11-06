@@ -4,47 +4,27 @@
 
 Browsers should not connect directly to Kafka. The recommended design is for the third-party Web backend to consume Kafka and forward relevant events to browsers through WebSocket or SSE.
 
-## 1. Topic Names
+## 1. Topic and Message Format
 
-The default `--kafka-topic-prefix` is `tis`. Topic names use:
+All seven event types are published to `<prefix>.events`, defaulting to `tis.events`. The prefix is configured using `--kafka-topic-prefix`. A bridge subscribes only to its entity location; use distinct prefixes, such as `tis.occ.events` and `tis.dbg.events`, when the source location must be distinguished.
 
-```text
-<prefix>.<TISComms message name>
+Each Kafka record has an empty-string key. Its UTF-8 JSON value contains `eventType` and the existing `payload`:
+
+```json
+{"eventType":"TrainDisplayResult","payload":{"trainId":1}}
 ```
 
-The seven default topics are:
+Consumers must subscribe to the shared topic and dispatch by `eventType`. Existing consumers of the previous topics and value format must be updated.
 
-```text
-tis.TrainDisplayResult
-tis.TisTrainDownloadUpdate
-tis.TisTrainDataVersionUpdate
-tis.TisTrainTimeScheduleChange
-tis.IncomingRATISMessage
-tis.RATISStatusUpdate
-tis.RATISVetting
-```
+## 2. Kafka Keys and Ordering
 
-Each bridge subscribes only to its entity location. Use a distinct prefix per location when several instances publish to one cluster, for example `tis.occ` and `tis.dbg`. This produces topics such as `tis.occ.TrainDisplayResult`.
-
-## 2. Kafka Keys
-
-The key is a separate Kafka record field and is not part of the topic name.
-
-| Topic suffix | Key |
-|---|---|
-| `TrainDisplayResult` | `trainId` |
-| `TisTrainDownloadUpdate` | `trainNumber` |
-| `TisTrainDataVersionUpdate` | `trainNumber` |
-| `TisTrainTimeScheduleChange` | `timeSchedulePkey` |
-| `IncomingRATISMessage` | `messageId` |
-| `RATISStatusUpdate` | `messageId` |
-| `RATISVetting` | Empty string |
-
-Records with the same key normally reach the same partition, preserving partition order for one train or RATIS message. Consumers must read the topic, key, and JSON value.
+The Kafka key is an empty string for every event, not a train or message ID. The IDs remain in the payload. Partition selection depends on the configured partitioner; ordering is only guaranteed within a partition, and is not guaranteed across partitions.
 
 ## 3. TTIS Events
 
-### `tis.TrainDisplayResult`
+The examples below show only the `payload` field of the Kafka value. Headings are `eventType` values.
+
+### `TrainDisplayResult`
 
 Final train response for a predefined, free-text, or clear command:
 
@@ -60,7 +40,7 @@ Final train response for a predefined, free-text, or clear command:
 
 `originalCommand` is one of `TisPredefinedMessageCommand`, `TisFreeTextMessageCommand`, or `TisClearCommand`. Match the event against the REST response using `timestamp`, command type, and train ID. The bridge Authentication session is not included in the payload.
 
-### `tis.TisTrainDownloadUpdate`
+### `TisTrainDownloadUpdate`
 
 ```json
 {
@@ -73,7 +53,7 @@ Final train response for a predefined, free-text, or clear command:
 
 `type` is one of `LibraryDownloadStart`, `LibraryDownloadFinish`, `LibraryUpgrade`, `ScheduleDownloadStart`, `ScheduleDownloadFinish`, or `ScheduleUpgrade`.
 
-### `tis.TisTrainDataVersionUpdate`
+### `TisTrainDataVersionUpdate`
 
 ```json
 {
@@ -85,7 +65,7 @@ Final train response for a predefined, free-text, or clear command:
 }
 ```
 
-### `tis.TisTrainTimeScheduleChange`
+### `TisTrainTimeScheduleChange`
 
 ```json
 {"timeSchedulePkey":12345,"changeType":"Modified"}
@@ -95,7 +75,7 @@ Final train response for a predefined, free-text, or clear command:
 
 ## 4. STIS/RATIS Events
 
-### `tis.IncomingRATISMessage`
+### `IncomingRATISMessage`
 
 ```json
 {
@@ -110,7 +90,7 @@ This is a notification payload. Retrieve the full text, destination, times, and 
 
 `sessionRef` is a numeric RATIS Call Banner routing reference, not an Authentication `sessionId`.
 
-### `tis.RATISStatusUpdate`
+### `RATISStatusUpdate`
 
 ```json
 {"messageId":1801,"sessionRef":42,"status":"APPROVED"}
@@ -118,7 +98,7 @@ This is a notification payload. Retrieve the full text, destination, times, and 
 
 `status` is `APPROVED`, `NOT_APPROVED`, `REJECTED`, or `APPROVE_FAILED`.
 
-### `tis.RATISVetting`
+### `RATISVetting`
 
 ```json
 {"enabled":true}
@@ -145,9 +125,9 @@ When Kafka is unavailable, `--kafka-spool-file=<path>` writes one record per lin
 
 ```json
 {
-  "topic":"tis.TrainDisplayResult",
-  "key":"1",
-  "payload":{"trainId":1,"timestamp":1790820001,"originalCommand":"TisPredefinedMessageCommand","success":true,"errorDetails":""}
+  "topic":"tis.events",
+  "key":"",
+  "payload":{"eventType":"TrainDisplayResult","payload":{"trainId":1,"timestamp":1790820001,"originalCommand":"TisPredefinedMessageCommand","success":true,"errorDetails":""}}
 }
 ```
 

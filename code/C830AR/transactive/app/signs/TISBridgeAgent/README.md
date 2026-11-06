@@ -15,7 +15,7 @@ ID. Business endpoints return HTTP 503 while authentication is unavailable.
 - `--profile-id=<key>`: profile key used by the bridge session.
 - `--user-pwd=<password>`: password used by the bridge session.
 - `--rest-port=<port>`: REST port, default `8089`.
-- `--kafka-topic-prefix=<prefix>`: Kafka topic prefix, default `tis`.
+- `--kafka-topic-prefix=<prefix>`: Kafka topic prefix, default `tis`; events use `<prefix>.events`, an empty key, and a JSON value with `eventType` and `payload`.
 - `--kafka-servers=<host:port,...>`: Kafka bootstrap servers.
 - `--kafka-spool-file=<path>`: optional file fallback for Kafka-style records.
 

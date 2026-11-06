@@ -4,47 +4,27 @@
 
 浏览器不应直接连接 Kafka。推荐由第三方 Web 后端消费 Kafka，再通过 WebSocket 或 SSE 推送到浏览器。
 
-## 1. Topic 命名
+## 1. Topic 和消息格式
 
-默认 `--kafka-topic-prefix` 为 `tis`。Topic 格式为：
+7 种事件统一发布到 `<prefix>.events`，默认 Topic 为 `tis.events`。可通过 `--kafka-topic-prefix` 配置前缀。每个 Bridge 只订阅实体所属 Location；需要区分来源时，可使用不同前缀，例如 `tis.occ.events` 和 `tis.dbg.events`。
 
-```text
-<prefix>.<TISComms消息名称>
+每条 Kafka Record 的 Key 均为空字符串。UTF-8 JSON Value 包含 `eventType` 和原有 `payload`：
+
+```json
+{"eventType":"TrainDisplayResult","payload":{"trainId":1}}
 ```
 
-默认共有 7 个 Topic：
+消费端订阅统一 Topic，并按 `eventType` 分发。原有 Topic 和 Value 格式的消费者需要适配。
 
-```text
-tis.TrainDisplayResult
-tis.TisTrainDownloadUpdate
-tis.TisTrainDataVersionUpdate
-tis.TisTrainTimeScheduleChange
-tis.IncomingRATISMessage
-tis.RATISStatusUpdate
-tis.RATISVetting
-```
+## 2. Kafka Key 和顺序
 
-一个 Bridge 实例只订阅其实体所属 Location。多 Location 部署时，应为实例配置不同前缀，例如 `tis.occ`、`tis.dbg`，最终 Topic 为 `tis.occ.TrainDisplayResult`。
-
-## 2. Kafka Key
-
-Kafka Key 不属于 Topic 名称，而是 Kafka Record 的独立字段：
-
-| Topic 后缀 | Key |
-|---|---|
-| `TrainDisplayResult` | `trainId` |
-| `TisTrainDownloadUpdate` | `trainNumber` |
-| `TisTrainDataVersionUpdate` | `trainNumber` |
-| `TisTrainTimeScheduleChange` | `timeSchedulePkey` |
-| `IncomingRATISMessage` | `messageId` |
-| `RATISStatusUpdate` | `messageId` |
-| `RATISVetting` | 空字符串 |
-
-相同 Key 的记录通常进入同一 Partition，因此同一列车或 RATIS 消息的事件可以保持 Partition 内顺序。Consumer 必须同时读取 Topic、Key 和 JSON Value。
+所有事件的 Kafka Key 均为空字符串，不再使用列车或消息 ID；这些 ID 仍保留在 payload 中。分区选择取决于分区器配置，顺序仅在同一分区内保证，跨分区不保证顺序。
 
 ## 3. TTIS 事件
 
-### `tis.TrainDisplayResult`
+以下示例仅展示 Kafka Value 中的 `payload`，各小节标题为 `eventType`。
+
+### `TrainDisplayResult`
 
 列车对预定义消息、自由文本或清除命令的最终响应。
 
@@ -66,7 +46,7 @@ Kafka Key 不属于 Topic 名称，而是 Kafka Record 的独立字段：
 
 Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `trainId` 关联原请求。Bridge 的 Authentication Session 不会写入 Payload。
 
-### `tis.TisTrainDownloadUpdate`
+### `TisTrainDownloadUpdate`
 
 ```json
 {
@@ -86,7 +66,7 @@ Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `t
 - `ScheduleDownloadFinish`
 - `ScheduleUpgrade`
 
-### `tis.TisTrainDataVersionUpdate`
+### `TisTrainDataVersionUpdate`
 
 ```json
 {
@@ -98,7 +78,7 @@ Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `t
 }
 ```
 
-### `tis.TisTrainTimeScheduleChange`
+### `TisTrainTimeScheduleChange`
 
 ```json
 {"timeSchedulePkey":12345,"changeType":"Modified"}
@@ -108,7 +88,7 @@ Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `t
 
 ## 4. STIS/RATIS 事件
 
-### `tis.IncomingRATISMessage`
+### `IncomingRATISMessage`
 
 ```json
 {
@@ -123,7 +103,7 @@ Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `t
 
 `sessionRef` 是 RATIS Call Banner 的数字路由标识，不是 Authentication `sessionId`。
 
-### `tis.RATISStatusUpdate`
+### `RATISStatusUpdate`
 
 ```json
 {"messageId":1801,"sessionRef":42,"status":"APPROVED"}
@@ -136,7 +116,7 @@ Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `t
 - `REJECTED`
 - `APPROVE_FAILED`
 
-### `tis.RATISVetting`
+### `RATISVetting`
 
 ```json
 {"enabled":true}
@@ -163,9 +143,9 @@ Kafka 事件描述变化，不保证 Consumer 启动时一定能获得完整当�
 
 ```json
 {
-  "topic":"tis.TrainDisplayResult",
-  "key":"1",
-  "payload":{"trainId":1,"timestamp":1790820001,"originalCommand":"TisPredefinedMessageCommand","success":true,"errorDetails":""}
+  "topic":"tis.events",
+  "key":"",
+  "payload":{"eventType":"TrainDisplayResult","payload":{"trainId":1,"timestamp":1790820001,"originalCommand":"TisPredefinedMessageCommand","success":true,"errorDetails":""}}
 }
 ```
 

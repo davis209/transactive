@@ -8,43 +8,35 @@
 
 ## 1. Topic 命名和消息封装
 
-Topic 命名规则：
+所有事件发布到 `<prefix>.events`，默认 Topic 为 `pa.events`；前缀可通过 `--kafka-topic-prefix` 配置。所有 Kafka Record 的 Key 均为空字符串。Value 为 UTF-8 JSON：
 
-```text
-pa.<MessageName>
+```json
+{ "eventType": "BroadcastProgressUpdate", "payload": { "broadcastId": "StationDva_001" } }
 ```
 
-Kafka 的 record 内容如下：
-
-| 部分 | 内容 |
-| --- | --- |
-| Topic | 按上述规则生成。 |
-| Key | 广播相关消息使用 broadcast ID；配置类消息使用空字符串。 |
-| Value | UTF-8 JSON 文本。 |
-
-PABridgeAgent 不在 JSON Value 中再包裹统一的 `eventType`、时间戳、location 或消息 ID。Consumer 应从 Topic 名称确定事件类型；若一个 Consumer 同时订阅多个 location，应通过不同的 Topic 前缀、独立部署或外部元数据区分来源 location。
+`eventType` 用于区分事件，`payload` 保留原有消息内容。消息不包含统一的 location；多 location 场景需通过不同前缀或外部元数据区分。旧 Topic 和旧 Value 格式的消费者需要适配。
 
 ---
 
-## 2. 全部 PA 事件和对应 Topic
+## 2. PA 事件类型
 
-PABridgeAgent 当前订阅并转发以下全部 PAAgentComms 事件。DVA 版本事件会根据实际 Payload 类型输出到三个 Topic 之一，因此共有 7 个输出 Topic。
+下列 7 种 `eventType` 均发布到同一个 Topic：
 
-| MessageName | Topic | Key | 来源 PAAgentComms |
-| --- | --- | --- | --- |
-| `BroadcastProgressUpdate` | `pa.BroadcastProgressUpdate` | `broadcastId` | `BroadcastProgressUpdate` |
-| `CurrentBroadcastsUpdate` | `pa.CurrentBroadcastsUpdate` | `toBroadcastId` | `CurrentBroadcastsUpdate` |
-| `DvaMessagesUpdate` | `pa.DvaMessagesUpdate` | 空字符串 | `DvaMessagesUpdate` |
-| `DvaVersionsUpdate` | `pa.DvaVersionsUpdate` | 空字符串 | `DvaVersionsUpdate`，完整版本记录 |
-| `DvaPublicVersionsUpdate` | `pa.DvaPublicVersionsUpdate` | 空字符串 | `DvaVersionsUpdate`，公共版本记录 |
-| `DvaPrivateVersionsUpdate` | `pa.DvaPrivateVersionsUpdate` | 空字符串 | `DvaVersionsUpdate`，私有版本记录 |
-| `PrioritySchemeUpdate` | `pa.PrioritySchemeUpdate` | 空字符串 | `PrioritySchemeUpdate` |
-
-同一个 `DvaVersionsUpdate` PAAgentComms 消息，根据 CORBA payload 的实际类型，会发布为上述三个 DVA Version Topic 之一。
+| eventType | 来源 PAAgentComms |
+| --- | --- |
+| `BroadcastProgressUpdate` | `BroadcastProgressUpdate` |
+| `CurrentBroadcastsUpdate` | `CurrentBroadcastsUpdate` |
+| `DvaMessagesUpdate` | `DvaMessagesUpdate` |
+| `DvaVersionsUpdate` | `DvaVersionsUpdate`，完整版本记录 |
+| `DvaPublicVersionsUpdate` | `DvaVersionsUpdate`，公共版本记录 |
+| `DvaPrivateVersionsUpdate` | `DvaVersionsUpdate`，私有版本记录 |
+| `PrioritySchemeUpdate` | `PrioritySchemeUpdate` |
 
 ---
 
 ## 3. Payload Schema
+
+以下示例展示 Value 中的 `payload`，并非完整消息。
 
 ### 4.1 BroadcastProgressUpdate
 
@@ -211,7 +203,7 @@ PABridgeAgent 当前订阅并转发以下全部 PAAgentComms 事件。DVA 版本
 
 每条记录包含 `pKey`、`locationKey`，以及相应的版本字段：
 
-| Topic | 版本字段 |
+| eventType | 版本字段 |
 | --- | --- |
 | `DvaVersionsUpdate` | `privateAdhoc1` 到 `privateAdhoc6`、`privatePreRecorded`、`publicAdhoc1` 到 `publicAdhoc6`、`publicPreRecorded` |
 | `DvaPublicVersionsUpdate` | `publicAdhoc1` 到 `publicAdhoc6`、`publicPreRecorded` |
@@ -237,7 +229,7 @@ PA 优先级方案变化时发布。Payload 是三维数值数组：
 
 - Producer 使用 librdkafka 的异步 `rd_kafka_producev` 发布，并在每次发布后调用非阻塞 `rd_kafka_poll(0)`。
 - 当前实现没有为 Producer 指定分区；Kafka 根据 Topic 和 Key 决定分区。
-- 同一个带 Key 的广播消息通常可按 broadcast ID 获得 Kafka 分区内顺序，但跨 Topic 和跨分区没有全局顺序保证。
+- 所有 Key 均为空字符串，不再按 broadcast ID 选择分区。分区内有顺序，跨分区没有全局顺序保证；实际分布取决于分区器。
 - 当前实现没有应用层重试、持久化 outbox、去重 ID 或 exactly-once 保证。
 - Consumer 必须能够处理重复消息、乱序消息、漏消息和服务重启后的状态重建。
 - 建议 Consumer 收到事件后以 REST 查询作为最终状态校验，尤其是启动、重连或检测到事件缺失时。
@@ -262,7 +254,7 @@ PA 优先级方案变化时发布。Payload 是三维数值数组：
 ## 6. Consumer 接入建议
 
 1. 使用独立 Consumer Group 消费所需 Topic。
-2. 按业务需要订阅 `BroadcastProgressUpdate` 和 `CurrentBroadcastsUpdate`；配置缓存需求再订阅 DVA 和 Priority Topic。
+2. 订阅统一 Topic，并按 `eventType` 选择需要处理的广播、DVA 和 Priority 事件。
 3. 用 `broadcastId` 作为广播状态聚合键。
 4. 将 Topic、分区、offset 与消费时间记录在 Consumer 自己的日志中，便于诊断。
 5. 不记录、显示或使用 `CurrentBroadcastsUpdate` 中的 `sessionId`。

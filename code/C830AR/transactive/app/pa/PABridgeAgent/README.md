@@ -58,9 +58,12 @@ PA REST APIs return `503`.
 
 ## PAAgentComms forwarded to Kafka
 
+All events are published to `<prefix>.events` (default `pa.events`) with an empty Kafka key and a JSON value containing `eventType` and `payload`.
+
 - `BroadcastProgressUpdate`
 - `CurrentBroadcastsUpdate`
 - `DvaMessagesUpdate`
+- `DvaVersionsUpdate`
 - `DvaPublicVersionsUpdate`
 - `DvaPrivateVersionsUpdate`
 - `PrioritySchemeUpdate`
