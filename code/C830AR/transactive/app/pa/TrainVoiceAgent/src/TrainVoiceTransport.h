@@ -18,7 +18,6 @@ namespace TA_IRS_App
         virtual ~TrainVoiceTransport();
         virtual void run();
         virtual void terminate();
-        void setControl(bool enabled);
         bool ready() const;
         TrainRequestManager::WaitResult request(const TrainFrame& frame, const std::string& ip,
             unsigned short port, TrainFrame& reply, std::string& error);
@@ -28,7 +27,7 @@ namespace TA_IRS_App
         TrainEventPublisher& m_publisher;
         const std::string m_bindAddress;
         const unsigned short m_port;
-        std::atomic<bool> m_running, m_control, m_ready;
+        std::atomic<bool> m_running, m_ready;
         std::atomic<unsigned int> m_sendWaiters;
         std::mutex m_socketLock;
         TrainUdpSocket m_socket;

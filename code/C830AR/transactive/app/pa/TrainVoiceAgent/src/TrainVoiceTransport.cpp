@@ -8,27 +8,14 @@ namespace TA_IRS_App
 {
     TrainVoiceTransport::TrainVoiceTransport(TrainEventPublisher& publisher, const std::string& bindAddress, unsigned short port)
         : TA_Base_Core::Thread("TrainVoiceUdp"), m_publisher(publisher), m_bindAddress(bindAddress), m_port(port),
-          m_running(true), m_control(false), m_ready(false), m_sendWaiters(0), m_requests(std::chrono::seconds(60)) {}
+          m_running(true), m_ready(false), m_sendWaiters(0), m_requests(std::chrono::seconds(60)) {}
     TrainVoiceTransport::~TrainVoiceTransport() { terminateAndWait(); }
-    void TrainVoiceTransport::setControl(bool enabled)
-    {
-        ++m_sendWaiters;
-        { std::lock_guard<std::mutex> guard(m_socketLock); m_control = enabled; --m_sendWaiters; }
-        if (!enabled) { m_ready = false; m_requests.cancelAll(); }
-    }
-    bool TrainVoiceTransport::ready() const { return m_control && m_ready && m_running; }
+    bool TrainVoiceTransport::ready() const { return m_ready && m_running; }
     void TrainVoiceTransport::terminate() { m_running = false; m_ready = false; m_requests.cancelAll(); }
     void TrainVoiceTransport::run()
     {
         while (m_running)
         {
-            if (!m_control)
-            {
-                { std::lock_guard<std::mutex> guard(m_socketLock); m_socket.close(); }
-                m_ready = false;
-                TA_Base_Core::Thread::sleep(100);
-                continue;
-            }
             if (!m_ready)
             {
                 std::string error;
@@ -45,13 +32,13 @@ namespace TA_IRS_App
             uint16_t sourcePort = 0;
             bool received = false;
             { std::lock_guard<std::mutex> guard(m_socketLock); received = m_socket.receive(bytes, source, sourcePort, 50, error); }
-            if (received && m_control && m_running) handleFrame(bytes, source);
+            if (received && m_running) handleFrame(bytes, source);
             else if (!error.empty())
             {
                 LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugError, "Train UDP receive failed: %s", error.c_str());
                 m_ready = false;
             }
-            while (m_sendWaiters > 0 && m_running && m_control) TA_Base_Core::Thread::sleep(1);
+            while (m_sendWaiters > 0 && m_running) TA_Base_Core::Thread::sleep(1);
         }
         std::lock_guard<std::mutex> guard(m_socketLock);
         m_socket.close();

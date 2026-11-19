@@ -37,7 +37,7 @@ int main()
     TrainUdpSocket train;
     std::string error;
     assert(train.open("127.0.0.1", 46481, error));
-    bridge.setControl(true);
+    // The transport starts without requiring a Control-mode transition.
     bridge.start();
     for (int i = 0; i < 100 && !bridge.ready(); ++i) std::this_thread::sleep_for(std::chrono::milliseconds(10));
     assert(bridge.ready());
@@ -110,7 +110,7 @@ int main()
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
     { std::lock_guard<std::mutex> guard(publishedLock); assert(published == "AudioFunctionReset"); }
-    bridge.setControl(false); assert(!bridge.ready());
     bridge.terminateAndWait();
+    assert(!bridge.ready());
     return 0;
 }

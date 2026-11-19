@@ -40,7 +40,6 @@ namespace TA_IRS_App
             std::string bindAddress = TA_Base_Core::RunParams::getInstance().get("--train-bind-address");
             if (bindAddress.empty()) bindAddress = "0.0.0.0";
             m_transport.reset(new TrainVoiceTransport(*m_eventPublisher, bindAddress, 61002));
-            m_transport->setControl(m_operationMode == TA_Base_Core::Control);
             m_transport->start();
             m_readService.reset(new TrainVoiceReadService(m_transport.get()));
             m_restController.reset(new TrainRestController(m_readService.get()));
@@ -66,8 +65,8 @@ namespace TA_IRS_App
     void TrainVoiceAgent::notifyGroupOnline(const std::string&) {}
     void TrainVoiceAgent::agentTerminate() { stopServices(); }
     TA_Base_Bus::IEntity* TrainVoiceAgent::createEntity(TA_Base_Core::IEntityDataPtr) { return 0; }
-    void TrainVoiceAgent::agentSetMonitor() { std::lock_guard<std::mutex> guard(m_lifecycleLock); m_operationMode = TA_Base_Core::Monitor; if (m_transport) m_transport->setControl(false); }
-    void TrainVoiceAgent::agentSetControl() { std::lock_guard<std::mutex> guard(m_lifecycleLock); m_operationMode = TA_Base_Core::Control; if (m_transport) m_transport->setControl(true); }
+    void TrainVoiceAgent::agentSetMonitor() { std::lock_guard<std::mutex> guard(m_lifecycleLock); m_operationMode = TA_Base_Core::Monitor; }
+    void TrainVoiceAgent::agentSetControl() { std::lock_guard<std::mutex> guard(m_lifecycleLock); m_operationMode = TA_Base_Core::Control; }
     void TrainVoiceAgent::registerForStateUpdates() {}
     void TrainVoiceAgent::receiveSpecialisedMessage(const TA_Base_Core::StateUpdateMessageCorbaDef&) {}
     void TrainVoiceAgent::processOnlineUpdate(const TA_Base_Core::ConfigUpdateDetails&) {}

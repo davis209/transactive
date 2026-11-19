@@ -12,10 +12,16 @@ and the port with --rest-port (default 8089). The Kafka producer uses --kafka-se
 and --kafka-topic-prefix (default trainvoice); events use <prefix>.events and
 an empty record key. Successful publication means queued locally, not delivered.
 
-Train transport uses UDP unicast; the Control instance binds port 61002, with
+Train transport uses UDP unicast; both Monitor and Control instances bind port 61002, with
 --train-bind-address (default 0.0.0.0). Set each TCCU's IP, port and 16-bit
 protocol device ID in the database; for example 0x0201 denotes TCCU index 1.
 Only replies from a configured TCCU IP for the given train are accepted.
+Both operation modes provide the same REST and UDP functionality. Mode changes
+do not close the UDP socket or cancel outstanding train requests. If two
+instances run on the same host, configure different local bind addresses (and
+REST endpoints); the same UDP address and port cannot be shared. When multiple
+instances receive the same train events, each can publish Kafka events and
+process requests independently, so deployment must account for duplicates.
 
 GET /api/train-voice/trains and GET /api/train-voice/active-calls read the
 database. SIP clients create calls with POST /api/train-voice/active-calls and
