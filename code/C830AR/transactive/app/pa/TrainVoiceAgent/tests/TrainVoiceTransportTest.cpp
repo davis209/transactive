@@ -83,6 +83,13 @@ int main()
     std::vector<uint8_t> bytes; assert(TrainProtocol::encode(event, bytes, error));
     assert(train.send("127.0.0.1", 46480, bytes, error));
     for (int i = 0; i < 100; ++i) {
+        { std::lock_guard<std::mutex> guard(publishedLock); if (savedRequests.size() == 1) break; }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    { std::lock_guard<std::mutex> guard(publishedLock); assert(savedRequests.size() == 1 && published.empty()); }
+    bridge.setKafkaPublishingEnabled(true);
+    assert(train.send("127.0.0.1", 46480, bytes, error));
+    for (int i = 0; i < 100; ++i) {
         { std::lock_guard<std::mutex> guard(publishedLock); if (published == "DriverCallRequested") break; }
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
@@ -110,6 +117,18 @@ int main()
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
     { std::lock_guard<std::mutex> guard(publishedLock); assert(published == "AudioFunctionReset"); }
+    bridge.setKafkaPublishingEnabled(false);
+    assert(bridge.ready());
+    event.type = 6; event.sourceDevice[0] = 3; event.sourceDevice[1] = 1; event.data = {1, 0};
+    assert(TrainProtocol::encode(event, bytes, error) && train.send("127.0.0.1", 46480, bytes, error));
+    for (int i = 0; i < 100; ++i) {
+        { std::lock_guard<std::mutex> guard(publishedLock); if (savedRequests.size() == 3) break; }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    { std::lock_guard<std::mutex> guard(publishedLock); assert(savedRequests.size() == 3 && published == "AudioFunctionReset"); }
+    TrainProtocol::setMdCommand(command, 1, 2);
+    assert(bridge.send(command, "127.0.0.1", 46481, error));
+    assert(train.receive(commandBytes, commandAddress, commandPort, 2000, error));
     bridge.terminateAndWait();
     assert(!bridge.ready());
     return 0;

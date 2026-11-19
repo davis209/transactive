@@ -19,9 +19,11 @@ Only replies from a configured TCCU IP for the given train are accepted.
 Both operation modes provide the same REST and UDP functionality. Mode changes
 do not close the UDP socket or cancel outstanding train requests. If two
 instances run on the same host, configure different local bind addresses (and
-REST endpoints); the same UDP address and port cannot be shared. When multiple
-instances receive the same train events, each can publish Kafka events and
-process requests independently, so deployment must account for duplicates.
+REST endpoints); the same UDP address and port cannot be shared. Only Control
+publishes Kafka events; Monitor still processes UDP and writes pending call
+requests to the database. Events received while Monitor is active are not
+buffered for later publication. Overlapping Control instances, retries and
+failover can still result in duplicate or missed Kafka notifications.
 
 GET /api/train-voice/trains and GET /api/train-voice/active-calls read the
 database. SIP clients create calls with POST /api/train-voice/active-calls and

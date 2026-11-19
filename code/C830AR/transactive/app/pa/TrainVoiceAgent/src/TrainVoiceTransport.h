@@ -18,6 +18,7 @@ namespace TA_IRS_App
         virtual ~TrainVoiceTransport();
         virtual void run();
         virtual void terminate();
+        void setKafkaPublishingEnabled(bool enabled);
         bool ready() const;
         TrainRequestManager::WaitResult request(const TrainFrame& frame, const std::string& ip,
             unsigned short port, TrainFrame& reply, std::string& error);
@@ -30,6 +31,8 @@ namespace TA_IRS_App
         std::atomic<bool> m_running, m_ready;
         std::atomic<unsigned int> m_sendWaiters;
         std::mutex m_socketLock;
+        std::mutex m_publisherLock;
+        bool m_kafkaPublishingEnabled;
         TrainUdpSocket m_socket;
         TrainRequestManager m_requests;
     };

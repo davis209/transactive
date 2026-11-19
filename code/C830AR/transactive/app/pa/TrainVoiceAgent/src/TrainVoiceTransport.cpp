@@ -8,8 +8,13 @@ namespace TA_IRS_App
 {
     TrainVoiceTransport::TrainVoiceTransport(TrainEventPublisher& publisher, const std::string& bindAddress, unsigned short port)
         : TA_Base_Core::Thread("TrainVoiceUdp"), m_publisher(publisher), m_bindAddress(bindAddress), m_port(port),
-          m_running(true), m_ready(false), m_sendWaiters(0), m_requests(std::chrono::seconds(60)) {}
+          m_running(true), m_ready(false), m_sendWaiters(0), m_kafkaPublishingEnabled(false), m_requests(std::chrono::seconds(60)) {}
     TrainVoiceTransport::~TrainVoiceTransport() { terminateAndWait(); }
+    void TrainVoiceTransport::setKafkaPublishingEnabled(bool enabled)
+    {
+        std::lock_guard<std::mutex> guard(m_publisherLock);
+        m_kafkaPublishingEnabled = enabled;
+    }
     bool TrainVoiceTransport::ready() const { return m_ready && m_running; }
     void TrainVoiceTransport::terminate() { m_running = false; m_ready = false; m_requests.cancelAll(); }
     void TrainVoiceTransport::run()
@@ -115,8 +120,11 @@ namespace TA_IRS_App
                     eventType == "DriverCallRequested" ? "DRIVER" : "PASSENGER", sourceId); }
                 catch (...) { LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugError, "Failed to save pending train call request"); }
             }
-            if (!m_publisher.publish(eventType, payload))
-                LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugError, "Unable to queue train event %s", eventType.c_str());
+            {
+                std::lock_guard<std::mutex> guard(m_publisherLock);
+                if (m_kafkaPublishingEnabled && !m_publisher.publish(eventType, payload))
+                    LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugError, "Unable to queue train event %s", eventType.c_str());
+            }
         }
         catch (...) { LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugError, "Train event lookup failed"); }
     }
