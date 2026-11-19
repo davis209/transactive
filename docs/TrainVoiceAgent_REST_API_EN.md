@@ -4,7 +4,7 @@ This guide describes the current implementation for Web SIP clients and integrat
 
 ## 1 Connectivity and conventions
 
-The default address is http://127.0.0.1:8089. Configure --rest-bind-address and --rest-port as needed. Requests and responses use JSON; POST requests use Content-Type: application/json. The request-body limit is 1 MiB. The server has no caller authentication or TLS; place it behind a trusted gateway. Configure CORS at the gateway for cross-origin browser access. Paths are matched exactly; do not append query strings.
+The default address is http://127.0.0.1:8094. Configure --rest-bind-address and --rest-port as needed. Requests and responses use JSON; POST requests use Content-Type: application/json. The request-body limit is 1 MiB. The server has no caller authentication or TLS; place it behind a trusted gateway. Configure CORS at the gateway for cross-origin browser access. Paths are matched exactly; do not append query strings.
 
 Train commands are sent only in Control mode after UDP binds. Train IDs range from 1 to 254. Each POST requires a positive integer carId and exactly one enabled TCCU configured with a valid IP, port and protocol device ID (for example 0x0201 is TCCU index 1).
 

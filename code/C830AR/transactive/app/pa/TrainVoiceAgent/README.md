@@ -8,7 +8,7 @@ REST listens on 127.0.0.1 by default; /health reports HTTP 503 while train
 communication is not ready. This health check covers UDP readiness, not the
 database or Kafka. The server has no caller authentication or TLS; protect it
 with a trusted gateway. Configure the bind address with --rest-bind-address
-and the port with --rest-port (default 8089). The Kafka producer uses --kafka-servers
+and the port with --rest-port (default 8094). The Kafka producer uses --kafka-servers
 and --kafka-topic-prefix (default trainvoice); events use <prefix>.events and
 an empty record key. Successful publication means queued locally, not delivered.
 

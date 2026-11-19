@@ -4,7 +4,7 @@
 
 ## 1 接入与约定
 
-默认地址为 http://127.0.0.1:8089；可使用 --rest-bind-address 和 --rest-port 修改。请求和响应使用 JSON；POST 请求头使用 Content-Type: application/json。请求体上限为 1 MiB。服务没有内置调用者认证或 TLS，应部署在受信任的网关之后。浏览器跨域访问需要在网关配置 CORS。当前使用精确路径匹配，勿附加查询字符串。
+默认地址为 http://127.0.0.1:8094；可使用 --rest-bind-address 和 --rest-port 修改。请求和响应使用 JSON；POST 请求头使用 Content-Type: application/json。请求体上限为 1 MiB。服务没有内置调用者认证或 TLS，应部署在受信任的网关之后。浏览器跨域访问需要在网关配置 CORS。当前使用精确路径匹配，勿附加查询字符串。
 
 接口仅在 Control 模式且 UDP 已绑定时发送列车命令。列车 ID 范围为 1 至 254。每个 POST 必须提供正整数 carId；数据库中该列车车辆必须恰有一个启用的 TCCU，且配置有效 IP、端口和协议设备 ID（例如 0x0201 表示 TCCU 编号 1）。
 

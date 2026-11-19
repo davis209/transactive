@@ -29,7 +29,7 @@ namespace TA_IRS_App
     {
         const std::string portValue = TA_Base_Core::RunParams::getInstance().get("--rest-port");
         char* end = 0;
-        const long port = portValue.empty() ? 8089 : std::strtol(portValue.c_str(), &end, 10);
+        const long port = portValue.empty() ? 8094 : std::strtol(portValue.c_str(), &end, 10);
         if (port < 1 || port > 65535 || (!portValue.empty() && (end == portValue.c_str() || *end != '\0')))
             throw std::invalid_argument("Invalid REST port");
         {
