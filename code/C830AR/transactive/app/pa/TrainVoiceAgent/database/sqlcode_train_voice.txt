@@ -1,0 +1,10 @@
+[TRAIN_VOICE]
+[[MySQL]]
+TRAINVOICE_SELECT_97001=SELECT t.train_id,t.train_name,COALESCE(c.car_id,0) AS car_id,COALESCE(c.car_name,'') AS car_name,COALESCE(c.car_position,0) AS car_position,COALESCE(d.device_key,0) AS device_key,COALESCE(d.device_type,'') AS device_type,COALESCE(d.device_name,'') AS device_name,COALESCE(d.protocol_device_id,0) AS protocol_device_id,COALESCE(d.ip_address,'') AS ip_address,COALESCE(d.control_port,0) AS control_port,COALESCE(d.sip_extension,'') AS sip_extension FROM train_voice_train t LEFT JOIN train_voice_car c ON c.train_id=t.train_id AND c.enabled=1 LEFT JOIN train_voice_device d ON d.car_id=c.car_id AND d.enabled=1 WHERE t.enabled=1 ORDER BY t.train_id,c.car_position,d.device_key
+TRAINVOICE_SELECT_97002=SELECT call_id,train_id,car_id,device_key,audio_function,sip_extension,sip_call_id,client_id,CAST(started_at AS CHAR) AS started_at FROM train_voice_active_call ORDER BY started_at,call_id
+TRAINVOICE_INSERT_97003=INSERT INTO train_voice_active_call (call_id,train_id,car_id,device_key,audio_function,sip_extension,sip_call_id,client_id) VALUES ('%s',%s,%s,%s,%s,'%s','%s','%s') ON DUPLICATE KEY UPDATE call_id=call_id
+TRAINVOICE_DELETE_97004=DELETE FROM train_voice_active_call WHERE call_id='%s'
+TRAINVOICE_SELECT_97006=SELECT train_id,car_id,device_key,audio_function,sip_extension,sip_call_id,client_id FROM train_voice_active_call WHERE call_id='%s'
+TRAINVOICE_INSERT_97007=INSERT INTO train_voice_call_request (train_id,request_type,source_device_id) VALUES (%s,'%s',%s) ON DUPLICATE KEY UPDATE request_id=request_id
+TRAINVOICE_SELECT_97008=SELECT request_id,train_id,request_type,source_device_id,CAST(received_at AS CHAR) AS received_at FROM train_voice_call_request ORDER BY received_at,request_id
+TRAINVOICE_DELETE_97009=DELETE FROM train_voice_call_request WHERE request_id=%s
