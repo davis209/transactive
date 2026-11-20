@@ -125,7 +125,10 @@ namespace TA_IRS_App
             for (unsigned long row = 0; row < data->getNumRows(); ++row)
             {
                 TrainVoiceCallRequest request;
-                request.requestId = data->getUnsignedLongLongData(row, "REQUEST_ID");
+                const std::string requestId = data->getStringData(row, "REQUEST_ID");
+                if (requestId.empty() || requestId.find_first_not_of("0123456789") != std::string::npos)
+                    throw std::runtime_error("Invalid request ID in database");
+                request.requestId = std::stoull(requestId);
                 request.trainId = data->getUnsignedLongData(row, "TRAIN_ID");
                 request.requestType = data->getStringData(row, "REQUEST_TYPE");
                 request.sourceDeviceId = data->getUnsignedLongData(row, "SOURCE_DEVICE_ID");
@@ -141,7 +144,7 @@ namespace TA_IRS_App
         if (requestId == 0) throw std::invalid_argument("Invalid request ID");
         TA_Base_Core::IDatabase* db = TA_Base_Core::DatabaseFactory::getInstance().getDatabase(TA_Base_Core::Radio_Cd, TA_Base_Core::Write);
         TA_Base_Core::SQLStatement sql;
-        db->prepareSQLStatement(sql, "TRAINVOICE_DELETE_97009", requestId);
+        db->prepareSQLStatement(sql, "TRAINVOICE_DELETE_97009", std::to_string(requestId));
         db->executeModification(sql);
     }
 }
