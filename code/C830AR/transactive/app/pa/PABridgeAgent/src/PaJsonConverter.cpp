@@ -89,8 +89,7 @@ namespace TA_IRS_App
         return JsonUtil::object({
             JsonUtil::property("fromBroadcastId", data.fromBroadcastId.in()),
             JsonUtil::property("toBroadcastId", data.toBroadcastId.in()),
-            JsonUtil::property("broadcastType", broadcastType(data.broadcastType)),
-            JsonUtil::property("sessionId", data.sessionId.in())
+            JsonUtil::property("broadcastType", broadcastType(data.broadcastType))
         });
     }
 
@@ -233,8 +232,7 @@ namespace TA_IRS_App
         {
             records.push_back(JsonUtil::object({
                 JsonUtil::property("broadcastId", data[i].broadcastId.in()),
-                JsonUtil::property("broadcastType", broadcastType(data[i].broadcastType)),
-                JsonUtil::property("sessionId", data[i].sessionId.in())
+                JsonUtil::property("broadcastType", broadcastType(data[i].broadcastType))
             }));
         }
         return JsonUtil::array(records);
@@ -244,7 +242,6 @@ namespace TA_IRS_App
     {
         return JsonUtil::object({
             JsonUtil::property("broadcastId", data.broadcastId.in()),
-            JsonUtil::property("sessionId", data.sessionId.in()),
             JsonUtil::property("broadcastType", broadcastType(data.broadcastType)),
             JsonUtil::property("isEventTriggered", boolean(data.isEventTriggered), true)
         });

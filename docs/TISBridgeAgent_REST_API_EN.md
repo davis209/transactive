@@ -6,8 +6,9 @@ This API is intended for Web STIS Manager, Web TTIS Manager, and third-party bac
 
 - Default port: `8089`, configurable with `--rest-port`.
 - Content-Type: `application/json`.
-- Web clients do not create or submit a Transactive `sessionId`. The bridge owns the Authentication session.
-- `GET /health` remains available before authentication. It returns `{"status":"starting"}` until the session is ready; business endpoints return HTTP `503`.
+- Clients obtain a valid TransActive session from AuthenticationAgent through a separate login flow. Every GET and POST request except `GET /health` must include `X-Transactive-Session-Id: <session-id>` in the HTTP header, not in the body or URL.
+- Business requests with a missing header return HTTP `401`. The bridge forwards the session to TISAgent CORBA methods that require it, but does not create, end, or independently validate client sessions. Query methods without a session parameter only check that the header is present. TISAgent CORBA exceptions currently return `502` and do not distinguish invalid sessions from denied permissions.
+- `GET /health` does not require a session and only indicates that the REST service is responding; it does not validate sessions or check downstream services. Use HTTPS through a trusted TLS reverse proxy and avoid logging session IDs.
 - TTIS display calls are asynchronous. A successful REST response means the request was accepted. Final per-train results arrive on `TrainDisplayResult`.
 
 Common error:
@@ -19,10 +20,10 @@ Common error:
 | HTTP status | Meaning |
 |---|---|
 | 200 | Successful or accepted |
+| 401 | Session header is missing |
 | 404 | Unknown endpoint |
 | 500 | JSON, conversion, or internal bridge error |
 | 502 | TISAgent CORBA call failed |
-| 503 | Authentication session is not available |
 
 ## 2. Health
 

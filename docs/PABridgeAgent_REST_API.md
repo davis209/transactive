@@ -10,7 +10,7 @@
 
 ### 1.1 Base URL
 
-默认监听端口由 `PABridgeAgent` 启动参数 `--RestPort` 指定，默认值为 `8088`。
+默认监听端口由 `PABridgeAgent` 启动参数 `--rest-port` 指定，默认值为 `8088`。
 
 示例：
 
@@ -31,14 +31,16 @@ Accept: application/json
 
 ### 1.3 Session 处理
 
-第三方 Web PA 客户端不需要、也不允许生成或传递 `sessionId`。
+客户端通过独立认证流程获取 AuthenticationAgent 签发的有效 TransActive Session ID。除 `GET /health` 外，每个 GET 和 POST 请求都必须在 HTTP Header 中提供：
 
-`PABridgeAgent` 启动后会根据启动参数中的操作员、profile、location、console、password 等信息，向 Authentication 服务申请真实 session id。所有调用 `PAAgent` 的接口都会由 `PABridgeAgent` 自动携带该 session id。
+```http
+X-Transactive-Session-Id: <session-id>
+```
 
-当 `PABridgeAgent` 尚未成功获取 session id 时：
+不要在 JSON 请求体或 URL 中传递 Session ID。缺少该 Header 时返回 HTTP `401`。Bridge 将每次请求的 Session ID 传给需要它的 PAAgent CORBA 方法，不创建、注销或主动验证客户端 Session；没有 Session 参数的查询接口也只检查 Header 是否存在，不验证其有效性。PAAgent 的 CORBA 异常目前统一返回 `502`，不能据此区分无效 Session 与权限不足。`GET /health` 不校验 Session，也不表示 PAAgent 或 AuthenticationAgent 可用。
 
-- `GET /health` 返回 `status=starting`
-- 其他 PA REST API 返回 HTTP `503`
+应通过可信 TLS 反向代理使用 HTTPS，并避免记录 Session ID。
+广播列表、广播配置和 Kafka `CurrentBroadcastsUpdate` 不再输出原始 `sessionId`，避免泄露会话凭证。
 
 ---
 
@@ -62,8 +64,8 @@ Accept: application/json
 
 ```json
 {
-  "error": "PABridgeAgent has not acquired an Authentication session yet",
-  "status": 503
+  "error": "Missing X-Transactive-Session-Id header",
+  "status": 401
 }
 ```
 
@@ -72,10 +74,10 @@ Accept: application/json
 | HTTP 状态码 | 含义 |
 | --- | --- |
 | 200 | 调用成功 |
+| 401 | 缺少 Session Header |
 | 404 | 未知接口 |
 | 500 | PABridgeAgent 内部处理异常 |
 | 502 | 调用 PAAgent CORBA 接口失败 |
-| 503 | PABridgeAgent 尚未获取 Authentication session |
 
 ---
 
@@ -85,7 +87,7 @@ Accept: application/json
 
 用于检查 `PABridgeAgent` 是否启动。
 
-#### 响应示例：session 已就绪
+#### 响应示例
 
 ```json
 {
@@ -93,15 +95,7 @@ Accept: application/json
 }
 ```
 
-#### 响应示例：session 未就绪
-
-```json
-{
-  "status": "starting"
-}
-```
-
-第三方客户端应仅在 `/health` 返回 `status=ok` 后开放 PA 操作入口。
+该结果仅表示 REST 服务正在响应，不验证客户端 Session 或下游服务。
 
 ---
 
@@ -655,7 +649,7 @@ Accept: application/json
 
 1. Web 客户端启动后先轮询 `GET /health`。
 2. 只有当 `/health` 返回 `status=ok` 时，才允许用户发起 PA 操作。
-3. Web 客户端不要在任何请求体、URL 或 header 中传递 `sessionId`。
-4. 对 HTTP `503` 做可恢复处理，提示“PA bridge 正在等待认证 session”。
+3. 每次业务请求通过 `X-Transactive-Session-Id` Header 传递客户端 Session，不要放入请求体或 URL。
+4. 客户端负责维护 Session；缺少 Header 返回 HTTP `401`，后端调用失败返回 `502`。
 5. 对 HTTP `502` 做 PAAgent 依赖异常处理，提示用户稍后重试或联系后台运维。
 6. 对需要 `broadcastId` 的接口，先通过创建广播接口或 `GET /api/pa/broadcasts` 获取有效 ID。

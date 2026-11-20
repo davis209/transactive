@@ -1,11 +1,8 @@
 #pragma once
 
-#include <condition_variable>
 #include <map>
 #include <memory>
-#include <mutex>
 #include <string>
-#include <thread>
 
 #include "TisKafkaProducer.h"
 #include "TisMessageSubscriber.h"
@@ -23,7 +20,6 @@ namespace TA_Base_Bus
     class DataNode;
     class DataPoint;
     class DataPointFactory;
-    class AuthenticationLibrary;
 }
 
 namespace TA_Base_Core
@@ -63,37 +59,18 @@ namespace TA_IRS_App
         virtual void checkOperationMode() {};
 
         void loadConfiguration();
-        void loadAuthenticationConfiguration();
         void startBridgeServices();
         void stopBridgeServices();
-        void startSessionRetry();
-        void stopSessionRetry();
-        void sessionRetryLoop();
-        bool requestBridgeSession();
-        void endBridgeSession();
-        std::string getBridgeSessionId() const;
         TisKafkaProducerPtr createKafkaProducer() const;
         unsigned long getUnsignedRunParam(const std::string& name, unsigned long defaultValue) const;
         std::string getStringRunParam(const std::string& name, const std::string& defaultValue = "") const;
 
         TA_Base_Bus::GenericAgent* m_genericAgent;
-        std::unique_ptr<TA_Base_Bus::AuthenticationLibrary> m_authenticationLibrary;
         TA_Base_Core::EOperationMode m_operationMode;
         std::string m_agentName;
         unsigned long m_locationKey;
         unsigned short m_restPort;
         std::string m_kafkaTopicPrefix;
-        unsigned long m_sessionUserKey;
-        unsigned long m_sessionProfileKey;
-        unsigned long m_sessionLocationKey;
-        unsigned long m_sessionConsoleId;
-        std::string m_sessionPassword;
-        std::string m_sessionId;
-        mutable std::mutex m_sessionLock;
-        std::condition_variable m_sessionRetryCondition;
-        std::thread m_sessionRetryThread;
-        bool m_stopSessionRetry;
-        bool m_sessionRetryRunning;
 
         TisKafkaProducerPtr m_kafkaProducer;
         std::unique_ptr<TisMessageSubscriber> m_messageSubscriber;

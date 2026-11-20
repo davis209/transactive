@@ -30,6 +30,11 @@
             <Button Grid.Column="7" Content="Send" Width="84" Height="28" Margin="8,0,0,0" Click="SendButton_Click" />
         </Grid>
 
+        <DockPanel DockPanel.Dock="Top" Margin="0,0,0,10">
+            <TextBlock Text="Session ID" VerticalAlignment="Center" Margin="0,0,8,0" />
+            <PasswordBox x:Name="SessionIdPasswordBox" Height="28" VerticalContentAlignment="Center" />
+        </DockPanel>
+
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="340" />
@@ -104,7 +109,7 @@
                            x:Name="FooterTextBlock"
                            Margin="0,8,0,0"
                            Foreground="#666"
-                           Text="Web PA client does not pass sessionId. PABridgeAgent supplies the session internally." />
+                           Text="Session ID is sent in the X-Transactive-Session-Id header." />
             </Grid>
         </Grid>
     </DockPanel>

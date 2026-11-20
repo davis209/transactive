@@ -132,6 +132,12 @@ namespace PABridgeAgentTestClient
             request.Timeout = timeout;
             request.ReadWriteTimeout = timeout;
 
+            string sessionId = SessionIdPasswordBox.Password;
+            if (!string.IsNullOrEmpty(sessionId))
+            {
+                request.Headers["X-Transactive-Session-Id"] = sessionId;
+            }
+
             string body = RequestBodyTextBox.Text ?? "";
             if (endpoint.Method == "POST")
             {

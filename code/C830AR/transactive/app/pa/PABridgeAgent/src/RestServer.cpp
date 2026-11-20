@@ -27,22 +27,26 @@ namespace TA_IRS_App
     {
         m_server->Get(".*", [this](const httplib::Request& req, httplib::Response& res) {
             int statusCode = 200;
-            const std::string body = m_controller.handle("GET", req.target, "", statusCode);
+            const std::string body = m_controller.handle("GET", req.target, "",
+                req.get_header_value("X-Transactive-Session-Id"), statusCode);
             res.status = statusCode;
+            res.set_header("Access-Control-Allow-Origin", "*");
             res.set_content(body, "application/json");
         });
 
         m_server->Post(".*", [this](const httplib::Request& req, httplib::Response& res) {
             int statusCode = 200;
-            const std::string body = m_controller.handle("POST", req.target, req.body, statusCode);
+            const std::string body = m_controller.handle("POST", req.target, req.body,
+                req.get_header_value("X-Transactive-Session-Id"), statusCode);
             res.status = statusCode;
+            res.set_header("Access-Control-Allow-Origin", "*");
             res.set_content(body, "application/json");
         });
 
         m_server->Options(".*", [](const httplib::Request& req, httplib::Response& res) {
             res.status = 204;
             res.set_header("Access-Control-Allow-Origin", "*");
-            res.set_header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+            res.set_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Transactive-Session-Id");
             res.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
         });
     }

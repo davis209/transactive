@@ -38,7 +38,7 @@ Final train response for a predefined, free-text, or clear command:
 }
 ```
 
-`originalCommand` is one of `TisPredefinedMessageCommand`, `TisFreeTextMessageCommand`, or `TisClearCommand`. Match the event against the REST response using `timestamp`, command type, and train ID. The bridge Authentication session is not included in the payload.
+`originalCommand` is one of `TisPredefinedMessageCommand`, `TisFreeTextMessageCommand`, or `TisClearCommand`. Match the event against the REST response using `timestamp`, command type, and train ID. The client Authentication session is not included in the payload.
 
 ### `TisTrainDownloadUpdate`
 

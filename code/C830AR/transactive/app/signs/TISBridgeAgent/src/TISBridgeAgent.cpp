@@ -1,17 +1,13 @@
 #include "TISBridgeAgent.h"
 
 #include "bus/generic_agent/src/GenericAgent.h"
-#include "bus/security/authentication_library/src/AuthenticationLibrary.h"
 
-#include "core/data_access_interface/entity_access/src/ConsoleAccessFactory.h"
 #include "core/data_access_interface/entity_access/src/IEntityData.h"
 #include "core/exceptions/src/TransactiveException.h"
 #include "core/message/src/MessageSubscriptionManager.h"
 #include "core/utilities/src/DebugUtil.h"
-#include "core/utilities/src/Hostname.h"
 #include "core/utilities/src/RunParams.h"
 
-#include <chrono>
 #include <cstdlib>
 
 namespace TA_IRS_App
@@ -20,19 +16,11 @@ namespace TA_IRS_App
         : m_genericAgent(0),
           m_operationMode(TA_Base_Core::NotApplicable),
           m_locationKey(0),
-          m_restPort(8089),
-          m_sessionUserKey(0),
-          m_sessionProfileKey(0),
-          m_sessionLocationKey(0),
-          m_sessionConsoleId(0),
-          m_stopSessionRetry(false),
-          m_sessionRetryRunning(false)
+          m_restPort(8089)
     {
         LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo, "Creating GenericAgent");
         m_genericAgent = new TA_Base_Bus::GenericAgent(argc, argv, this);
 
-        LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo, "Creating AuthenticationLibrary");
-        m_authenticationLibrary.reset(new TA_Base_Bus::AuthenticationLibrary());
         m_agentName = TA_Base_Core::RunParams::getInstance().get(RPARAM_ENTITYNAME);
 
         LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo, "Loading TISBridgeAgent configuration");
@@ -48,7 +36,6 @@ namespace TA_IRS_App
             catch (...) {}
             m_genericAgent = 0;
         }
-        m_authenticationLibrary.reset();
     }
 
     void TISBridgeAgent::startTISBridgeAgent()
@@ -81,27 +68,6 @@ namespace TA_IRS_App
 
         m_restPort = static_cast<unsigned short>(getUnsignedRunParam("--rest-port", 8089));
         m_kafkaTopicPrefix = getStringRunParam("--kafka-topic-prefix", "tis");
-        loadAuthenticationConfiguration();
-    }
-
-    void TISBridgeAgent::loadAuthenticationConfiguration()
-    {
-        m_sessionUserKey = getUnsignedRunParam("--user-id", 0);
-        m_sessionProfileKey = getUnsignedRunParam("--profile-id", 0);
-        m_sessionPassword = getStringRunParam("--user-pwd");
-        m_sessionLocationKey = m_locationKey;
-
-        const std::string hostname = TA_Base_Core::Hostname::getHostname();
-        std::unique_ptr<TA_Base_Core::IConsole> console(TA_Base_Core::ConsoleAccessFactory::getInstance().getConsole(hostname));
-        m_sessionConsoleId = console->getKey();
-
-        LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,
-            "TISBridgeAgent resolved hostname %s to console key %lu", hostname.c_str(), m_sessionConsoleId);
-
-        if (m_sessionUserKey == 0) TA_THROW(TA_Base_Core::TransactiveException("TISBridgeAgent requires --user-id"));
-        if (m_sessionProfileKey == 0) TA_THROW(TA_Base_Core::TransactiveException("TISBridgeAgent requires --profile-id"));
-        if (m_sessionPassword.empty()) TA_THROW(TA_Base_Core::TransactiveException("TISBridgeAgent requires --user-pwd"));
-        if (m_sessionConsoleId == 0) TA_THROW(TA_Base_Core::TransactiveException("Add a console-type entity in DB for this local host"));
     }
 
     unsigned long TISBridgeAgent::getUnsignedRunParam(const std::string& name, unsigned long defaultValue) const
@@ -114,103 +80,6 @@ namespace TA_IRS_App
     {
         const std::string value = TA_Base_Core::RunParams::getInstance().get(name.c_str());
         return value.empty() ? defaultValue : value;
-    }
-
-    bool TISBridgeAgent::requestBridgeSession()
-    {
-        if (!getBridgeSessionId().empty()) return true;
-        if (m_authenticationLibrary.get() == 0)
-        {
-            TA_THROW(TA_Base_Core::TransactiveException("TISBridgeAgent authentication library is not initialised"));
-        }
-
-        const std::string sessionId = m_authenticationLibrary->requestSession(
-            m_sessionUserKey, m_sessionProfileKey, m_sessionLocationKey, m_sessionConsoleId, m_sessionPassword);
-        if (sessionId.empty()) TA_THROW(TA_Base_Core::TransactiveException("TISBridgeAgent failed to acquire a session id"));
-
-        {
-            std::lock_guard<std::mutex> guard(m_sessionLock);
-            m_sessionId = sessionId;
-        }
-        TA_Base_Core::RunParams::getInstance().set(RPARAM_SESSIONID, sessionId.c_str());
-        LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugInfo,
-            "TISBridgeAgent acquired session id for user=%lu profile=%lu location=%lu console=%lu",
-            m_sessionUserKey, m_sessionProfileKey, m_sessionLocationKey, m_sessionConsoleId);
-        return true;
-    }
-
-    void TISBridgeAgent::startSessionRetry()
-    {
-        std::lock_guard<std::mutex> guard(m_sessionLock);
-        if (m_sessionRetryRunning) return;
-        m_stopSessionRetry = false;
-        m_sessionRetryRunning = true;
-        m_sessionRetryThread = std::thread(&TISBridgeAgent::sessionRetryLoop, this);
-    }
-
-    void TISBridgeAgent::stopSessionRetry()
-    {
-        {
-            std::lock_guard<std::mutex> guard(m_sessionLock);
-            if (!m_sessionRetryRunning) return;
-            m_stopSessionRetry = true;
-        }
-        m_sessionRetryCondition.notify_all();
-        if (m_sessionRetryThread.joinable()) m_sessionRetryThread.join();
-        std::lock_guard<std::mutex> guard(m_sessionLock);
-        m_sessionRetryRunning = false;
-    }
-
-    void TISBridgeAgent::sessionRetryLoop()
-    {
-        while (true)
-        {
-            {
-                std::unique_lock<std::mutex> lock(m_sessionLock);
-                if (m_stopSessionRetry || !m_sessionId.empty()) return;
-            }
-            try
-            {
-                if (requestBridgeSession()) return;
-            }
-            catch (const std::exception& e)
-            {
-                LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugWarn,
-                    "TISBridgeAgent failed to acquire session id, will retry: %s", e.what());
-            }
-            catch (...)
-            {
-                LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugWarn,
-                    "TISBridgeAgent failed to acquire session id, will retry");
-            }
-
-            std::unique_lock<std::mutex> lock(m_sessionLock);
-            if (m_stopSessionRetry) return;
-            m_sessionRetryCondition.wait_for(lock, std::chrono::seconds(5));
-        }
-    }
-
-    std::string TISBridgeAgent::getBridgeSessionId() const
-    {
-        std::lock_guard<std::mutex> guard(m_sessionLock);
-        return m_sessionId;
-    }
-
-    void TISBridgeAgent::endBridgeSession()
-    {
-        const std::string sessionId = getBridgeSessionId();
-        if (sessionId.empty() || m_authenticationLibrary.get() == 0) return;
-        try { m_authenticationLibrary->endSession(sessionId); }
-        catch (...)
-        {
-            LOG_GENERIC(SourceInfo, TA_Base_Core::DebugUtil::DebugWarn,
-                "TISBridgeAgent failed to end session id cleanly");
-        }
-        {
-            std::lock_guard<std::mutex> guard(m_sessionLock);
-            m_sessionId.clear();
-        }
-        TA_Base_Core::RunParams::getInstance().set(RPARAM_SESSIONID, "");
     }
 
     TisKafkaProducerPtr TISBridgeAgent::createKafkaProducer() const
@@ -233,12 +102,10 @@ namespace TA_IRS_App
     void TISBridgeAgent::startBridgeServices()
     {
         if (m_messageSubscriber.get() != 0) return;
-        startSessionRetry();
         m_kafkaProducer = createKafkaProducer();
         m_messageSubscriber.reset(new TisMessageSubscriber(m_locationKey, m_kafkaProducer, m_kafkaTopicPrefix));
         m_messageSubscriber->subscribe();
-        m_restController.reset(new TisRestController(
-            [this]() { return getBridgeSessionId(); }));
+        m_restController.reset(new TisRestController());
         m_restServer.reset(new TisRestServer(m_restPort, *m_restController));
         m_restServer->start();
 
@@ -258,11 +125,9 @@ namespace TA_IRS_App
             m_restServer->terminateAndWait();
             m_restServer.reset();
         }
-        stopSessionRetry();
         m_restController.reset();
         m_messageSubscriber.reset();
         m_kafkaProducer.reset();
-        endBridgeSession();
     }
 
     void TISBridgeAgent::agentSetMonitor()

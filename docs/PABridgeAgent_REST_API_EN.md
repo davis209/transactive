@@ -10,7 +10,7 @@ This document is intended for the Web PA client and third-party development team
 
 ### 1.1 Base URL
 
-The listen port is configured with the `--RestPort` startup parameter. The default is `8088`.
+The listen port is configured with the `--rest-port` startup parameter. The default is `8088`.
 
 Example:
 
@@ -31,14 +31,16 @@ Accept: application/json
 
 ### 1.3 Session Handling
 
-Third-party Web PA clients must not generate or send a `sessionId`.
+Clients obtain a valid TransActive session from AuthenticationAgent through a separate login flow. Every GET and POST request except `GET /health` must include:
 
-After startup, `PABridgeAgent` uses the configured operator, profile, location, console, password, and other startup parameters to request a real session ID from the Authentication service. `PABridgeAgent` automatically supplies this session ID to every PAAgent call.
+```http
+X-Transactive-Session-Id: <session-id>
+```
 
-Before `PABridgeAgent` has acquired a session ID:
+Do not send the session in the JSON body or URL. A missing header returns HTTP `401`. The bridge forwards each request's session to PAAgent methods that require it; it does not create, end, or independently validate client sessions. Query methods without a session parameter only check that the header is present, not that it is valid. PAAgent CORBA exceptions currently return `502` and do not distinguish invalid sessions from denied permissions. `GET /health` does not validate sessions or check PAAgent or AuthenticationAgent availability.
 
-- `GET /health` returns `status=starting`.
-- All other PA REST APIs return HTTP `503`.
+Use HTTPS through a trusted TLS reverse proxy and avoid logging session IDs.
+Broadcast lists, broadcast configuration, and Kafka `CurrentBroadcastsUpdate` no longer expose the original `sessionId` credential.
 
 ---
 
@@ -60,18 +62,18 @@ Errors use the following JSON structure:
 
 ```json
 {
-  "error": "PABridgeAgent has not acquired an Authentication session yet",
-  "status": 503
+  "error": "Missing X-Transactive-Session-Id header",
+  "status": 401
 }
 ```
 
 | HTTP status | Meaning |
 | --- | --- |
 | 200 | Request succeeded. |
+| 401 | Session header is missing. |
 | 404 | Unknown endpoint. |
 | 500 | Internal PABridgeAgent processing error. |
 | 502 | PAAgent CORBA call failed. |
-| 503 | PABridgeAgent has not acquired an Authentication session. |
 
 ---
 
@@ -81,7 +83,7 @@ Errors use the following JSON structure:
 
 Checks whether `PABridgeAgent` is running.
 
-#### Response: session ready
+#### Response
 
 ```json
 {
@@ -89,15 +91,7 @@ Checks whether `PABridgeAgent` is running.
 }
 ```
 
-#### Response: session not ready
-
-```json
-{
-  "status": "starting"
-}
-```
-
-Third-party clients should enable PA operation controls only after `/health` returns `status=ok`.
+This only indicates the REST service is responding; it does not validate the client session or downstream services.
 
 ---
 
@@ -569,7 +563,7 @@ The following values are used in requests and responses:
 
 1. Poll `GET /health` when the Web client starts.
 2. Allow PA operations only when `/health` returns `status=ok`.
-3. Never send `sessionId` in a request body, URL, or header.
-4. Treat HTTP `503` as recoverable and indicate that the PA bridge is waiting for an Authentication session.
+3. Send the client session in the `X-Transactive-Session-Id` header on every business request, not in the body or URL.
+4. The client manages its session. A missing header returns HTTP `401`; a downstream CORBA failure returns `502`.
 5. Handle HTTP `502` as a PAAgent dependency failure; prompt the operator to retry later or contact system support.
 6. For APIs requiring `broadcastId`, obtain a valid ID from a broadcast-creation endpoint or `GET /api/pa/broadcasts` first.

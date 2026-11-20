@@ -5,15 +5,15 @@ It follows the PABridgeAgent design: commands and snapshots use JSON REST APIs,
 while existing `TISComms` notifications are converted to JSON and published to
 Kafka. TISAgent does not require any modification.
 
-The bridge obtains its own Authentication session and keeps retrying until a
-session is available. Web clients neither create nor pass a Transactive session
-ID. Business endpoints return HTTP 503 while authentication is unavailable.
+Clients obtain a TransActive Authentication session separately and send it in the
+`X-Transactive-Session-Id` header on every TIS REST request. `/health` does not
+require a session. A missing header returns HTTP 401. The bridge forwards the
+request session to TISAgent operations that require it; it does not log in,
+validate, or terminate client sessions. Use HTTPS through a trusted TLS reverse
+proxy and protect session IDs.
 
 ## Run parameters
 
-- `--user-id=<key>`: operator key used by the bridge session.
-- `--profile-id=<key>`: profile key used by the bridge session.
-- `--user-pwd=<password>`: password used by the bridge session.
 - `--rest-port=<port>`: REST port, default `8089`.
 - `--kafka-topic-prefix=<prefix>`: Kafka topic prefix, default `tis`; events use `<prefix>.events`, an empty key, and a JSON value with `eventType` and `payload`.
 - `--kafka-servers=<host:port,...>`: Kafka bootstrap servers.
@@ -23,13 +23,7 @@ The STIS and TTIS servants are resolved automatically from the database for
 the TISBridgeAgent location, using the same discovery mechanism as STISManager
 and TTISManager.
 
-The location is read from the TISBridgeAgent entity. The console key is resolved
-from the local hostname in the same way as PABridgeAgent.
-
-At least one TIS agent name must be configured. When only one is provided, the
-bridge uses that entity name for both the STIS and TTIS CORBA interfaces. When
-both are provided, each interface continues to use its explicitly configured
-entity name.
+The location is read from the TISBridgeAgent entity.
 
 ## Documents
 

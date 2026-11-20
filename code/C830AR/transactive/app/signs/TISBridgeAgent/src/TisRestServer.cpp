@@ -12,7 +12,7 @@ namespace
     void setCorsHeaders(httplib::Response& response)
     {
         response.set_header("Access-Control-Allow-Origin", "*");
-        response.set_header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        response.set_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Transactive-Session-Id");
         response.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     }
 }
@@ -39,14 +39,16 @@ namespace TA_IRS_App
     {
         m_server->Get(".*", [this](const httplib::Request& request, httplib::Response& response) {
             int statusCode = 200;
-            response.set_content(m_controller.handle("GET", request.target, "", statusCode), "application/json");
+            response.set_content(m_controller.handle("GET", request.target, "",
+                request.get_header_value("X-Transactive-Session-Id"), statusCode), "application/json");
             response.status = statusCode;
             setCorsHeaders(response);
         });
 
         m_server->Post(".*", [this](const httplib::Request& request, httplib::Response& response) {
             int statusCode = 200;
-            response.set_content(m_controller.handle("POST", request.target, request.body, statusCode), "application/json");
+            response.set_content(m_controller.handle("POST", request.target, request.body,
+                request.get_header_value("X-Transactive-Session-Id"), statusCode), "application/json");
             response.status = statusCode;
             setCorsHeaders(response);
         });

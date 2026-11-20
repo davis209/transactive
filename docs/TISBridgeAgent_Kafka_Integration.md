@@ -44,7 +44,7 @@
 - `TisFreeTextMessageCommand`
 - `TisClearCommand`
 
-Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `trainId` 关联原请求。Bridge 的 Authentication Session 不会写入 Payload。
+Web 后端使用 REST 返回的 `timestamp`，并结合 `originalCommand` 和 `trainId` 关联原请求。客户端的 Authentication Session 不会写入 Payload。
 
 ### `TisTrainDownloadUpdate`
 

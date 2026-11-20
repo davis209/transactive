@@ -6,8 +6,9 @@
 
 - 默认端口：`8089`，可通过 `--rest-port` 修改。
 - Content-Type：`application/json`。
-- Web 客户端不传递 Transactive `sessionId`；Bridge 使用启动参数自行申请并维护 Session。
-- `GET /health` 不要求 Session。Session 尚未取得时返回 `{"status":"starting"}`，业务接口返回 HTTP `503`。
+- 客户端通过独立认证流程获取 AuthenticationAgent 签发的有效 TransActive Session ID。除 `GET /health` 外，每个 GET 和 POST 请求都必须在 HTTP Header 中提供 `X-Transactive-Session-Id: <session-id>`；不要放入请求体或 URL。
+- 缺少 Header 时业务接口返回 HTTP `401`。Bridge 将 Session 传给需要它的 TISAgent CORBA 方法，但不创建、注销或主动验证客户端 Session；没有 Session 参数的查询接口也只检查 Header 是否存在。TISAgent CORBA 异常目前返回 `502`，不能据此区分无效 Session 与权限不足。
+- `GET /health` 不要求 Session，其结果只表示 REST 服务正在响应，不验证 Session 或下游服务。应通过可信 TLS 反向代理使用 HTTPS，并避免记录 Session ID。
 - TTIS 显示命令为异步命令。REST 成功只表示 TISAgent 已接受请求，最终结果通过 Kafka `TrainDisplayResult` 返回。
 
 通用错误：
@@ -19,10 +20,10 @@
 | HTTP 状态 | 含义 |
 |---|---|
 | 200 | 调用成功或已接受 |
+| 401 | 缺少 Session Header |
 | 404 | 接口不存在 |
 | 500 | JSON、参数转换或 Bridge 内部错误 |
 | 502 | TISAgent CORBA 调用失败 |
-| 503 | Bridge 尚未取得 Authentication Session |
 
 ## 2. 公共接口
 

@@ -142,8 +142,7 @@ Published when a broadcast is created, removed, or renamed.
 {
   "fromBroadcastId": "StationDva_001",
   "toBroadcastId": "StationDva_002",
-  "broadcastType": "StationDva",
-  "sessionId": "..."
+  "broadcastType": "StationDva"
 }
 ```
 
@@ -152,7 +151,6 @@ Published when a broadcast is created, removed, or renamed.
 | fromBroadcastId | string | Previous broadcast ID. Usually empty when a broadcast is created. |
 | toBroadcastId | string | New broadcast ID. It may be empty when a broadcast is removed. |
 | broadcastType | string | Broadcast type. |
-| sessionId | string | Session identifier from the original PAAgent message. Consumers must not use it to invoke REST or CORBA APIs, and should neither log nor display it. |
 
 #### broadcastType enumeration values
 
@@ -166,7 +164,7 @@ Published when a broadcast is created, removed, or renamed.
 | `TrainDva` | Train DVA (digital voice announcement) broadcast. |
 | `Unknown` | Unrecognised PAAgent broadcast type; not a normally defined broadcast type. |
 
-The current implementation forwards `sessionId`. Because it is sensitive session information, production access to this topic must be restricted; a later version may remove this field.
+The current version does not forward the original `sessionId`, to protect session credentials. Production access to this topic should still be restricted.
 
 ### 4.3 DvaMessagesUpdate
 
@@ -257,5 +255,5 @@ Before production deployment, security controls must therefore be provided throu
 2. Subscribe to the shared topic and filter broadcast, DVA, and Priority events by `eventType`.
 3. Aggregate broadcast state with `broadcastId` as the key.
 4. Record topic, partition, offset, and consumer timestamp in the consumer's own logs for diagnosis.
-5. Do not log, display, or use `sessionId` from `CurrentBroadcastsUpdate`.
+5. Do not depend on the `sessionId` field in older `CurrentBroadcastsUpdate` messages.
 6. On initial startup or recovery, rebuild the broadcast and configuration baseline through REST query APIs before consuming Kafka incremental events.

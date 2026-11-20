@@ -8,12 +8,7 @@ JSON parsing and serialisation are handled by the bundled `src/json.hpp`.
 
 ## Run parameters
 
-- The PAAgent location is read from the bridge agent's entity configuration. At OCC or BOCC, the bridge resolves the unique `MasterPAAgent` at that location from the database. At a station or depot, it resolves the unique local `StationPAAgent`. The same location is used to subscribe to PAAgent messages and request the bridge session.
-- `--user-id=<key>`: required operator/user key used to request the bridge session.
-- `--profile-id=<key>`: required profile key used to request the bridge session.
-- The console/workstation key is resolved from the local hostname. The hostname must
-  match exactly one undeleted `Console` entity's `address` in the database.
-- `--user-pwd=<password>`: required password used to authenticate the bridge session.
+- The PAAgent location is read from the bridge agent's entity configuration. At OCC or BOCC, the bridge resolves the unique `MasterPAAgent` at that location from the database. At a station or depot, it resolves the unique local `StationPAAgent`. The same location is used to subscribe to PAAgent messages.
 - `--rest-port=<port>`: REST listen port; default `8088`.
 - `--kafka-topic-prefix=<prefix>`: Kafka topic prefix; default `pa`.
 - `--kafka-servers=<host:port,...>`: enables Kafka publishing through
@@ -21,10 +16,11 @@ JSON parsing and serialisation are handled by the bundled `src/json.hpp`.
 - `--kafka-spool-file=<path>`: optional fallback that writes Kafka-style records to a file
   when no Kafka bootstrap server is configured.
 
-PABridgeAgent keeps retrying until it obtains a real Authentication session and
-uses that session for all PAAgent calls. Web PA clients must not generate or pass
-`sessionId`. Before the session is ready, `/health` reports `starting` and the
-PA REST APIs return `503`.
+Clients obtain a TransActive Authentication session separately and send it in the
+`X-Transactive-Session-Id` header on every PA REST request. `/health` does not
+require a session. A missing header returns HTTP `401`. PABridgeAgent forwards the
+request session to PAAgent operations that require it; it does not log in, validate,
+or terminate client sessions. Use HTTPS at a trusted reverse proxy and protect session IDs.
 
 ## REST endpoints
 

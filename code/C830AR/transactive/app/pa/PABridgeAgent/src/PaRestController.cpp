@@ -11,13 +11,13 @@
 
 namespace TA_IRS_App
 {
-    PaRestController::PaRestController(const std::string& paAgentEntityName, SessionIdProvider sessionIdProvider)
-        : m_paAgent(paAgentEntityName, true),
-          m_sessionIdProvider(sessionIdProvider)
+    PaRestController::PaRestController(const std::string& paAgentEntityName)
+        : m_paAgent(paAgentEntityName, true)
     {
     }
 
-    std::string PaRestController::handle(const std::string& method, const std::string& path, const std::string& body, int& statusCode)
+    std::string PaRestController::handle(const std::string& method, const std::string& path, const std::string& body,
+                                         const std::string& sessionId, int& statusCode)
     {
         statusCode = 200;
 
@@ -25,17 +25,14 @@ namespace TA_IRS_App
         {
             if (method == "GET" && path == "/health")
             {
-                const bool hasSession = m_sessionIdProvider && !m_sessionIdProvider().empty();
                 return ok(JsonUtil::object({
-                    JsonUtil::property("status", hasSession ? "ok" : "starting"),
-                    JsonUtil::property("sessionReady", hasSession ? "true" : "false", true)
+                    JsonUtil::property("status", "ok")
                 }));
             }
 
-            const std::string sessionId = m_sessionIdProvider ? m_sessionIdProvider() : "";
             if (sessionId.empty())
             {
-                return error(statusCode, 503, "PABridgeAgent has not acquired an Authentication session yet");
+                return error(statusCode, 401, "Missing X-Transactive-Session-Id header");
             }
 
             if (method == "GET" && path == "/api/pa/broadcasts")

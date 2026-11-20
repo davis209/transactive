@@ -1,6 +1,5 @@
 #pragma once
 
-#include <functional>
 #include <map>
 #include <string>
 
@@ -16,11 +15,10 @@ namespace TA_IRS_App
     class PaRestController
     {
     public:
-        typedef std::function<std::string()> SessionIdProvider;
+        explicit PaRestController(const std::string& paAgentEntityName);
 
-        PaRestController(const std::string& paAgentEntityName, SessionIdProvider sessionIdProvider);
-
-        std::string handle(const std::string& method, const std::string& path, const std::string& body, int& statusCode);
+        std::string handle(const std::string& method, const std::string& path, const std::string& body,
+                           const std::string& sessionId, int& statusCode);
 
     private:
         std::string ok(const std::string& json);
@@ -30,6 +28,5 @@ namespace TA_IRS_App
         TA_Base_Bus::IPAAgentCorbaDef::TrainCoverage toTrainCoverage(const std::map<std::string, std::string>& body, const std::string& key) const;
 
         PAAgentNamedObject m_paAgent;
-        SessionIdProvider m_sessionIdProvider;
     };
 }

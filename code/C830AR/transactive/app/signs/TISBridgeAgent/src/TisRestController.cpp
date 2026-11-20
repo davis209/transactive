@@ -34,28 +34,26 @@ namespace
 
 namespace TA_IRS_App
 {
-    TisRestController::TisRestController(SessionIdProvider sessionIdProvider)
+    TisRestController::TisRestController()
         : m_stisAgent(TA_Base_Bus::TISAgentAccessFactory::getInstance().getSTISAgent()),
-          m_ttisAgent(TA_Base_Bus::TISAgentAccessFactory::getInstance().getTTISAgent()),
-          m_sessionIdProvider(sessionIdProvider)
+          m_ttisAgent(TA_Base_Bus::TISAgentAccessFactory::getInstance().getTTISAgent())
     {
     }
 
-    std::string TisRestController::handle(const std::string& method, const std::string& path, const std::string& body, int& statusCode)
+    std::string TisRestController::handle(const std::string& method, const std::string& path, const std::string& body,
+                                          const std::string& sessionId, int& statusCode)
     {
         statusCode = 200;
         try
         {
             if (method == "GET" && path == "/health")
             {
-                const bool ready = m_sessionIdProvider && !m_sessionIdProvider().empty();
-                return TisJsonUtil::object({ TisJsonUtil::property("status", ready ? "ok" : "starting") });
+                return TisJsonUtil::object({ TisJsonUtil::property("status", "ok") });
             }
 
-            const std::string sessionId = m_sessionIdProvider ? m_sessionIdProvider() : "";
             if (sessionId.empty())
             {
-                return error(statusCode, 503, "TISBridgeAgent has not acquired an Authentication session yet");
+                return error(statusCode, 401, "Missing X-Transactive-Session-Id header");
             }
 
             if (method == "GET" && path == "/api/tis/stis/library-versions")

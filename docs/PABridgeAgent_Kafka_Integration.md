@@ -142,8 +142,7 @@
 {
   "fromBroadcastId": "StationDva_001",
   "toBroadcastId": "StationDva_002",
-  "broadcastType": "StationDva",
-  "sessionId": "..."
+  "broadcastType": "StationDva"
 }
 ```
 
@@ -152,7 +151,6 @@
 | fromBroadcastId | string | 原广播 ID。创建时通常为空字符串。 |
 | toBroadcastId | string | 新广播 ID。删除时可能为空字符串。 |
 | broadcastType | string | 广播类型。 |
-| sessionId | string | PAAgent 原始消息中的会话标识。Consumer 不得使用它调用 REST 或 CORBA 接口，也不应记录或显示。 |
 
 #### broadcastType 枚举值
 
@@ -166,7 +164,7 @@
 | `TrainDva` | 列车 DVA（数字语音公告）广播。 |
 | `Unknown` | 未识别的 PAAgent 广播类型；不是正常定义的广播类型。 |
 
-注意：当前实现会转发 `sessionId`。由于它属于敏感会话信息，生产环境应限制该 Topic 的访问权限；后续版本可能删除该字段。
+为保护会话凭证，当前版本不转发原始 `sessionId`。消费者仍应限制 Topic 的访问权限。
 
 ### 4.3 DvaMessagesUpdate
 
@@ -257,5 +255,5 @@ PA 优先级方案变化时发布。Payload 是三维数值数组：
 2. 订阅统一 Topic，并按 `eventType` 选择需要处理的广播、DVA 和 Priority 事件。
 3. 用 `broadcastId` 作为广播状态聚合键。
 4. 将 Topic、分区、offset 与消费时间记录在 Consumer 自己的日志中，便于诊断。
-5. 不记录、显示或使用 `CurrentBroadcastsUpdate` 中的 `sessionId`。
+5. 不依赖旧版本 `CurrentBroadcastsUpdate` 中的 `sessionId` 字段。
 6. 初次启动或恢复后，调用 REST 查询接口重建广播与配置基线，再消费 Kafka 增量事件。
